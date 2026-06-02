@@ -1,0 +1,46 @@
+# Crystal Clear Academy (CCA)
+
+Premier educational tutoring academy in Chennai, India. Specializing in board preparation, NEET medical coaching, digital skills, and teacher eligibility preparation.
+
+## Core Information
+- **Founding Date:** 2006
+- **Founder & Lead Educator:** Specializes in first-principles physics & chemistry coaching.
+- **Batches:** Strict maximum limit of 15 students per batch (High-Focus Batches), and 8 students for premium personal tracks.
+- **Contact Phone:** +91 98416 44813
+- **Email:** hello@crystalclearacademy.in
+- **Website:** https://crystalclearacademy.in
+- **Primary Channels:** Interactive inquiries and enrollment redirects run through WhatsApp.
+
+## Educational Programs
+
+### 1. CCA Foundations (Classes 9-12)
+- **Scope:** Physics, Chemistry, Biology, Mathematics for CBSE & State Board.
+- **Pricing:** 
+  - Class 9-10: ₹2,500/month (Weekend batches)
+  - Class 11-12 Board: ₹4,000/month (3 days weekly core)
+  - Premium Personal Track: ₹7,500/month (Direct founder access)
+- **URL:** https://crystalclearacademy.in/foundations
+
+### 2. CCA Aspire (NEET Exam Coaching)
+- **Scope:** Specialized physics mcq shortcut estimation methods, visual biology process concept mapping, weekly OMR simulations.
+- **Pricing:**
+  - Weekend Intensive: ₹3,500/month
+  - NEET Personal Track: ₹9,500/month (8 seats limit)
+  - Combo (Board + NEET): ₹11,500/month
+- **URL:** https://crystalclearacademy.in/aspire
+
+### 3. CCA Launchpad (Digital Skills)
+- **Scope:** Job-ready future competencies: Graphic Design, Figma wireframing, Python programming logic, and AI prompt engineering.
+- **Pricing:**
+  - UI/UX Figma Design: ₹4,500/month
+  - Python Coding Bootcamp: ₹4,500/month
+  - AI & Digital Competencies: ₹5,000/month
+- **URL:** https://crystalclearacademy.in/launchpad
+
+### 4. CCA Pathways (TET Mentoring)
+- **Scope:** Child Development and pedagogy theories, subject pedagogy worksheets, mock evaluation test sheets.
+- **Pricing:**
+  - TET Paper I: ₹3,000/month
+  - Complete TET Pathway (Paper I & II Combo): ₹5,000/month
+  - TET Paper II: ₹3,000/month
+- **URL:** https://crystalclearacademy.in/pathways
