@@ -2,10 +2,14 @@
 
 import { useState } from "react";
 
-export default function LeadForm({ defaultGoal = "foundations" }) {
+export default function LeadForm({ defaultGoal = "Foundations" }) {
+  const initialGoal = (defaultGoal === "foundations" || defaultGoal === "Class 9-10" || defaultGoal === "Foundations") ? "Foundations" :
+                      (defaultGoal === "aspire" || defaultGoal === "NEET" || defaultGoal === "Aspire") ? "Aspire" :
+                      (defaultGoal === "launchpad" || defaultGoal === "Skills" || defaultGoal === "Launchpad") ? "Launchpad" : "Foundations";
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [goal, setGoal] = useState(defaultGoal);
+  const [goal, setGoal] = useState(initialGoal);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,10 +19,9 @@ export default function LeadForm({ defaultGoal = "foundations" }) {
     }
 
     const goalLabelMap = {
-      foundations: "CCA Foundations (Class 9-12)",
-      aspire: "CCA Aspire (NEET Coaching)",
-      launchpad: "CCA Launchpad (Digital Skills)",
-      pathways: "CCA Pathways (TET Mentoring)",
+      "Foundations": "CCA Foundations (Class 9-12)",
+      "Aspire": "CCA Aspire (NEET Coaching)",
+      "Launchpad": "CCA Launchpad (Digital Skills)",
     };
 
     const selectedGoal = goalLabelMap[goal] || goal;
@@ -40,7 +43,7 @@ export default function LeadForm({ defaultGoal = "foundations" }) {
           id="student-name"
           type="text"
           className="form-input"
-          placeholder="e.g. Adhithya Kumar"
+          placeholder="e.g. Sanjay Kumar"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -72,16 +75,15 @@ export default function LeadForm({ defaultGoal = "foundations" }) {
             onChange={(e) => setGoal(e.target.value)}
             suppressHydrationWarning={true}
           >
-            <option value="foundations">Foundations (Class 9-12)</option>
-            <option value="aspire">Aspire (NEET Exam)</option>
-            <option value="launchpad">Launchpad (Digital Skills)</option>
-            <option value="pathways">Pathways (TET Mentors)</option>
+            <option value="Foundations">Foundations</option>
+            <option value="Aspire">Aspire</option>
+            <option value="Launchpad">Launchpad</option>
           </select>
         </div>
       </div>
 
       <button type="submit" className="btn btn-gold btn-block" style={{ marginTop: "8px" }} suppressHydrationWarning={true}>
-        Get Concept Clarity Details
+        Request a Callback
       </button>
     </form>
   );

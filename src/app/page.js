@@ -1,194 +1,313 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm/LeadForm";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import TabSwitcher from "@/components/TabSwitcher/TabSwitcher";
 import FAQAccordion from "@/components/FAQAccordion/FAQAccordion";
 
+function SyllabusForm({ programName }) {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!name.trim() || !phone.trim()) {
+      alert("Please fill in all details.");
+      return;
+    }
+    const message = `Hi Crystal Clear Academy, I would like to get the syllabus details for the ${programName} program.\n\n- Name: ${name.trim()}\n- Phone: ${phone.trim()}`;
+    const encodedText = encodeURIComponent(message);
+    window.open(`https://wa.me/919841644813?text=${encodedText}`, "_blank");
+  };
+
+  return (
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+      <div className="input-group">
+        <label className="input-label" htmlFor={`syllabus-name-${programName.replace(/\s+/g, '-')}`} style={{ fontSize: "11px" }}>Student Name</label>
+        <input
+          id={`syllabus-name-${programName.replace(/\s+/g, '-')}`}
+          type="text"
+          className="form-input"
+          style={{ padding: "10px 12px", fontSize: "14px" }}
+          placeholder="e.g. Sanjay Kumar"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </div>
+      <div className="input-group">
+        <label className="input-label" htmlFor={`syllabus-phone-${programName.replace(/\s+/g, '-')}`} style={{ fontSize: "11px" }}>WhatsApp Number</label>
+        <input
+          id={`syllabus-phone-${programName.replace(/\s+/g, '-')}`}
+          type="tel"
+          className="form-input"
+          style={{ padding: "10px 12px", fontSize: "14px" }}
+          placeholder="e.g. 9876543210"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        />
+      </div>
+      <button type="submit" className="btn btn-gold btn-block" style={{ marginTop: "8px", padding: "12px", fontSize: "14px" }}>
+        Request Syllabus on WhatsApp
+      </button>
+    </form>
+  );
+}
+
 export default function Home() {
   // Ecosystem Tabs Content
   const ecosystemTabs = [
     {
       id: "foundations",
-      label: "CCA Foundations",
+      label: "Foundations (Class 9-10)",
       content: (
-        <div className="program-panel active">
-          <div className="program-info">
-            <h3 className="font-headline-md">Foundations (Classes 9-12)</h3>
-            <p className="program-description font-body-lg">
-              {"Deep conceptual tuition focused on board excellence and logical reasoning. We don't just teach the syllabus; we teach the \"why\" behind every concept, ensuring basic blocks are solid."}
-            </p>
-            <ul className="program-checklist">
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                State Board &amp; CBSE Specialization
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Daily Mentorship &amp; Problem Review
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Monthly Progress Summits with Parents
-              </li>
-            </ul>
-            <p className="font-body-md" style={{ marginTop: "16px", marginBottom: "16px", fontWeight: "600", color: "var(--color-academic-blue)" }}>
-              Boards Covered: CBSE · State Board · Matric · ICSE/CISCE · NIOS
-            </p>
-            <Link className="btn btn-primary" href="/foundations">Learn More</Link>
+        <>
+          {/* Left Column: Program Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+            {/* Card 1 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 9 &amp; 10</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Science &amp; Maths Foundation</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
+                Build strong conceptual roots in Science and Mathematics. Transition from rote memorization to analytical problem solving.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Science%20%26%20Maths%20Foundation%20for%20Class%209-10."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
+            {/* Card 2 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 10</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Board Booster</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
+                Intensive board-pattern mock exams, doubt clearance sessions, and revision modules for high scores.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Board%20Booster%20for%20Class%2010."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
           </div>
-          <div className="program-graphic">
-            <svg viewBox="0 0 300 240" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="50" y="160" width="200" height="40" rx="4" fill="var(--color-primary-navy)" />
-              <rect x="80" y="110" width="140" height="40" rx="4" fill="var(--color-secondary)" />
-              <rect x="110" y="60" width="80" height="40" rx="4" fill="var(--color-brand-gold)" />
-              <path d="M150 15 L180 50 L120 50 Z" fill="var(--color-primary-navy)" />
-              <text x="150" y="185" fill="#ffffff" fontSize="12" fontWeight="700" textAnchor="middle">BOARD MASTERY</text>
-              <text x="150" y="135" fill="#ffffff" fontSize="12" fontWeight="700" textAnchor="middle">CONCEPT CORE</text>
-              <text x="150" y="85" fill="#ffffff" fontSize="12" fontWeight="700" textAnchor="middle">BASICS</text>
-            </svg>
+
+          {/* Right Column: Syllabus Form Widget */}
+          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
+            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
+              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
+            </p>
+            <SyllabusForm programName="Foundations (Class 9-10)" />
           </div>
-        </div>
+        </>
       )
     },
     {
       id: "aspire",
-      label: "CCA Aspire",
+      label: "Aspire (Class 11-12 & NEET)",
       content: (
-        <div className="program-panel active">
-          <div className="program-info">
-            <h3 className="font-headline-md">Aspire (NEET Coaching)</h3>
-            <p className="program-description font-body-lg">
-              Intensive mentoring specifically designed for medical aspirations. Our 10-year track record ensures students master the MCQ pattern with surgical precision, speed, and analytical competence.
+        <>
+          {/* Left Column: Program Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+            {/* Card 1 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 11 &amp; 12</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>NEET Aspire</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
+                Combined board masterclasses and advanced NEET prep. Master visual biology maps and physics shortcuts.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20NEET%20Aspire%20for%20Class%2011-12."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
+            {/* Card 2 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Droppers / Repeaters</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>NEET Repeaters Program</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
+                Full-time high-focus coaching. Intensive question-solving mock tests with daily mentor doubt resolution.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Repeaters%20Program."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Syllabus Form Widget */}
+          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
+            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
+              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
             </p>
-            <ul className="program-checklist">
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Specialized Shortcut Techniques for MCQ Physics &amp; Chemistry
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Biology Visual Concept-Mapping Modules
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Weekly OMR Simulated Mock Exams &amp; Reviews
-              </li>
-            </ul>
-            <Link className="btn btn-primary" href="/aspire">Learn More</Link>
+            <SyllabusForm programName="Aspire (Class 11-12 & NEET)" />
           </div>
-          <div className="program-graphic">
-            <svg viewBox="0 0 300 240" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M80 60 Q120 20 150 60 T220 60" fill="none" stroke="var(--color-brand-gold)" strokeWidth="3" />
-              <path d="M80 140 Q120 180 150 140 T220 140" fill="none" stroke="var(--color-primary-navy)" strokeWidth="3" />
-              <line x1="100" y1="48" x2="100" y2="152" stroke="var(--color-secondary)" strokeWidth="2" />
-              <line x1="130" y1="42" x2="130" y2="148" stroke="var(--color-secondary)" strokeWidth="2" />
-              <line x1="160" y1="52" x2="160" y2="142" stroke="var(--color-secondary)" strokeWidth="2" />
-              <line x1="190" y1="58" x2="190" y2="148" stroke="var(--color-secondary)" strokeWidth="2" />
-              <circle cx="100" cy="48" r="4" fill="var(--color-brand-gold)"/>
-              <circle cx="100" cy="152" r="4" fill="var(--color-primary-navy)"/>
-              <circle cx="130" cy="42" r="4" fill="var(--color-brand-gold)"/>
-              <circle cx="130" cy="148" r="4" fill="var(--color-primary-navy)"/>
-              <circle cx="160" cy="52" r="4" fill="var(--color-brand-gold)"/>
-              <circle cx="160" cy="142" r="4" fill="var(--color-primary-navy)"/>
-              <circle cx="190" cy="58" r="4" fill="var(--color-brand-gold)"/>
-              <circle cx="190" cy="148" r="4" fill="var(--color-primary-navy)"/>
-              <text x="150" y="210" fill="var(--color-primary-navy)" fontSize="13" fontWeight="700" textAnchor="middle">DNA OF NEET MASTERY</text>
-            </svg>
-          </div>
-        </div>
+        </>
       )
     },
     {
       id: "launchpad",
-      label: "CCA Launchpad",
+      label: "Launchpad (Skill Development)",
       content: (
-        <div className="program-panel active">
-          <div className="program-info">
-            <h3 className="font-headline-md">Launchpad (Digital Skills)</h3>
-            <p className="program-description font-body-lg">
-              Equipping the next generation with future-ready digital competencies. Go beyond traditional academic frameworks to master modern systems that drive design, computing, and tech enterprise.
-            </p>
-            <ul className="program-checklist">
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Graphic Design, Typography &amp; UI/UX Wireframing
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Python Programming &amp; Logic Design
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                AI Prompting, Automation &amp; Digital Toolsets
-              </li>
-            </ul>
-            <div style={{ marginTop: "16px", marginBottom: "16px", display: "flex", flexDirection: "column", gap: "8px" }}>
-              <p className="font-body-sm" style={{ margin: 0 }}><strong>Design:</strong> Graphic Design · UI/UX · Design Thinking · Creative Tools</p>
-              <p className="font-body-sm" style={{ margin: 0 }}><strong>Technology:</strong> AI &amp; Emerging Tech · No-Code · Web Dev · Digital Literacy</p>
-              <p className="font-body-sm" style={{ margin: 0 }}><strong>Career:</strong> Communication · Presentation · Problem Solving · Professional Dev</p>
-              <p className="font-body-sm" style={{ fontStyle: "italic", marginTop: "4px", color: "var(--color-brand-gold)", fontWeight: "600" }}>
-                Formats: 4–6 week courses · 2–3 month tracks · Weekend workshops · Holiday bootcamps
+        <>
+          {/* Left Column: Program Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
+            {/* Card 1 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Creative</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>UI/UX Design</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
+                Design web &amp; app wireframes. Master Figma layout grids, visual hierarchy, typography, and presentation.
               </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20UI/UX%20Design%20track."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
             </div>
-            <Link className="btn btn-primary" href="/launchpad">Visit Launchpad Portal</Link>
+            {/* Card 2 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Technology</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>Python Bootcamp</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
+                Learn core logic building, algorithm design, data structures, and practical coding from first-principles.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Python%20Bootcamp%20track."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
+            {/* Card 3 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Future Skills</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>AI &amp; Digital Literacy</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
+                Leverage modern generative AI tools, prompt engineering, no-code integrations, and workflow automation.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20AI%20%26%20Digital%20Literacy%20track."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
           </div>
-          <div className="program-graphic">
-            <svg viewBox="0 0 300 240" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="40" y="50" width="220" height="130" rx="6" fill="none" stroke="var(--color-primary-navy)" strokeWidth="2" />
-              <line x1="40" y1="80" x2="260" y2="80" stroke="var(--color-primary-navy)" strokeWidth="2" />
-              <circle cx="55" cy="65" r="4" fill="var(--color-brand-gold)" />
-              <circle cx="70" cy="65" r="4" fill="var(--color-secondary)" />
-              <circle cx="85" cy="65" r="4" fill="var(--color-outline-variant)" />
-              <text x="60" y="125" fill="var(--color-primary-navy)" fontFamily="monospace" fontSize="14" fontWeight="700">&lt;code&gt;</text>
-              <text x="140" y="155" fill="var(--color-brand-gold)" fontFamily="monospace" fontSize="12" fontWeight="700">UI / UX DESIGN</text>
-            </svg>
+
+          {/* Right Column: Syllabus Form Widget */}
+          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
+            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
+              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
+            </p>
+            <SyllabusForm programName="Launchpad (Skill Development)" />
           </div>
-        </div>
+        </>
       )
     },
     {
       id: "pathways",
-      label: "CCA Pathways",
+      label: "Pathways (TET Mentors)",
       content: (
-        <div className="program-panel active">
-          <div className="program-info">
-            <h3 className="font-headline-md">Pathways (TET Mentoring)</h3>
-            <p className="program-description font-body-lg">
-              Empowering teachers and education professionals to excel in the Teacher Eligibility Test (TET) and master child psychology and pedagogy frameworks.
-            </p>
-            <p className="font-body-md" style={{ fontWeight: "600", color: "var(--color-brand-gold)", marginBottom: "16px" }}>
-              Target: Graduates and aspiring government school teachers
-            </p>
-            <ul className="program-checklist">
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                In-Depth Pedagogical Theory &amp; Child Development Analysis
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Subject-Specific Comprehensive Evaluation Sheets
-              </li>
-              <li className="checklist-item font-body-md">
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                Rigorous Previous Year Paper Mapping &amp; Mock Tests
-              </li>
-            </ul>
-            <Link className="btn btn-primary" href="/pathways">Learn More</Link>
+        <>
+          {/* Left Column: Program Cards */}
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
+            {/* Card 1 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>TET Paper I</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>Primary Teacher Prep</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
+                Focused preparation for TET Paper I. Master pedagogical frameworks and child development theories.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20TET%20Paper%20I%20mentoring."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
+            {/* Card 2 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>TET Paper II</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>Upper Primary Prep</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
+                In-depth guidance for subject-matter content and pedagogical review customized for Paper II exams.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20TET%20Paper%20II%20mentoring."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
+            {/* Card 3 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
+              <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Institutions</span>
+              <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>Pedagogy Consult</h4>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
+                Consultations for schools and institutes to refine child psychology, curriculum flow, and coaching methods.
+              </p>
+              <a
+                className="btn btn-secondary btn-block"
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20pedagogical%20consultations."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
+              >
+                Enquire Now
+              </a>
+            </div>
           </div>
-          <div className="program-graphic">
-            <svg viewBox="0 0 300 240" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="150" cy="100" r="45" fill="none" stroke="var(--color-primary-navy)" strokeWidth="2" />
-              <circle cx="150" cy="100" r="35" fill="none" stroke="var(--color-brand-gold)" strokeWidth="1.5" strokeDasharray="4 2" />
-              <path d="M142 88 L142 104 L158 104 M158 96 L142 96" fill="none" stroke="var(--color-primary-navy)" strokeWidth="2" strokeLinecap="round"/>
-              <polygon points="150,45 153,53 162,53 155,58 157,66 150,61 143,66 145,58 138,53 147,53" fill="var(--color-brand-gold)" />
-              <line x1="150" y1="145" x2="150" y2="185" stroke="var(--color-primary-navy)" strokeWidth="3" strokeLinecap="round"/>
-              <path d="M120 185 H180" stroke="var(--color-primary-navy)" strokeWidth="3" strokeLinecap="round"/>
-              <text x="150" y="215" fill="var(--color-primary-navy)" fontSize="13" fontWeight="700" textAnchor="middle">TEACHING PATHWAYS</text>
-            </svg>
+
+          {/* Right Column: Syllabus Form Widget */}
+          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
+            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
+              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
+            </p>
+            <SyllabusForm programName="Pathways (TET Mentors)" />
           </div>
-        </div>
+        </>
       )
     }
   ];
@@ -197,73 +316,49 @@ export default function Home() {
   const tuitionFeeTabs = [
     {
       id: "aspire",
-      label: "CCA Aspire (NEET)",
+      label: "NEET Aspire (Class 11-12/Repeaters)",
       content: (
         <div style={{ width: "100%" }}>
-          <div style={{ backgroundColor: "rgba(198, 167, 94, 0.15)", border: "1px solid var(--color-brand-gold)", color: "#ffffff", padding: "12px 24px", borderRadius: "var(--radius-lg)", marginBottom: "24px", textAlign: "center", fontWeight: "700" }}>
-            Founder's Batch — First 10 students get 10% off
+          <div style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)", padding: "12px 24px", borderRadius: "var(--radius-lg)", marginBottom: "24px", textAlign: "center", fontWeight: "700", fontSize: "16px" }}>
+            Founder's Batch — Flat 15% Early Bird Discount valid until June 15
           </div>
-          <div className="pricing-pane active" style={{ display: "grid" }}>
+          <div className="pricing-pane active" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
             {/* Card 1 */}
-            <div className="pricing-card">
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
               <span className="price-label">Weekend Intensive</span>
-              <div className="price-val">₹3,500<span>/mo</span></div>
-              <ul className="price-list">
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Saturday &amp; Sunday Intensive
-                </li>
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Concept Mastery Lectures
-                </li>
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Extensive MCQ Practice Sets
-                </li>
-              </ul>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹42,000<span style={{ fontSize: "14px", color: "var(--color-outline)", fontWeight: "normal" }}>/yr</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-outline)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
+                Includes printed modules and weekly tests
+              </p>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
+                Saturday &amp; Sunday intensive lectures and practice sheets.
+              </p>
               <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Weekend%20Intensive%20batch." target="_blank" rel="noopener noreferrer">Enquire Now</a>
             </div>
-            {/* Card 2 (Featured) */}
-            <div className="pricing-card featured">
-              <div className="featured-badge">Only 8 seats — limited availability</div>
-              <span className="price-label">Personal Track</span>
-              <div className="price-val">₹9,500<span>/mo</span></div>
-              <ul className="price-list">
-                <li className="price-feature highlighted">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Direct Founder Mentoring
-                </li>
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Custom Mock Review Strategy
-                </li>
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Daily Direct Doubt Resolvers
-                </li>
-              </ul>
-              <a className="btn btn-gold btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20NEET%20Personal%20Track%20batch." target="_blank" rel="noopener noreferrer">Secure Your Spot</a>
+            {/* Card 2 */}
+            <div className="pricing-card featured" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <div className="featured-badge" style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)" }}>Only 8 seats — limited availability</div>
+              <span className="price-label" style={{ marginTop: "8px" }}>NEET Elite Batch (Founder's Special)</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹1,10,000<span style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", fontWeight: "normal" }}>/yr</span></div>
+              <p className="font-body-md" style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
+                Includes printed modules and weekly tests
+              </p>
+              <p className="font-body-md" style={{ color: "rgba(255,255,255,0.9)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
+                Limited to 8 seats, direct mentorship under S. Ganesan with personalized review.
+              </p>
+              <a className="btn btn-gold btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20NEET%20Elite%20Batch." target="_blank" rel="noopener noreferrer">Secure Your Spot</a>
             </div>
             {/* Card 3 */}
-            <div className="pricing-card">
-              <span className="price-label">Combo (Board + NEET)</span>
-              <div className="price-val">₹11,500<span>/mo</span></div>
-              <ul className="price-list">
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Comprehensive Board Support
-                </li>
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Integrated Entrance Syllabus
-                </li>
-                <li className="price-feature">
-                  <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                  Stress &amp; Time Management Prep
-                </li>
-              </ul>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Combo%20(Board%2BNEET)%20batch." target="_blank" rel="noopener noreferrer">Enquire Now</a>
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">NEET Integrated Program</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹1,30,000<span style={{ fontSize: "14px", color: "var(--color-outline)", fontWeight: "normal" }}>/yr</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-outline)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
+                Includes printed modules and weekly tests
+              </p>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
+                Comprehensive board syllabus coverage combined with advanced entrance prep.
+              </p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Integrated%20Program." target="_blank" rel="noopener noreferrer">Enquire Now</a>
             </div>
           </div>
         </div>
@@ -271,183 +366,47 @@ export default function Home() {
     },
     {
       id: "foundations",
-      label: "CCA Foundations",
+      label: "Foundations (Class 9-10)",
       content: (
-        <div className="pricing-pane active" style={{ display: "grid" }}>
-          {/* Card 1 */}
-          <div className="pricing-card">
-            <span className="price-label">Class 9-10 Foundations</span>
-            <div className="price-val">₹2,500<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Sat &amp; Sun Science + Maths
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Focus on Board Exams Base
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Monthly Concept Assessment
-              </li>
-            </ul>
-            <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20Class%209-10%20Foundations%20batch." target="_blank" rel="noopener noreferrer">Enquire Now</a>
-          </div>
-          {/* Card 2 (Featured) */}
-          <div className="pricing-card featured">
-            <div className="featured-badge">Most Popular</div>
-            <span className="price-label">Class 11-12 Board</span>
-            <div className="price-val">₹4,000<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature highlighted">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                3 Days Weekly Core Lectures
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Board Syllabus Mastery
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Personal Sheet Resolution
-              </li>
-            </ul>
-            <a className="btn btn-gold btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20claim%20a%20seat%20for%20the%20Class%2011-12%20Board%20batch." target="_blank" rel="noopener noreferrer">Claim Seat</a>
-          </div>
-          {/* Card 3 */}
-          <div className="pricing-card">
-            <span className="price-label">Premium Personal Track</span>
-            <div className="price-val">₹7,500<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Direct Founder Access
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Customized Learning Pace
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Bi-Weekly Parent Syncs
-              </li>
-            </ul>
-            <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Foundations%20Premium%20Personal%20Track." target="_blank" rel="noopener noreferrer">Enquire Now</a>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: "launchpad",
-      label: "CCA Launchpad",
-      content: (
-        <div className="pricing-pane active" style={{ display: "grid" }}>
-          {/* Card 1 */}
-          <div className="pricing-card">
-            <span className="price-label">UI/UX Design</span>
-            <div className="price-val">₹4,500<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Figma Software Mastery
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Real World Portfolio Projects
-              </li>
-            </ul>
-            <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Launchpad%20UI/UX%20Design%20track." target="_blank" rel="noopener noreferrer">Enquire Now</a>
-          </div>
-          {/* Card 2 (Featured) */}
-          <div className="pricing-card featured">
-            <div className="featured-badge">Popular</div>
-            <span className="price-label">Python Bootcamp</span>
-            <div className="price-val">₹4,500<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature highlighted">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Basic Programming Logic
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Practical Code Exercises
-              </li>
-            </ul>
-            <a className="btn btn-gold btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20Launchpad%20Python%20Bootcamp." target="_blank" rel="noopener noreferrer">Claim Seat</a>
-          </div>
-          {/* Card 3 */}
-          <div className="pricing-card">
-            <span className="price-label">AI &amp; Digital Competencies</span>
-            <div className="price-val">₹5,000<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Prompt Engineering Skills
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Automation Workflows
-              </li>
-            </ul>
-            <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20AI%20and%20Digital%20Competencies%20track." target="_blank" rel="noopener noreferrer">Enquire Now</a>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: "pathways",
-      label: "CCA Pathways",
-      content: (
-        <div className="pricing-pane active" style={{ display: "grid" }}>
-          {/* Card 1 */}
-          <div className="pricing-card">
-            <span className="price-label">TET Paper I</span>
-            <div className="price-val">₹3,000<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Child Development Foundations
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Mock Evaluation Cycles
-              </li>
-            </ul>
-            <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20TET%20Paper%20I%20batch." target="_blank" rel="noopener noreferrer">Enquire Now</a>
-          </div>
-          {/* Card 2 (Featured) */}
-          <div className="pricing-card featured">
-            <div className="featured-badge">Best Value</div>
-            <span className="price-label">Complete TET Pathway</span>
-            <div className="price-val">₹5,000<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature highlighted">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Papers I &amp; II Combined Prep
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Direct Founder Consultations
-              </li>
-            </ul>
-            <a className="btn btn-gold btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20Complete%20TET%20Pathway%20combo." target="_blank" rel="noopener noreferrer">Claim Seat</a>
-          </div>
-          {/* Card 3 */}
-          <div className="pricing-card">
-            <span className="price-label">TET Paper II</span>
-            <div className="price-val">₹3,000<span>/mo</span></div>
-            <ul className="price-list">
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Subject-Specific Reviews
-              </li>
-              <li className="price-feature">
-                <svg className="price-feature-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Strategy Development Sheets
-              </li>
-            </ul>
-            <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20TET%20Paper%20II%20batch." target="_blank" rel="noopener noreferrer">Enquire Now</a>
+        <div style={{ width: "100%" }}>
+          <div className="pricing-pane active" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+            {/* Card 1 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">Class 9 Foundation</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹28,000<span style={{ fontSize: "14px", color: "var(--color-outline)", fontWeight: "normal" }}>/yr</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-outline)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
+                Includes printed modules and weekly tests
+              </p>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
+                Strong conceptual building blocks in Science and Mathematics.
+              </p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20Class%209%20Foundation%20batch." target="_blank" rel="noopener noreferrer">Enquire Now</a>
+            </div>
+            {/* Card 2 */}
+            <div className="pricing-card featured" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <div className="featured-badge" style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)" }}>Most Popular</div>
+              <span className="price-label" style={{ marginTop: "8px" }}>Class 10 Board Booster</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹32,000<span style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", fontWeight: "normal" }}>/yr</span></div>
+              <p className="font-body-md" style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
+                Includes printed modules and weekly tests
+              </p>
+              <p className="font-body-md" style={{ color: "rgba(255,255,255,0.9)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
+                In-depth curriculum coverage with previous year paper revisions.
+              </p>
+              <a className="btn btn-gold btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20claim%20a%20seat%20for%20the%20Class%2010%20Board%20Booster%20batch." target="_blank" rel="noopener noreferrer">Claim Seat</a>
+            </div>
+            {/* Card 3 */}
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">High-Focus Personal Track</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹75,000<span style={{ fontSize: "14px", color: "var(--color-outline)", fontWeight: "normal" }}>/yr</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-outline)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
+                Includes printed modules and weekly tests
+              </p>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
+                Direct conceptual review and customized test schedule with the founder.
+              </p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Foundations%20High-Focus%20Personal%20Track." target="_blank" rel="noopener noreferrer">Enquire Now</a>
+            </div>
           </div>
         </div>
       )
@@ -619,38 +578,7 @@ export default function Home() {
       {/* Founder Section */}
       <section className="section-py founder-section" id="about">
         <div className="container founder-grid">
-          <ScrollReveal className="founder-text-block">
-            <span className="founder-subtitle font-label-lg">Pedagogical Vision</span>
-            <h2 className="founder-title font-headline-lg">A Legacy of Academic Transformation</h2>
-            <p className="founder-desc font-body-lg">
-              With over 18 years in the core education sector and a decade specifically focused on NEET science outcomes, our founder has redefined what student mentorship means. From transforming government school results to mentoring elite achievers, the mission remains the same: Absolute Clarity.
-            </p>
-            <ul className="program-checklist" style={{ margin: "8px 0 16px 0" }}>
-              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>18+ years of teaching excellence</strong> in Chennai.</span>
-              </li>
-              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>10+ years of dedicated NEET mentoring</strong> with proven results.</span>
-              </li>
-              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>Track record of training government school students</strong> to qualify for MBBS/BDS.</span>
-              </li>
-            </ul>
-            <div className="founder-stats">
-              <div className="stat-card">
-                <div className="stat-number">1,000+</div>
-                <div className="stat-label">Success Stories</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">5,000+</div>
-                <div className="stat-label">Students Mentored</div>
-              </div>
-            </div>
-          </ScrollReveal>
-
+          {/* Left Column: Photo / Avatar side */}
           <ScrollReveal className="founder-card-side">
             <div className="founder-quote-card">
               <span className="quote-icon">“</span>
@@ -667,8 +595,41 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="founder-name">Lead Educator &amp; Founder</div>
-                  <div className="founder-role">Crystal Clear Academy</div>
+                  <div className="founder-role">S. Ganesan</div>
                 </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Right Column: Text details */}
+          <ScrollReveal className="founder-text-block">
+            <span className="founder-subtitle font-label-lg">Pedagogical Vision</span>
+            <h2 className="founder-title font-headline-lg">Mentorship by S. Ganesan</h2>
+            <p className="founder-desc font-body-lg">
+              With 18+ years of core education leadership in Chennai, S. Ganesan has pioneered conceptual coaching in Physics, Chemistry, and Mathematics. His signature clarity-first mentoring bridges the gap between school board mastery and competitive NEET syllabus demands, helping students unlock top tier academic performance.
+            </p>
+            <ul className="program-checklist" style={{ margin: "8px 0 16px 0" }}>
+              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
+                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span><strong>18+ years of teaching excellence</strong> in Chennai.</span>
+              </li>
+              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
+                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span><strong>10+ years of dedicated NEET mentoring</strong> with proven results.</span>
+              </li>
+              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
+                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span><strong>Track record of training government school students</strong> to qualify for MBBS/BDS under the 7.5% reservation.</span>
+              </li>
+            </ul>
+            <div className="founder-stats">
+              <div className="stat-card">
+                <div className="stat-number">1,200+</div>
+                <div className="stat-label">Students Mentored</div>
+              </div>
+              <div className="stat-card">
+                <div className="stat-number">98%</div>
+                <div className="stat-label">Board Exam Pass Rate</div>
               </div>
             </div>
           </ScrollReveal>
@@ -694,7 +655,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>1. Conceptual Clarity</h4>
-              <p>Breaking down complex syllabus topics into first-principles representation.</p>
+              <p>First-principles representation of topics.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -704,7 +665,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>2. Concrete Foundations</h4>
-              <p>Daily practice sheets and weekly assessment loops.</p>
+              <p>Daily practice sheets &amp; weekly assessments.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -714,7 +675,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>3. Small-Batch Mentorship</h4>
-              <p>Strict high-focus limit (max 15 students) for personalized guidance.</p>
+              <p>Strict high-focus limit of 15 students.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -724,7 +685,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>4. Outcome-Driven Excellence</h4>
-              <p>Mock exam cycles and target score tracking.</p>
+              <p>Target score tracking &amp; progress updates.</p>
             </ScrollReveal>
           </div>
         </div>
@@ -763,18 +724,18 @@ export default function Home() {
                 </svg>
               </div>
               <div className="event-body">
-                <span className="event-tag">Free Workshop</span>
-                <h4 className="event-title">Free Demo Class</h4>
-                <p className="event-desc">Experience our signature clarity-first method with key mentor discussions.</p>
+                <span className="event-tag">NEET Prep</span>
+                <h4 className="event-title">NEET Mock Strategy Seminar</h4>
+                <p className="event-desc">Master the art of question selection and time management under mock exam conditions.</p>
                 <div className="event-footer">
-                  <span className="event-time">Upcoming Sunday</span>
+                  <span className="event-time">June 10</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20RSVP%20for%20the%20upcoming%20Sunday%20Free%20Demo%20Class."
+                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20NEET%20Mock%20Strategy%20Seminar%20on%20June%2010."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    RSVP
+                    Register Free
                   </a>
                 </div>
               </div>
@@ -787,18 +748,18 @@ export default function Home() {
                 </svg>
               </div>
               <div className="event-body">
-                <span className="event-tag">Skills Program</span>
-                <h4 className="event-title">UI/UX Graphic Design Bootcamp</h4>
-                <p className="event-desc">Learn key visual communication, layout grids, Figma, and typography rules.</p>
+                <span className="event-tag">Board Strategy</span>
+                <h4 className="event-title">Class 10 Board Prep Webinar</h4>
+                <p className="event-desc">Learn visual concept maps and revision frameworks to maximize board exam scores.</p>
                 <div className="event-footer">
-                  <span className="event-time">Starts TBD</span>
+                  <span className="event-time">June 12</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20my%20interest%20for%20the%20UI/UX%20Graphic%20Design%20Bootcamp."
+                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20Class%2010%20Board%20Prep%20Webinar%20on%20June%2012."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Register
+                    Register Free
                   </a>
                 </div>
               </div>
@@ -811,18 +772,18 @@ export default function Home() {
                 </svg>
               </div>
               <div className="event-body">
-                <span className="event-tag">Parental Sync</span>
-                <h4 className="event-title">{"Parents' Open House"}</h4>
-                <p className="event-desc">Meet the leading mentors, review student tracking, and plan core schedules.</p>
+                <span className="event-tag">Batch Launch</span>
+                <h4 className="event-title">Direct Admission Small Batches Start</h4>
+                <p className="event-desc">High-focus batches limited to 15 students start. Secure your slot for direct mentor access.</p>
                 <div className="event-footer">
-                  <span className="event-time">Monthly Meetup</span>
+                  <span className="event-time">June 15</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20joining%20the%20next%20Parents%20Open%20House."
+                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20Direct%20Admission%20Small%20Batches%20Start%20on%20June%2015."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Join
+                    Register Free
                   </a>
                 </div>
               </div>
@@ -848,11 +809,11 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"The personal track coaching transformed my son's approach to Physics. He used to be terrified, but now he solves MCQs with confidence.\""}</p>
+                <p className="testimonial-text">{"\"The personalized attention at CCA is unmatched. Every student's learning gaps are identified and resolved, making my child feel confident and fully supported.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Mrs. Rajalakshmi</div>
-                <div className="testimonial-author-desc">Parent of Class 12 Student</div>
+                <div className="testimonial-author-desc">Parent of Class 10 Student</div>
               </div>
             </ScrollReveal>
             
@@ -863,26 +824,26 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"The mentorship for Government School students is incredible. CCA truly cares about social impact and real results.\""}</p>
+                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations became incredibly simple and easy to remember.\""}</p>
+              </div>
+              <div>
+                <div className="testimonial-author-name">Adhithya Kumar</div>
+                <div className="testimonial-author-desc">NEET Qualifier 2023</div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal className="testimonial-card">
+              <div>
+                <div className="stars-container">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  ))}
+                </div>
+                <p className="testimonial-text">{"\"The guidance here is not just about lectures; it's a mentorship that goes beyond classroom hours. The support system has helped my child excel academically and personally.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Dr. Arulmani</div>
-                <div className="testimonial-author-desc">Educational Consultant</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal className="testimonial-card">
-              <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
-                </div>
-                <p className="testimonial-text">{"\"Launchpad's UI/UX course gave me more practical skills than my college semester. Highly recommend for future skills.\""}</p>
-              </div>
-              <div>
-                <div className="testimonial-author-name">Karthik S.</div>
-                <div className="testimonial-author-desc">Student, Launchpad Batch</div>
+                <div className="testimonial-author-desc">Parent of Class 12 Student</div>
               </div>
             </ScrollReveal>
           </div>
