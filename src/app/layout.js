@@ -1,20 +1,20 @@
-import { Playfair_Display, Source_Sans_3 } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB/WhatsAppFAB";
 
-const playfair = Playfair_Display({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["700", "900"],
-  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-const sourceSans = Source_Sans_3({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
-  variable: "--font-source-sans",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -146,7 +146,7 @@ function OrganizationJsonLd() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${sourceSans.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body>
         <OrganizationJsonLd />
         <Header />

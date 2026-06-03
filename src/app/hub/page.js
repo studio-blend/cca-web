@@ -1,5 +1,4 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
-import LeadForm from "@/components/LeadForm/LeadForm";
 
 export const metadata = {
   title: "CCA Hub - Bulletin & Gallery | Crystal Clear Academy",
@@ -83,7 +82,16 @@ export default function HubPage() {
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px" }}>
               Stay current with upcoming events, admission alerts, early bird fee waivers, and look inside our premium coaching classrooms in Chennai.
             </p>
-            <LeadForm defaultGoal="foundations" />
+            <div style={{ marginTop: "20px" }}>
+              <a 
+                className="btn btn-gold" 
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20admissions%20after%2520viewing%2520the%2520bulletin%2520updates." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Enquire on WhatsApp →
+              </a>
+            </div>
           </ScrollReveal>
 
           <ScrollReveal className="hero-visual-container">
@@ -176,7 +184,64 @@ export default function HubPage() {
         </div>
       </section>
 
-      {/* Classroom Gallery */}
+      {/* Testimonials Gallery */}
+      <section className="section-py" style={{ backgroundColor: "var(--color-surface-warm)" }}>
+        <div className="container">
+          <ScrollReveal className="section-title-wrap">
+            <span className="hero-tagline font-label-lg">Student Voices</span>
+            <h2 className="font-headline-lg">Video &amp; Written Testimonials</h2>
+            <div className="gold-divider"></div>
+          </ScrollReveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", marginTop: "40px" }}>
+            {/* Testimonial Video Card 1 */}
+            <ScrollReveal className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "32px", height: "100%", backgroundColor: "var(--color-surface-card)", border: "1px solid rgba(198,167,94,0.18)", boxShadow: "var(--shadow-sm)", borderRadius: "var(--radius-lg)" }}>
+              <div style={{ position: "relative", height: "200px", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "20px" }}>
+                <img src="/student-boy.png" alt="Srinivas K." style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(14,31,59,0.4)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div className="btn-play-pulse" style={{ width: "60px", height: "60px", borderRadius: "50%", backgroundColor: "var(--color-brand-gold)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 12px rgba(198,167,94,0.5)" }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary-navy)" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: "4px" }}>
+                      <path d="M8 5V19L19 12L8 5Z" />
+                    </svg>
+                  </div>
+                </div>
+                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>VIDEO TESTIMONIAL</span>
+              </div>
+              <div style={{ flexGrow: 1 }}>
+                <div className="font-label-md" style={{ color: "var(--color-brand-gold)", marginBottom: "4px" }}>NEET Scorer — 680/720</div>
+                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 12px 0", fontSize: "20px" }}>Srinivas K.</h4>
+                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontStyle: "italic", fontSize: "14px", lineHeight: "1.6" }}>
+                  &ldquo;The physics concept maps broke down complex formulas into easy rules. I stopped memorizing equations and started understanding how to derive them. Revathy M.&apos;s mentorship completely changed my approach to solving numericals under time pressure.&rdquo;
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Testimonial Video Card 2 */}
+            <ScrollReveal className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "32px", height: "100%", backgroundColor: "var(--color-surface-card)", border: "1px solid rgba(198,167,94,0.18)", boxShadow: "var(--shadow-sm)", borderRadius: "var(--radius-lg)" }}>
+              <div style={{ position: "relative", height: "200px", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "20px" }}>
+                <img src="/student-girl.png" alt="Priyanka M." style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(14,31,59,0.4)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <div className="btn-play-pulse" style={{ width: "60px", height: "60px", borderRadius: "50%", backgroundColor: "var(--color-brand-gold)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 12px rgba(198,167,94,0.5)" }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary-navy)" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: "4px" }}>
+                      <path d="M8 5V19L19 12L8 5Z" />
+                    </svg>
+                  </div>
+                </div>
+                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>VIDEO TESTIMONIAL</span>
+              </div>
+              <div style={{ flexGrow: 1 }}>
+                <div className="font-label-md" style={{ color: "var(--color-brand-gold)", marginBottom: "4px" }}>CBSE Class 12 — 97% Scorer</div>
+                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 12px 0", fontSize: "20px" }}>Priyanka M.</h4>
+                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontStyle: "italic", fontSize: "14px", lineHeight: "1.6" }}>
+                  &ldquo;I was struggling with rote learning before joining CCA. The offline classes made math concepts visual and logical. Drawing proofs on digital maps helped me visualize mechanics and calculus easily, which made my CBSE boards stress-free!&rdquo;
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Plain Media Gallery */}
       <section className="section-py">
         <div className="container">
           <ScrollReveal className="section-title-wrap">
@@ -187,14 +252,9 @@ export default function HubPage() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginTop: "40px" }}>
             {/* Gallery Item 1 */}
-            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <div style={{ height: "200px", width: "100%", background: "linear-gradient(135deg, var(--color-primary-navy), var(--color-academic-blue))", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-brand-gold)" strokeWidth="2" />
-                  <line x1="50" y1="50" x2="80" y2="20" stroke="#ffffff" strokeWidth="3" />
-                  <path d="M70 20 A30 30 0 0 0 50 10" fill="none" stroke="var(--color-brand-gold)" strokeWidth="3" />
-                  <text x="50" y="55" fill="#ffffff" fontSize="10" textAnchor="middle" fontFamily="monospace">v = rω</text>
-                </svg>
+            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(198,167,94,0.15)", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-sm)" }}>
+              <div style={{ height: "200px", width: "100%", overflow: "hidden" }}>
+                <img src="/gallery-physics.png" alt="Physics Concept Mapping" style={{ width: "100%", height: "100%", objectFit: "cover" }} className="gallery-hover-zoom" />
               </div>
               <div style={{ padding: "20px" }}>
                 <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>Physics Concept Mapping</h4>
@@ -205,58 +265,40 @@ export default function HubPage() {
             </ScrollReveal>
 
             {/* Gallery Item 2 */}
-            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <div style={{ height: "200px", width: "100%", background: "linear-gradient(135deg, var(--color-academic-blue), var(--color-secondary))", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M20 50 Q35 15 50 50 T80 50" fill="none" stroke="#ffffff" strokeWidth="2.5" />
-                  <path d="M20 50 Q35 85 50 50 T80 50" fill="none" stroke="var(--color-brand-gold)" strokeWidth="2.5" />
-                  <circle cx="35" cy="32" r="4" fill="#ffffff" />
-                  <circle cx="50" cy="50" r="4" fill="var(--color-brand-gold)" />
-                  <circle cx="65" cy="68" r="4" fill="#ffffff" />
-                </svg>
+            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(198,167,94,0.15)", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-sm)" }}>
+              <div style={{ height: "200px", width: "100%", overflow: "hidden" }}>
+                <img src="/gallery-classroom.png" alt="Classroom Discussion" style={{ width: "100%", height: "100%", objectFit: "cover" }} className="gallery-hover-zoom" />
               </div>
               <div style={{ padding: "20px" }}>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>Biology genetics Review</h4>
+                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>High-Focus Classrooms</h4>
+                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontSize: "13px", lineHeight: "1.4" }}>
+                  Glimpse into our small batch classes in Chennai. Students collaborating directly with our lead mentors in a focused academic setting.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Gallery Item 3 */}
+            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(198,167,94,0.15)", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-sm)" }}>
+              <div style={{ height: "200px", width: "100%", overflow: "hidden" }}>
+                <img src="/gallery-biology.png" alt="Biology genetics Review" style={{ width: "100%", height: "100%", objectFit: "cover" }} className="gallery-hover-zoom" />
+              </div>
+              <div style={{ padding: "20px" }}>
+                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>Biology Genetics Review</h4>
                 <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontSize: "13px", lineHeight: "1.4" }}>
                   Mapping out transcription stages, replication loops, and organic molecular connections visually rather than relying on plain memorization lists.
                 </p>
               </div>
             </ScrollReveal>
 
-            {/* Gallery Item 3 */}
-            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <div style={{ height: "200px", width: "100%", background: "linear-gradient(135deg, var(--color-primary-navy), var(--color-secondary))", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect x="25" y="20" width="50" height="60" rx="4" fill="none" stroke="#ffffff" strokeWidth="2" />
-                  <circle cx="50" cy="35" r="10" fill="none" stroke="var(--color-brand-gold)" strokeWidth="2" />
-                  <line x1="35" y1="55" x2="65" y2="55" stroke="#ffffff" strokeWidth="2" />
-                  <line x1="35" y1="65" x2="55" y2="65" stroke="#ffffff" strokeWidth="2" />
-                </svg>
+            {/* Gallery Item 4 */}
+            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(198,167,94,0.15)", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-sm)" }}>
+              <div style={{ height: "200px", width: "100%", overflow: "hidden" }}>
+                <img src="/gallery-uiux.png" alt="Figma UI/UX Mockups" style={{ width: "100%", height: "100%", objectFit: "cover" }} className="gallery-hover-zoom" />
               </div>
               <div style={{ padding: "20px" }}>
                 <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>Figma UI/UX Mockups</h4>
                 <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontSize: "13px", lineHeight: "1.4" }}>
                   Launchpad students showcasing their design systems, mobile grid structures, and interactive Figma prototypes to peers.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Gallery Item 4 */}
-            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(0,0,0,0.06)" }}>
-              <div style={{ height: "200px", width: "100%", background: "linear-gradient(135deg, var(--color-secondary), var(--color-primary-navy))", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="30" cy="35" r="8" fill="var(--color-brand-gold)" />
-                  <circle cx="50" cy="35" r="8" fill="none" stroke="#ffffff" strokeWidth="2" />
-                  <circle cx="70" cy="35" r="8" fill="#ffffff" />
-                  <circle cx="30" cy="65" r="8" fill="none" stroke="#ffffff" strokeWidth="2" />
-                  <circle cx="50" cy="65" r="8" fill="#ffffff" />
-                  <circle cx="70" cy="65" r="8" fill="none" stroke="#ffffff" strokeWidth="2" />
-                </svg>
-              </div>
-              <div style={{ padding: "20px" }}>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>OMR Examination Diagnostics</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontSize: "13px", lineHeight: "1.4" }}>
-                  NEET Aspire weekend evaluations under strict timing control. Mock OMR papers analyzed to identify personal speed gaps.
                 </p>
               </div>
             </ScrollReveal>
