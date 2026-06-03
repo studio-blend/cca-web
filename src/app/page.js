@@ -111,7 +111,7 @@ export default function Home() {
                 </p>
                 <a
                   className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%2520in%2520Subject%2520Tuition%2520for%2520Class%25209-12."
+                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Subject%20Tuition%20for%20Class%209-12."
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
@@ -174,7 +174,7 @@ export default function Home() {
                 </p>
                 <a
                   className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Early%2520NEET%2520Foundation%2520for%2520Class%25209-10."
+                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Early%20NEET%20Foundation%20for%20Class%209-10."
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
@@ -191,7 +191,7 @@ export default function Home() {
                 </p>
                 <a
                   className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Integrated%2520NEET%2520Coaching%2520for%2520Class%252011-12."
+                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Integrated%20NEET%20Coaching%20for%20Class%2011-12."
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
@@ -256,10 +256,10 @@ export default function Home() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
               {/* Card 1 */}
               <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Studio Blend Collaboration</span>
+                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>CCA Launchpad</span>
                 <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Design</h4>
                 <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Figma prototyping, layout grids, typography guidelines, and creative problem solving models.
+                  Figma prototyping, layout grids, typography guidelines, and creative problem-solving — learn professional design tools used by industry.
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "12px", marginTop: "auto" }}>
                   {["Graphic Design", "UI/UX", "Design Thinking", "Creative Tools"].map((tag, i) => (
@@ -269,23 +269,23 @@ export default function Home() {
               </div>
               {/* Card 2 */}
               <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Studio Blend Collaboration</span>
+                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>CCA Launchpad</span>
                 <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Technology</h4>
                 <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Build with digital blocks. Modern automation workflows, coding structures, and digital integrations.
+                  Build real projects with AI tools, automation workflows, web development basics, and no-code platforms used by modern professionals.
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "12px", marginTop: "auto" }}>
-                  {["AI &amp; Emerging Tech", "No-Code", "Web Dev", "Digital Literacy"].map((tag, i) => (
+                  {["AI & Emerging Tech", "No-Code", "Web Dev", "Digital Literacy"].map((tag, i) => (
                     <span key={i} style={{ fontSize: "10px", backgroundColor: "rgba(198,167,94,0.1)", color: "var(--color-primary-navy)", padding: "2px 6px", borderRadius: "4px", fontWeight: "600" }}>{tag}</span>
                   ))}
                 </div>
               </div>
               {/* Card 3 */}
               <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Studio Blend Collaboration</span>
+                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>CCA Launchpad</span>
                 <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Career</h4>
                 <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Interpersonal capability training, creative arguments, dynamic slide structures, and leadership.
+                  Communication, presentation decks, leadership exercises, and problem-solving frameworks — skills that open doors beyond academics.
                 </p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "12px", marginTop: "auto" }}>
                   {["Communication", "Presentation", "Problem Solving", "Professional Dev"].map((tag, i) => (
@@ -423,15 +423,24 @@ export default function Home() {
       id: "foundations",
       label: "Foundations",
       content: (
-        <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-          <div className="pricing-card" style={{ maxWidth: "600px", padding: "40px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", width: "100%" }}>
-            <h3 style={{ color: "var(--color-brand-gold)", fontSize: "24px", fontWeight: "700" }}>Foundations Fees</h3>
-            <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)", fontSize: "18px", margin: "10px 0" }}>
-              Fees vary by class and subject. Contact us for a personalised quote.
-            </p>
-            <a className="btn btn-secondary" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20the%20Foundations%20program%20fees." target="_blank" rel="noopener noreferrer" style={{ padding: "12px 32px" }}>
-              Enquire on WhatsApp
-            </a>
+        <div style={{ width: "100%" }}>
+          <div style={{ backgroundColor: "rgba(198,167,94,0.08)", border: "1px solid rgba(198,167,94,0.25)", borderRadius: "var(--radius-lg)", padding: "16px 24px", marginBottom: "24px", display: "flex", alignItems: "center", gap: "12px" }}>
+            <svg style={{ width: "20px", height: "20px", color: "var(--color-brand-gold)", flexShrink: 0, fill: "var(--color-brand-gold)" }} viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <p style={{ margin: 0, fontSize: "14px", color: "var(--color-primary-navy)", fontWeight: "600" }}>Fees shown are starting ranges. Final pricing depends on class level, subject combination, and session frequency. WhatsApp us for a personalised quote in under 5 minutes.</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">Class 9 &amp; 10</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹1,500<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹2,500/month</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Science &amp; Maths conceptual coaching. Board-aligned curriculum with weekly assessments.</p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20Foundations%20fees%20for%20Class%209-10." target="_blank" rel="noopener noreferrer">Get Exact Quote</a>
+            </div>
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">Class 11 &amp; 12</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹2,000<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹3,500/month</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Physics, Chemistry, Biology &amp; Mathematics. Dual-board coaching with concept-clarity method.</p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20Foundations%20fees%20for%20Class%2011-12." target="_blank" rel="noopener noreferrer">Get Exact Quote</a>
+            </div>
           </div>
         </div>
       )
@@ -490,15 +499,30 @@ export default function Home() {
       id: "launchpad",
       label: "Launchpad",
       content: (
-        <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-          <div className="pricing-card" style={{ maxWidth: "600px", padding: "40px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", width: "100%" }}>
-            <h3 style={{ color: "var(--color-brand-gold)", fontSize: "24px", fontWeight: "700" }}>Launchpad Fees</h3>
-            <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)", fontSize: "18px", margin: "10px 0" }}>
-              Program fees vary by track. Early access pricing available.
-            </p>
-            <a className="btn btn-secondary" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Launchpad%20program%20fees." target="_blank" rel="noopener noreferrer" style={{ padding: "12px 32px" }}>
-              Enquire on WhatsApp
-            </a>
+        <div style={{ width: "100%" }}>
+          <div style={{ backgroundColor: "rgba(198,167,94,0.08)", border: "1px solid rgba(198,167,94,0.25)", borderRadius: "var(--radius-lg)", padding: "16px 24px", marginBottom: "24px", display: "flex", alignItems: "center", gap: "12px" }}>
+            <svg style={{ width: "20px", height: "20px", flexShrink: 0, fill: "var(--color-brand-gold)" }} viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <p style={{ margin: 0, fontSize: "14px", color: "var(--color-primary-navy)", fontWeight: "600" }}>Launchpad runs as 4–6 week courses, weekend workshops, and holiday bootcamps. Pricing varies by format and duration.</p>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px" }}>
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">Weekend Workshop</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹2,500<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹4,000</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>2-day intensive. Design, Tech or Career tracks — practical, hands-on sessions.</p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20a%20Launchpad%20Weekend%20Workshop." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
+            </div>
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">Full Course (4–6 Weeks)</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹5,000<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹8,000</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Structured 4–6 week courses in UI/UX, AI Literacy, or Professional Communication.</p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20a%20full%20Launchpad%20course." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
+            </div>
+            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+              <span className="price-label">Holiday Bootcamp</span>
+              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹3,500<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹6,000</span></div>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Intensive skill builds during school holidays — 5–10 day immersive formats.</p>
+              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20a%20Launchpad%20Holiday%20Bootcamp." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
+            </div>
           </div>
         </div>
       )
@@ -550,16 +574,35 @@ export default function Home() {
     }
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <div className="container hero-grid">
           <ScrollReveal className="hero-content">
-            <span className="hero-tagline font-label-lg">Premium Academic Mentorship</span>
+            <span className="hero-tagline font-label-lg">Premium Academic Mentorship · Chennai</span>
             <div className="urgency-badge" style={{ marginTop: "4px" }}>
               <span className="urgency-dot"></span>
-              <span>Founder&apos;s Batch: Only 8 seats left</span>
+              <span>NEET Founder&apos;s Batch: Only 8 seats left</span>
             </div>
             <h1 className="hero-title font-display-lg">
               Where Excellence Begins with <span className="text-glow-gold">Clarity</span>
@@ -568,12 +611,22 @@ export default function Home() {
             <p className="hero-description font-body-lg">
               18+ years of leadership in education. Custom courses structured for Classes 9–12 Board Exams, NEET mastery, and future-focused digital competencies.
             </p>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "4px" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
+                <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Primarily offline · Chennai center
+              </span>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
+                <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+                Online doubt support · 4–6 hr response
+              </span>
+            </div>
             <LeadForm defaultGoal="foundations" />
           </ScrollReveal>
 
           <ScrollReveal className="hero-visual-container">
             <img 
-              src="/hero-placeholder.png" 
+              src="/hero-banner.png" 
               alt="Crystal Clear Academy Students" 
               style={{ 
                 width: "100%", 
@@ -648,20 +701,52 @@ export default function Home() {
             <div className="stat-item">
               <span className="stat-number">1,200+</span>
               <span className="stat-label">Students Mentored</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>2006–Present</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">98%</span>
               <span className="stat-label">Board Pass Rate</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>18-year average</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">10+ Yrs</span>
               <span className="stat-label">NEET Track Record</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Proven qualifiers</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">15 Max</span>
               <span className="stat-label">Batch Size Limit</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Every student seen</span>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Govt School → NEET Callout Banner */}
+      <section style={{ backgroundColor: "var(--color-primary-navy)", padding: "0" }}>
+        <div className="container" style={{ padding: "20px var(--space-lg)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "16px" }}>
+              <div style={{ flexShrink: 0, width: "48px", height: "48px", backgroundColor: "var(--color-brand-gold)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg style={{ width: "26px", height: "26px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+              </div>
+              <div>
+                <p style={{ margin: "0 0 4px 0", fontSize: "18px", fontWeight: "700", color: "var(--color-brand-gold)", lineHeight: 1.2 }}>Government School → Medical College</p>
+                <p style={{ margin: 0, fontSize: "14px", color: "rgba(255,255,255,0.85)", lineHeight: 1.5, maxWidth: "600px" }}>
+                  CCA students from Tamil Nadu government schools have qualified NEET and secured MBBS/BDS seats under the 7.5% reservation — proof that the right mentorship levels every playing field.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20know%20more%20about%20how%20your%20govt%20school%20students%20qualified%20NEET."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-gold"
+              style={{ flexShrink: 0, whiteSpace: "nowrap" }}
+            >
+              Hear Their Story
+            </a>
+          </div>
         </div>
       </section>
 
@@ -673,7 +758,7 @@ export default function Home() {
             <div className="founder-quote-card" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px", borderBottom: "1px solid rgba(198,167,94,0.2)", paddingBottom: "20px" }}>
                 <div className="founder-portrait-frame">
-                  <img src="/founder-placeholder.png" alt="Revathy M." className="founder-portrait-img" />
+                  <img src="/founder-revathy.png" alt="Revathy M." className="founder-portrait-img" />
                 </div>
                 <div style={{ textAlign: "center" }}>
                   <div className="founder-name" style={{ fontSize: "20px" }}>Revathy M.</div>
@@ -760,7 +845,7 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations became incredibly simple and easy to remember.\""}</p>
+                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations — things that seemed impossible — became second nature. I cracked NEET in my first attempt.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Adhithya Kumar</div>
@@ -780,6 +865,21 @@ export default function Home() {
               <div>
                 <div className="testimonial-author-name">Dr. Arulmani</div>
                 <div className="testimonial-author-desc">Parent of Class 12 Student</div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal className="testimonial-card">
+              <div>
+                <div className="stars-container">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  ))}
+                </div>
+                <p className="testimonial-text">{"\"I was struggling with Physics derivations for months. After just 3 sessions at CCA, I finally understood the logic behind them — not just the formula. The WhatsApp doubt support is also super fast, always replied within a few hours.\""}</p>
+              </div>
+              <div>
+                <div className="testimonial-author-name">Priya S.</div>
+                <div className="testimonial-author-desc">Class 12 Student · CCA Aspire Batch</div>
               </div>
             </ScrollReveal>
           </div>
@@ -820,7 +920,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>1. Conceptual Clarity</h4>
-              <p>First-principles representation of topics.</p>
+              <p>Every topic is taught root-up — visual concept maps for Biology, step-by-step derivations for Physics, model-based reasoning for Chemistry. No rote learning, only understanding that sticks.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -830,7 +930,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>2. Concrete Foundations</h4>
-              <p>Daily practice sheets &amp; weekly assessments.</p>
+              <p>Daily practice sheets calibrated to board and NEET difficulty levels, plus weekly diagnostic assessments. Each student receives a personalised roadmap after the first session — not after enrollment.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -840,7 +940,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>3. Small-Batch Mentorship</h4>
-              <p>Strict high-focus limit of 15 students.</p>
+              <p>Maximum 15 students per batch — every face known, every gap tracked. Students have direct WhatsApp access to mentors: every doubt answered within 4–6 hours, even between sessions.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -850,7 +950,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>4. Outcome-Driven Excellence</h4>
-              <p>Target score tracking &amp; progress updates.</p>
+              <p>Target scores are set on Day 1, tracked weekly. Monthly progress reports shared with parents. Merit milestones celebrated — because accountability without recognition doesn't build confidence.</p>
             </ScrollReveal>
           </div>
         </div>
@@ -861,7 +961,7 @@ export default function Home() {
         <div className="container">
           <ScrollReveal className="section-title-wrap">
             <span className="hero-tagline font-label-lg" style={{ color: "var(--color-on-primary-container)" }}>Transparent Pricing</span>
-            <h2>Financial Investments</h2>
+            <h2>Fees &amp; Pricing</h2>
             <p>{"Founder's Batches — Early registrations receive an immediate 10% waiver"}</p>
             <div className="gold-divider" style={{ marginTop: "16px" }}></div>
           </ScrollReveal>
@@ -906,12 +1006,12 @@ export default function Home() {
               <div className="event-body">
                 <span className="event-tag">NEET Prep</span>
                 <h4 className="event-title">NEET Mock Strategy Seminar</h4>
-                <p className="event-desc">Master the art of question selection and time management under mock exam conditions.</p>
+                <p className="event-desc">Master the art of question selection and time management under mock exam conditions. Register to confirm your slot.</p>
                 <div className="event-footer">
-                  <span className="event-time">June 10</span>
+                  <span className="event-time">July 12, 2026</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20NEET%20Mock%20Strategy%20Seminar%20on%20June%2010."
+                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20NEET%20Mock%20Strategy%20Seminar%20on%20July%2012."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -930,12 +1030,12 @@ export default function Home() {
               <div className="event-body">
                 <span className="event-tag">Board Strategy</span>
                 <h4 className="event-title">Class 10 Board Prep Webinar</h4>
-                <p className="event-desc">Learn visual concept maps and revision frameworks to maximize board exam scores.</p>
+                <p className="event-desc">Visual concept maps and revision frameworks to maximize board exam scores. Online — attend from home.</p>
                 <div className="event-footer">
-                  <span className="event-time">June 12</span>
+                  <span className="event-time">July 19, 2026</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20Class%2010%20Board%20Prep%20Webinar%20on%20June%2012."
+                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20Class%2010%20Board%20Prep%20Webinar%20on%20July%2019."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -953,13 +1053,13 @@ export default function Home() {
               </div>
               <div className="event-body">
                 <span className="event-tag">Batch Launch</span>
-                <h4 className="event-title">Direct Admission Small Batches Start</h4>
-                <p className="event-desc">High-focus batches limited to 15 students start. Secure your slot for direct mentor access.</p>
+                <h4 className="event-title">July Batch Admissions Open</h4>
+                <p className="event-desc">New high-focus batches (max 15 students) begin July 26. Seats fill fast — register now to secure direct mentor access.</p>
                 <div className="event-footer">
-                  <span className="event-time">June 15</span>
+                  <span className="event-time">July 26, 2026</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20Direct%20Admission%20Small%20Batches%20Start%20on%20June%2015."
+                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20July%202026%20batch%20admission."
                     target="_blank"
                     rel="noopener noreferrer"
                   >

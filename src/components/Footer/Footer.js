@@ -13,7 +13,7 @@ export default function Footer() {
             Where Excellence Begins with Clarity
           </span>
           <p className="footer-about-text">
-            Elevating academic standards through conceptual clarity and focused mentorship since 2026.
+            Elevating academic standards through conceptual clarity and focused mentorship. Est. 2026.
           </p>
           <div className="footer-socials">
             <a href="https://instagram.com/crystalclearacademy" className="social-link-icon" aria-label="Instagram Link" target="_blank" rel="noopener noreferrer">
@@ -48,7 +48,7 @@ export default function Footer() {
             </div>
             <div className="footer-contact-item">
               <svg className="footer-contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              <span>Chennai, Tamil Nadu</span>
+              <span>Chennai, Tamil Nadu — 600 040</span>
             </div>
           </div>
         </div>
@@ -57,8 +57,8 @@ export default function Footer() {
       <div className="container footer-bottom">
         <span>© 2026 Crystal Clear Academy. Built by Studio Blend.</span>
         <div className="footer-bottom-links">
-          <a className="footer-bottom-link" href="#">Privacy Policy</a>
-          <a className="footer-bottom-link" href="#">Terms of Service</a>
+          <a className="footer-bottom-link" href="/privacy-policy">Privacy Policy</a>
+          <a className="footer-bottom-link" href="/terms-of-service">Terms of Service</a>
         </div>
       </div>
     </footer>

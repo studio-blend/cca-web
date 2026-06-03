@@ -1,20 +1,20 @@
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import WhatsAppFAB from "@/components/WhatsAppFAB/WhatsAppFAB";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-cormorant",
+  variable: "--font-playfair",
   display: "swap",
 });
 
-const inter = Inter({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  weight: ["200", "300", "400", "600", "700", "900"],
+  variable: "--font-source-sans",
   display: "swap",
 });
 
@@ -51,7 +51,7 @@ export const metadata = {
       "18+ years of teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai.",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://crystalclearacademy.in/og-image.png",
         width: 1200,
         height: 630,
         alt: "Crystal Clear Academy — Premium Academic Coaching",
@@ -63,7 +63,7 @@ export const metadata = {
     title: "Crystal Clear Academy | Where Excellence Begins with Clarity",
     description:
       "18+ years of teaching excellence. NEET coaching, board exam prep, and digital skills in Chennai.",
-    images: ["/og-image.png"],
+    images: ["https://crystalclearacademy.in/og-image.png"],
   },
   robots: {
     index: true,
@@ -95,9 +95,15 @@ function OrganizationJsonLd() {
     foundingDate: "2006",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Chennai",
       addressLocality: "Chennai",
       addressRegion: "Tamil Nadu",
+      postalCode: "600040",
       addressCountry: "IN",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "Chennai",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -146,7 +152,7 @@ function OrganizationJsonLd() {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${sourceSans.variable}`}>
       <body>
         <OrganizationJsonLd />
         <Header />

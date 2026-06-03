@@ -25,8 +25,8 @@ export default function HubPage() {
     {
       category: "Special Waiver",
       title: "Founder's Batch Early-Bird Offer",
-      desc: "Receive a flat 15% waiver on annual tuition fees for all Class 9-12 and NEET programs. Valid for registrations confirmed before June 15.",
-      date: "Valid till June 15",
+      desc: "Receive a flat 15% waiver on annual tuition fees for all Class 9-12 and NEET programs. Valid for registrations confirmed before July 31.",
+      date: "Valid till July 31",
       badgeColor: "var(--color-brand-gold)",
       textColor: "var(--color-primary-navy)",
       link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20apply%20for%20the%2015%25%20Early-Bird%20Waiver."
@@ -35,28 +35,28 @@ export default function HubPage() {
       category: "Free Seminar",
       title: "NEET Mock Exam Strategy Seminar",
       desc: "Learn critical speed techniques, question selection methodology, and OMR scheduling from our lead mentors to score 650+.",
-      date: "June 10, 4:00 PM",
+      date: "July 12, 4:00 PM",
       badgeColor: "var(--color-academic-blue)",
       textColor: "#ffffff",
-      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20NEET%20Mock%20Strategy%20Seminar%20on%20June%2010."
+      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20NEET%20Mock%20Strategy%20Seminar%20on%20July%2012."
     },
     {
       category: "Free Webinar",
       title: "Class 10 Board Prep Strategy",
       desc: "Unlock visual concept maps and memory triggers designed to help students score 95%+ in Science and Mathematics CBSE/State Board exams.",
-      date: "June 12, 6:00 PM",
+      date: "July 19, 6:00 PM",
       badgeColor: "var(--color-secondary)",
       textColor: "#ffffff",
-      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%2520for%2520the%2520Class%252010%2520Board%2520Prep%2520Webinar%2520on%2520June%252012."
+      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20Class%2010%20Board%20Prep%20Webinar%20on%20July%2019."
     },
     {
       category: "Batch Startup",
       title: "Direct Admission Small Batches Start",
       desc: "First batch of our high-focus programs (maximum 15 seats per class) commences. Direct mentor allocation and syllabus mapping sheets distributed.",
-      date: "June 15 Batch",
+      date: "July 26 Batch",
       badgeColor: "var(--color-primary-navy)",
       textColor: "#ffffff",
-      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20secure%20a%20seat%20for%20the%20June%2015%20batch."
+      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20secure%20a%20seat%20for%20the%20July%202026%20batch."
     }
   ];
 
@@ -85,7 +85,7 @@ export default function HubPage() {
             <div style={{ marginTop: "20px" }}>
               <a 
                 className="btn btn-gold" 
-                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20admissions%20after%2520viewing%2520the%2520bulletin%2520updates." 
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20admissions%20after%20viewing%20the%20bulletin%20updates." 
                 target="_blank" 
                 rel="noopener noreferrer"
               >

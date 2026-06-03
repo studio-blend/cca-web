@@ -53,7 +53,7 @@ export default function LeadForm({ defaultGoal = "Foundations" }) {
 
       <div className="form-grid-2">
         <div className="input-group">
-          <label className="input-label" htmlFor="student-phone">Contact Number</label>
+          <label className="input-label" htmlFor="student-phone">WhatsApp Number (Parent / Student)</label>
           <input
             id="student-phone"
             type="tel"
@@ -76,8 +76,9 @@ export default function LeadForm({ defaultGoal = "Foundations" }) {
             suppressHydrationWarning={true}
           >
             <option value="Foundations">Foundations</option>
-            <option value="Aspire">Aspire</option>
+            <option value="Aspire">Aspire (NEET)</option>
             <option value="Launchpad">Launchpad</option>
+            <option value="Pathways">Pathways (TET)</option>
           </select>
         </div>
       </div>
