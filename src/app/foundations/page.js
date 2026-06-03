@@ -1,5 +1,4 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
-import LeadForm from "@/components/LeadForm/LeadForm";
 
 export const metadata = {
   title: "CCA Foundations (Classes 9-12)",
@@ -42,8 +41,15 @@ export default function FoundationsPage() {
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
               Building conceptual concrete bases that support high board score outcomes. We transition students from rote learning memory loops into intuitive first-principles problem-solving.
             </p>
-            <div style={{ marginTop: "12px" }}>
-              <LeadForm defaultGoal="foundations" />
+            <div style={{ marginTop: "20px" }}>
+              <a 
+                className="btn btn-gold" 
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Foundations%20program%20for%20Classes%209-12." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Enquire About This Program →
+              </a>
             </div>
           </ScrollReveal>
 

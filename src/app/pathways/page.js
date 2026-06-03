@@ -1,5 +1,4 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
-import LeadForm from "@/components/LeadForm/LeadForm";
 
 export const metadata = {
   title: "CCA Pathways (Teacher Eligibility Test TET Mentoring)",
@@ -42,8 +41,15 @@ export default function PathwaysPage() {
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
               Helping teachers build a foundational career path. Master pedagogical psychology concepts, question matrices, and child development theory with clarity.
             </p>
-            <div style={{ marginTop: "12px" }}>
-              <LeadForm defaultGoal="pathways" />
+            <div style={{ marginTop: "20px" }}>
+              <a 
+                className="btn btn-gold" 
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Pathways%20TET%20Mentoring%20program." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Enquire About This Program →
+              </a>
             </div>
           </ScrollReveal>
 

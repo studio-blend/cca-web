@@ -1,5 +1,4 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
-import LeadForm from "@/components/LeadForm/LeadForm";
 
 export const metadata = {
   title: "CCA Aspire (NEET Medical Entrance Coaching)",
@@ -42,8 +41,15 @@ export default function AspirePage() {
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
               Over a decade of coaching excellence, guiding government and private school students to medical admissions. High-focus batches with founder supervision.
             </p>
-            <div style={{ marginTop: "12px" }}>
-              <LeadForm defaultGoal="aspire" />
+            <div style={{ marginTop: "20px" }}>
+              <a 
+                className="btn btn-gold" 
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Aspire%20program." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Enquire About This Program →
+              </a>
             </div>
           </ScrollReveal>
 

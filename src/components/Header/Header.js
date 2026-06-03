@@ -34,6 +34,7 @@ export default function Header() {
         <div className="container nav-container">
           <Link href="/" className="logo-wrap" onClick={closeMenu}>
             <Logo className="logo-crest" width="84px" height="38px" />
+            <span className="logo-text">Crystal Clear Academy</span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -1,5 +1,4 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
-import LeadForm from "@/components/LeadForm/LeadForm";
 
 export const metadata = {
   title: "CCA Launchpad (Digital Skills & UI/UX Bootcamp)",
@@ -42,8 +41,15 @@ export default function LaunchpadPage() {
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
               Equipping the next generation with digital tool competencies. Move past school definitions to master design frameworks, coding structures, and automation engines.
             </p>
-            <div style={{ marginTop: "12px" }}>
-              <LeadForm defaultGoal="launchpad" />
+            <div style={{ marginTop: "20px" }}>
+              <a 
+                className="btn btn-gold" 
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Launchpad%20digital%20skills%20track." 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Enquire About This Program →
+              </a>
             </div>
           </ScrollReveal>
 

@@ -442,7 +442,7 @@ export default function Home() {
       content: (
         <div style={{ width: "100%" }}>
           <div style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)", padding: "12px 24px", borderRadius: "var(--radius-lg)", marginBottom: "24px", textAlign: "center", fontWeight: "700", fontSize: "16px" }}>
-            Founder's Batch — First 10 students get 10% off
+            Founder&apos;s Batch — First 10 students get 10% off
           </div>
           <div className="pricing-pane active" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
             {/* Card 1 */}
@@ -557,8 +557,12 @@ export default function Home() {
         <div className="container hero-grid">
           <ScrollReveal className="hero-content">
             <span className="hero-tagline font-label-lg">Premium Academic Mentorship</span>
+            <div className="urgency-badge" style={{ marginTop: "4px" }}>
+              <span className="urgency-dot"></span>
+              <span>Founder&apos;s Batch: Only 8 seats left</span>
+            </div>
             <h1 className="hero-title font-display-lg">
-              Where Excellence Begins with <span style={{ color: "var(--color-brand-gold)" }}>Clarity</span>
+              Where Excellence Begins with <span className="text-glow-gold">Clarity</span>
             </h1>
             <p className="hero-tamil">தெளிவே வெற்றியின் தொடக்கம்</p>
             <p className="hero-description font-body-lg">
@@ -568,49 +572,17 @@ export default function Home() {
           </ScrollReveal>
 
           <ScrollReveal className="hero-visual-container">
-            <svg viewBox="0 0 500 500" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#C6A75E" stopOpacity="0.15"/>
-                  <stop offset="100%" stopColor="#C6A75E" stopOpacity="0"/>
-                </radialGradient>
-              </defs>
-              <circle cx="250" cy="250" r="220" fill="url(#glow)"/>
-              <circle cx="250" cy="250" r="180" fill="none" stroke="rgba(31, 78, 121, 0.1)" strokeDasharray="10 5" strokeWidth="1"/>
-              <circle cx="250" cy="250" r="120" fill="none" stroke="rgba(31, 78, 121, 0.15)" strokeWidth="2"/>
-              
-              <line x1="250" y1="250" x2="130" y2="150" stroke="rgba(31, 78, 121, 0.3)" strokeWidth="2" strokeDasharray="5 5"/>
-              <line x1="250" y1="250" x2="370" y2="150" stroke="rgba(31, 78, 121, 0.3)" strokeWidth="2" strokeDasharray="5 5"/>
-              <line x1="250" y1="250" x2="130" y2="350" stroke="rgba(31, 78, 121, 0.3)" strokeWidth="2" strokeDasharray="5 5"/>
-              <line x1="250" y1="250" x2="370" y2="350" stroke="rgba(31, 78, 121, 0.3)" strokeWidth="2" strokeDasharray="5 5"/>
-              
-              <g transform="translate(250, 250)">
-                <circle cx="0" cy="0" r="45" fill="var(--color-primary-navy)" stroke="var(--color-brand-gold)" strokeWidth="3"/>
-                <text x="0" y="5" fontFamily="var(--font-family-serif)" fontSize="14" fontWeight="700" fill="#ffffff" textAnchor="middle">CLARITY</text>
-              </g>
-              
-              <g transform="translate(130, 150)">
-                <circle cx="0" cy="0" r="35" fill="#ffffff" stroke="var(--color-secondary)" strokeWidth="2" filter="drop-shadow(0px 4px 10px rgba(0,0,0,0.05))"/>
-                <path d="M-8 -8 H8 V8 H-8 Z" fill="none" stroke="var(--color-brand-gold)" strokeWidth="2"/>
-                <text x="0" y="22" fontSize="9" fontWeight="700" fill="var(--color-primary-navy)" textAnchor="middle">NEET / MED</text>
-              </g>
-              <g transform="translate(370, 150)">
-                <circle cx="0" cy="0" r="35" fill="#ffffff" stroke="var(--color-secondary)" strokeWidth="2" filter="drop-shadow(0px 4px 10px rgba(0,0,0,0.05))"/>
-                <polygon points="0,-12 12,6 -12,6" fill="none" stroke="var(--color-brand-gold)" strokeWidth="2"/>
-                <text x="0" y="22" fontSize="9" fontWeight="700" fill="var(--color-primary-navy)" textAnchor="middle">FOUNDATIONS</text>
-              </g>
-              <g transform="translate(130, 350)">
-                <circle cx="0" cy="0" r="35" fill="#ffffff" stroke="var(--color-secondary)" strokeWidth="2" filter="drop-shadow(0px 4px 10px rgba(0,0,0,0.05))"/>
-                <circle cx="0" cy="0" r="10" fill="none" stroke="var(--color-brand-gold)" strokeWidth="2"/>
-                <text x="0" y="22" fontSize="9" fontWeight="700" fill="var(--color-primary-navy)" textAnchor="middle">DIGITAL SKILLS</text>
-              </g>
-              <g transform="translate(370, 350)">
-                <circle cx="0" cy="0" r="35" fill="#ffffff" stroke="var(--color-secondary)" strokeWidth="2" filter="drop-shadow(0px 4px 10px rgba(0,0,0,0.05))"/>
-                <path d="M-6 -6 L6 6 M6 -6 L-6 6" stroke="var(--color-brand-gold)" strokeWidth="2"/>
-                <text x="0" y="22" fontSize="9" fontWeight="700" fill="var(--color-primary-navy)" textAnchor="middle">TEACHERS (TET)</text>
-              </g>
-            </svg>
-            
+            <img 
+              src="/hero-placeholder.png" 
+              alt="Crystal Clear Academy Students" 
+              style={{ 
+                width: "100%", 
+                height: "auto", 
+                borderRadius: "var(--radius-xl)", 
+                border: "1px solid rgba(198, 167, 94, 0.25)", 
+                boxShadow: "var(--shadow-lg)" 
+              }} 
+            />
             <div className="floating-badge">
               <span className="floating-badge-number">18+ Years</span>
               <span className="floating-badge-text">Academic Leadership</span>
@@ -624,47 +596,192 @@ export default function Home() {
         <div className="marquee-track">
           <div className="marquee-group">
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>
               <span>18+ Years Teaching Experience</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6.18-6.18 4 4L20 9.41 22.29 11.7 22 6z"/></svg>
               <span>10+ Years NEET Success Records</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.89 12.57L12 15.9l6.11-3.33c.03-.1.89-2.9 8.89-2.57H5.89z"/></svg>
               <span>Govt School Candidates Certified NEET</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
               <span>Strict High-Focus Batches (Max 15)</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-3.3l-.85-.6C7.8 11.16 7 9.94 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 .94-.8 2.16-2.15 3.1z"/></svg>
               <span>Concept-Clarity Method</span>
             </div>
           </div>
           <div className="marquee-group">
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 11.55C9.64 9.35 6.48 8 3 8v11c3.48 0 6.64 1.35 9 3.55 2.36-2.2 5.52-3.55 9-3.55V8c-3.48 0-6.64 1.35-9 3.55zM12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>
               <span>18+ Years Teaching Experience</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6.18-6.18 4 4L20 9.41 22.29 11.7 22 6z"/></svg>
               <span>10+ Years NEET Success Records</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.89 12.57L12 15.9l6.11-3.33c.03-.1.89-2.9 8.89-2.57H5.89z"/></svg>
               <span>Govt School Candidates Certified NEET</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
               <span>Strict High-Focus Batches (Max 15)</span>
             </div>
             <div className="trust-item">
-              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <svg className="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-3.3l-.85-.6C7.8 11.16 7 9.94 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 .94-.8 2.16-2.15 3.1z"/></svg>
               <span>Concept-Clarity Method</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Banner Section */}
+      <section className="stats-banner">
+        <div className="container">
+          <ScrollReveal className="stats-grid">
+            <div className="stat-item">
+              <span className="stat-number">1,200+</span>
+              <span className="stat-label">Students Mentored</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">98%</span>
+              <span className="stat-label">Board Pass Rate</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">10+ Yrs</span>
+              <span className="stat-label">NEET Track Record</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-number">15 Max</span>
+              <span className="stat-label">Batch Size Limit</span>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="section-py founder-section" id="about">
+        <div className="container founder-grid">
+          {/* Left Column: Photo / Avatar side */}
+          <ScrollReveal className="founder-card-side">
+            <div className="founder-quote-card" style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "16px", borderBottom: "1px solid rgba(198,167,94,0.2)", paddingBottom: "20px" }}>
+                <div className="founder-portrait-frame">
+                  <img src="/founder-placeholder.png" alt="Revathy M." className="founder-portrait-img" />
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <div className="founder-name" style={{ fontSize: "20px" }}>Revathy M.</div>
+                  <div className="founder-role">Lead Educator &amp; Founder</div>
+                </div>
+              </div>
+              <div>
+                <span className="quote-icon" style={{ position: "static", display: "block", marginBottom: "8px" }}>“</span>
+                <p className="founder-quote-text" style={{ fontSize: "20px", marginBottom: 0 }}>
+                  {"True education isn't about memorizing facts; it's about lighting a fire of curiosity through structured clarity."}
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Right Column: Text details */}
+          <ScrollReveal className="founder-text-block">
+            <span className="founder-subtitle font-label-lg">Pedagogical Vision</span>
+            <h2 className="founder-title font-headline-lg">Mentorship by Revathy M.</h2>
+            <p className="founder-desc font-body-lg">
+              With 18+ years of core education leadership in Chennai, Revathy M. has pioneered conceptual coaching in Physics, Chemistry, and Mathematics. Her signature clarity-first mentoring bridges the gap between school board mastery and competitive NEET syllabus demands, helping students unlock top tier academic performance.
+            </p>
+            <ul className="program-checklist" style={{ margin: "8px 0 16px 0" }}>
+              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
+                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span><strong>18+ years of teaching excellence</strong> in Chennai.</span>
+              </li>
+              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
+                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span><strong>10+ years of dedicated NEET mentoring</strong> with proven results.</span>
+              </li>
+              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
+                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span><strong>Track record of training government school students</strong> to qualify for MBBS/BDS under the 7.5% reservation.</span>
+              </li>
+            </ul>
+            <div className="founder-credentials">
+              <div className="credential-badge">
+                <svg className="credential-icon" viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-2-1.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+                <span>18+ Years Mentorship</span>
+              </div>
+              <div className="credential-badge">
+                <svg className="credential-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Chennai-Based Center</span>
+              </div>
+              <div className="credential-badge">
+                <svg className="credential-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15l-3-3 1.41-1.41L10 13.17l4.59-4.59L16 10l-6 6z"/></svg>
+                <span>NEET Specialist</span>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-py" id="testimonials">
+        <div className="container">
+          <ScrollReveal className="section-title-wrap">
+            <span className="hero-tagline font-label-lg">Testimonials</span>
+            <h2 className="font-headline-lg">Voice of Trust</h2>
+            <div className="gold-divider"></div>
+          </ScrollReveal>
+          
+          <div className="testimonials-grid">
+            <ScrollReveal className="testimonial-card">
+              <div>
+                <div className="stars-container">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  ))}
+                </div>
+                <p className="testimonial-text">{"\"The personalized attention at CCA is unmatched. Every student's learning gaps are identified and resolved, making my child feel confident and fully supported.\""}</p>
+              </div>
+              <div>
+                <div className="testimonial-author-name">Mrs. Rajalakshmi</div>
+                <div className="testimonial-author-desc">Parent of Class 10 Student</div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal className="testimonial-card">
+              <div>
+                <div className="stars-container">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  ))}
+                </div>
+                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations became incredibly simple and easy to remember.\""}</p>
+              </div>
+              <div>
+                <div className="testimonial-author-name">Adhithya Kumar</div>
+                <div className="testimonial-author-desc">NEET Qualifier 2023</div>
+              </div>
+            </ScrollReveal>
+            
+            <ScrollReveal className="testimonial-card">
+              <div>
+                <div className="stars-container">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  ))}
+                </div>
+                <p className="testimonial-text">{"\"The guidance here is not just about lectures; it's a mentorship that goes beyond classroom hours. The support system has helped my child excel academically and personally.\""}</p>
+              </div>
+              <div>
+                <div className="testimonial-author-name">Dr. Arulmani</div>
+                <div className="testimonial-author-desc">Parent of Class 12 Student</div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -684,69 +801,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Founder Section */}
-      <section className="section-py founder-section" id="about">
-        <div className="container founder-grid">
-          {/* Left Column: Photo / Avatar side */}
-          <ScrollReveal className="founder-card-side">
-            <div className="founder-quote-card">
-              <span className="quote-icon">“</span>
-              <p className="founder-quote-text">
-                {"True education isn't about memorizing facts; it's about lighting a fire of curiosity through structured clarity."}
-              </p>
-              <div className="founder-profile-meta">
-                <div className="founder-avatar-svg">
-                  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="50" cy="50" r="50" fill="var(--color-primary-navy)"/>
-                    <path d="M50 25 C60 25 65 35 65 45 C65 55 58 60 50 60 C42 60 35 55 35 45 C35 35 40 25 50 25 Z" fill="var(--color-brand-gold)"/>
-                    <path d="M20 90 C20 70 35 65 50 65 C65 65 80 70 80 90 Z" fill="var(--color-brand-gold)"/>
-                  </svg>
-                </div>
-                <div>
-                  <div className="founder-name">Lead Educator &amp; Founder</div>
-                  <div className="founder-role">S. Ganesan</div>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Right Column: Text details */}
-          <ScrollReveal className="founder-text-block">
-            <span className="founder-subtitle font-label-lg">Pedagogical Vision</span>
-            <h2 className="founder-title font-headline-lg">Mentorship by S. Ganesan</h2>
-            <p className="founder-desc font-body-lg">
-              With 18+ years of core education leadership in Chennai, S. Ganesan has pioneered conceptual coaching in Physics, Chemistry, and Mathematics. His signature clarity-first mentoring bridges the gap between school board mastery and competitive NEET syllabus demands, helping students unlock top tier academic performance.
-            </p>
-            <ul className="program-checklist" style={{ margin: "8px 0 16px 0" }}>
-              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>18+ years of teaching excellence</strong> in Chennai.</span>
-              </li>
-              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>10+ years of dedicated NEET mentoring</strong> with proven results.</span>
-              </li>
-              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
-                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>Track record of training government school students</strong> to qualify for MBBS/BDS under the 7.5% reservation.</span>
-              </li>
-            </ul>
-            <div className="founder-stats">
-              <div className="stat-card">
-                <div className="stat-number">1,200+</div>
-                <div className="stat-label">Students Mentored</div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-number">98%</div>
-                <div className="stat-label">Board Exam Pass Rate</div>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* Methodology Section */}
-      <section className="section-py">
+      <section className="section-py" id="methodology">
         <div className="container">
           <ScrollReveal className="section-title-wrap">
             <span className="hero-tagline font-label-lg">Our Framework</span>
@@ -816,8 +872,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="section-py faq-section" id="faqs">
+        <div className="container">
+          <ScrollReveal className="section-title-wrap">
+            <span className="hero-tagline font-label-lg">Support Info</span>
+            <h2 className="font-headline-lg">Common Inquiries</h2>
+            <div className="gold-divider"></div>
+          </ScrollReveal>
+          
+          <ScrollReveal>
+            <FAQAccordion items={faqItems} />
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Events Section */}
-      <section className="section-py">
+      <section className="section-py" id="events">
         <div className="container">
           <ScrollReveal className="section-title-wrap">
             <span className="hero-tagline font-label-lg">Events at CCA</span>
@@ -898,79 +969,6 @@ export default function Home() {
               </div>
             </ScrollReveal>
           </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="section-py">
-        <div className="container">
-          <ScrollReveal className="section-title-wrap">
-            <span className="hero-tagline font-label-lg">Testimonials</span>
-            <h2 className="font-headline-lg">Voice of Trust</h2>
-            <div className="gold-divider"></div>
-          </ScrollReveal>
-          
-          <div className="testimonials-grid">
-            <ScrollReveal className="testimonial-card">
-              <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
-                </div>
-                <p className="testimonial-text">{"\"The personalized attention at CCA is unmatched. Every student's learning gaps are identified and resolved, making my child feel confident and fully supported.\""}</p>
-              </div>
-              <div>
-                <div className="testimonial-author-name">Mrs. Rajalakshmi</div>
-                <div className="testimonial-author-desc">Parent of Class 10 Student</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal className="testimonial-card">
-              <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
-                </div>
-                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations became incredibly simple and easy to remember.\""}</p>
-              </div>
-              <div>
-                <div className="testimonial-author-name">Adhithya Kumar</div>
-                <div className="testimonial-author-desc">NEET Qualifier 2023</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal className="testimonial-card">
-              <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
-                </div>
-                <p className="testimonial-text">{"\"The guidance here is not just about lectures; it's a mentorship that goes beyond classroom hours. The support system has helped my child excel academically and personally.\""}</p>
-              </div>
-              <div>
-                <div className="testimonial-author-name">Dr. Arulmani</div>
-                <div className="testimonial-author-desc">Parent of Class 12 Student</div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-py faq-section" id="faqs">
-        <div className="container">
-          <ScrollReveal className="section-title-wrap">
-            <span className="hero-tagline font-label-lg">Support Info</span>
-            <h2 className="font-headline-lg">Common Inquiries</h2>
-            <div className="gold-divider"></div>
-          </ScrollReveal>
-          
-          <ScrollReveal>
-            <FAQAccordion items={faqItems} />
-          </ScrollReveal>
         </div>
       </section>
 
