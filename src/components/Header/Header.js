@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -18,7 +19,10 @@ export default function Header() {
   }, []);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setMobileProgramsOpen(false);
+  };
 
   // Helper to determine if link is active
   const isActive = (path) => pathname === path;
@@ -39,18 +43,38 @@ export default function Header() {
             <Link href="/" className={`nav-link ${isActive("/") ? "active" : ""}`}>
               Home
             </Link>
-            <Link href="/foundations" className={`nav-link ${isActive("/foundations") ? "active" : ""}`}>
-              Foundations
-            </Link>
-            <Link href="/aspire" className={`nav-link ${isActive("/aspire") ? "active" : ""}`}>
-              Aspire (NEET)
-            </Link>
-            <Link href="/launchpad" className={`nav-link ${isActive("/launchpad") ? "active" : ""}`}>
-              Launchpad
-            </Link>
-            <Link href="/pathways" className={`nav-link ${isActive("/pathways") ? "active" : ""}`}>
-              Pathways
-            </Link>
+            
+            <div className="nav-dropdown">
+              <button
+                className={`nav-link nav-dropdown-trigger ${
+                  isActive("/foundations") || isActive("/aspire") || isActive("/launchpad") || isActive("/pathways")
+                    ? "active"
+                    : ""
+                }`}
+                type="button"
+                style={{ display: "flex", alignItems: "center", gap: "4px" }}
+              >
+                Programs
+                <svg viewBox="0 0 24 24" style={{ width: "12px", height: "12px", fill: "currentColor" }}>
+                  <path d="M7 10l5 5 5-5z" />
+                </svg>
+              </button>
+              <div className="nav-dropdown-menu">
+                <Link href="/foundations" className={`nav-dropdown-item ${isActive("/foundations") ? "active" : ""}`}>
+                  Foundations (Class 9-10)
+                </Link>
+                <Link href="/aspire" className={`nav-dropdown-item ${isActive("/aspire") ? "active" : ""}`}>
+                  Aspire (NEET)
+                </Link>
+                <Link href="/launchpad" className={`nav-dropdown-item ${isActive("/launchpad") ? "active" : ""}`}>
+                  Launchpad
+                </Link>
+                <Link href="/pathways" className={`nav-dropdown-item ${isActive("/pathways") ? "active" : ""}`}>
+                  Pathways
+                </Link>
+              </div>
+            </div>
+
             <Link href="/about" className={`nav-link ${isActive("/about") ? "active" : ""}`}>
               About
             </Link>
@@ -59,6 +83,9 @@ export default function Header() {
             </Link>
             <Link href="/resources" className={`nav-link ${isActive("/resources") ? "active" : ""}`}>
               Resources
+            </Link>
+            <Link href="/hub" className={`nav-link ${isActive("/hub") ? "active" : ""}`}>
+              Bulletin &amp; Gallery
             </Link>
             <a
               href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20chat%20with%20the%20Lead%20Mentor%20and%20begin%20my%20clarity%20journey."
@@ -92,18 +119,23 @@ export default function Header() {
         <Link href="/" className="nav-link font-title-lg" onClick={closeMenu}>
           Home
         </Link>
-        <Link href="/foundations" className="nav-link font-title-lg" onClick={closeMenu}>
-          Foundations
-        </Link>
-        <Link href="/aspire" className="nav-link font-title-lg" onClick={closeMenu}>
-          Aspire (NEET)
-        </Link>
-        <Link href="/launchpad" className="nav-link font-title-lg" onClick={closeMenu}>
-          Launchpad
-        </Link>
-        <Link href="/pathways" className="nav-link font-title-lg" onClick={closeMenu}>
-          Pathways
-        </Link>
+        <button
+          type="button"
+          className="nav-link font-title-lg mobile-dropdown-trigger"
+          onClick={() => setMobileProgramsOpen(!mobileProgramsOpen)}
+          style={{ display: "flex", alignItems: "center", gap: "8px" }}
+        >
+          Programs
+          <svg style={{ width: "16px", height: "16px", transform: mobileProgramsOpen ? "rotate(180deg)" : "none", transition: "transform 0.25s" }} viewBox="0 0 24 24">
+            <path d="M7 10l5 5 5-5H7z" fill="currentColor"/>
+          </svg>
+        </button>
+        <div style={{ display: mobileProgramsOpen ? "flex" : "none", flexDirection: "column", gap: "12px", backgroundColor: "rgba(14,31,59,0.03)", width: "100%", padding: "12px 0", alignItems: "center" }}>
+          <Link href="/foundations" className="nav-link font-title-md" onClick={closeMenu}>Foundations</Link>
+          <Link href="/aspire" className="nav-link font-title-md" onClick={closeMenu}>Aspire (NEET)</Link>
+          <Link href="/launchpad" className="nav-link font-title-md" onClick={closeMenu}>Launchpad</Link>
+          <Link href="/pathways" className="nav-link font-title-md" onClick={closeMenu}>Pathways</Link>
+        </div>
         <Link href="/about" className="nav-link font-title-lg" onClick={closeMenu}>
           About
         </Link>
@@ -112,6 +144,9 @@ export default function Header() {
         </Link>
         <Link href="/resources" className="nav-link font-title-lg" onClick={closeMenu}>
           Resources
+        </Link>
+        <Link href="/hub" className="nav-link font-title-lg" onClick={closeMenu}>
+          Bulletin &amp; Gallery
         </Link>
         <a
           href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20chat%20with%20the%20Lead%20Mentor%20and%20begin%20my%20clarity%20journey."

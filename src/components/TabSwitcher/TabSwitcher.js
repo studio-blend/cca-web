@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-export default function TabSwitcher({ tabs, gridLayout = false }) {
-  const [activeTab, setActiveTab] = useState(tabs[0]?.id);
+export default function TabSwitcher({ tabs, gridLayout = false, defaultTabId }) {
+  const [activeTab, setActiveTab] = useState(defaultTabId || tabs[0]?.id);
 
   return (
     <div className="tab-explorer">
