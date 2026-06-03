@@ -724,7 +724,7 @@ export default function Home() {
 
       {/* Govt School → NEET Callout Banner */}
       <section style={{ backgroundColor: "var(--color-primary-navy)", padding: "0" }}>
-        <div className="container" style={{ padding: "20px var(--space-lg)" }}>
+        <div className="container" style={{ padding: "20px var(--spacing-lg)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "flex-start", gap: "16px" }}>
               <div style={{ flexShrink: 0, width: "48px", height: "48px", backgroundColor: "var(--color-brand-gold)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}>
