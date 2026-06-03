@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Logo from "../Logo/Logo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,10 +33,7 @@ export default function Header() {
       <header id="main-header" className={`header-nav ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-container">
           <Link href="/" className="logo-wrap" onClick={closeMenu}>
-            <svg className="logo-crest" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2L2 22h20L12 2zm0 3.99L19.53 19H4.47L12 5.99z" />
-            </svg>
-            <span className="logo-text">CCA</span>
+            <Logo className="logo-crest" width="84px" height="38px" />
           </Link>
 
           {/* Desktop Navigation */}

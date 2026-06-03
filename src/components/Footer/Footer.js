@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Logo from "../Logo/Logo";
 
 export default function Footer() {
   return (
     <footer className="main-footer" id="contact">
       <div className="container footer-grid">
         <div className="footer-about">
-          <div className="footer-logo">CCA</div>
+          <div className="footer-logo" style={{ display: "flex", alignItems: "center" }}>
+            <Logo width="75px" height="34px" />
+          </div>
           <span className="footer-tagline font-label-md" style={{ color: "var(--color-brand-gold)", display: "block", marginTop: "-4px", marginBottom: "8px" }}>
             Where Excellence Begins with Clarity
           </span>
