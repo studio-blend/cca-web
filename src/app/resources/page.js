@@ -1,5 +1,6 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import ResourcesFilter from "@/components/ResourcesFilter/ResourcesFilter";
+import { getAllResources } from "@/lib/cms";
 
 export const metadata = {
   title: "Free Academic & Digital Study Resources | Crystal Clear Academy",
@@ -10,43 +11,17 @@ export const metadata = {
 };
 
 export default function ResourcesPage() {
-  const allResources = [
-    {
-      title: "Class 12 Physics Formula Sheet",
-      type: "PDF Document",
-      category: "science",
-      desc: "Complete collection of Electrodynamics and Mechanics formulas for Class 12 CBSE & State Board revision.",
-      whatsappMsg: "Hi CCA, I want to download the Class 12 Physics Formula Sheet PDF."
-    },
-    {
-      title: "NEET Biology Visual Concept Maps",
-      type: "PDF Booklet",
-      category: "neet",
-      desc: "Color-coded visual node guides mapping cell division and genetics processes for rapid review.",
-      whatsappMsg: "Hi CCA, I want to download the NEET Biology Visual Concept Maps booklet."
-    },
-    {
-      title: "Class 10 Math Board Syllabus Guide",
-      type: "PDF Document",
-      category: "math",
-      desc: "Detailed chapter-by-chapter weightage and board study schedules for Class 10 CBSE algebra.",
-      whatsappMsg: "Hi CCA, I want to download the Class 10 Math Board Syllabus Guide."
-    },
-    {
-      title: "Figma Keyboard Shortcuts Cheatsheet",
-      type: "PDF Sheet",
-      category: "digital",
-      desc: "Keyboard shortcuts and wireframe templates sheet to boost Figma UI/UX prototyping speed.",
-      whatsappMsg: "Hi CCA, I want to download the Figma keyboard shortcuts sheet."
-    },
-    {
-      title: "TET Child Pedagogy Practice Sheet",
-      type: "PDF Worksheet",
-      category: "pedagogy",
-      desc: "Important child development theories and trial multiple choice questions for TET Paper I preparation.",
-      whatsappMsg: "Hi CCA, I want to download the TET Child Pedagogy Practice Sheet."
-    }
-  ];
+  const cmsResources = getAllResources();
+
+  const formattedResources = cmsResources.map((res) => ({
+    title: res.title,
+    type: `${res.fileType || "PDF"} Document (${res.fileSize || "3 MB"})`,
+    category: (res.category || "science").toLowerCase().includes("neet") ? "neet" :
+              (res.category || "").toLowerCase().includes("math") ? "math" :
+              (res.category || "").toLowerCase().includes("pedagogy") ? "pedagogy" : "science",
+    desc: res.description,
+    whatsappMsg: `Hi CCA, I want to download the ${res.title}.`,
+  }));
 
   return (
     <>
@@ -60,14 +35,14 @@ export default function ResourcesPage() {
               <span style={{ color: "var(--color-brand-gold)" }}>Free Study Resources</span>
             </h1>
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
-              Download our signature concept sheets, NEET biology memory aids, and Figma UI design shortcut sheets directly via WhatsApp.
+              Download our signature concept sheets, NEET biology memory aids, and formula cheat sheets directly via WhatsApp.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Interactive Resources Filter */}
-      <ResourcesFilter resources={allResources} />
+      <ResourcesFilter resources={formattedResources} />
 
       {/* CTA Section */}
       <section className="section-py cta-section">

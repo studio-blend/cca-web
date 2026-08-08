@@ -1,0 +1,32 @@
+[
+  {
+    "id": "test-1",
+    "name": "Kavya R.",
+    "role": "NEET 2025 Achiever (Score: 685 / 720)",
+    "college": "Madras Medical College (MMC), Chennai",
+    "avatar": "/student-kavya.png",
+    "quote": "CCA's visual concept maps in Biology and individual doubt resolution desks made all the difference. I went from struggling with Physics numericals to scoring 170+ in Physics alone!",
+    "featured": true,
+    "rating": 5
+  },
+  {
+    "id": "test-2",
+    "name": "Siddharth V.",
+    "role": "Class 12 Board Topper (98.2%) & NEET 665",
+    "college": "Stanley Medical College",
+    "avatar": "/student-siddharth.png",
+    "quote": "Balancing Class 12 Board preparation with NEET was terrifying until I joined CCA. The dual-focused test series ensured my Board presentation was flawless while maintaining high MCQ speed.",
+    "featured": true,
+    "rating": 5
+  },
+  {
+    "id": "test-3",
+    "name": "Dr. Arunkumar (Parent)",
+    "role": "Parent of Class 11 Student",
+    "college": "Parent Feedback",
+    "avatar": "/parent-avatar.png",
+    "quote": "As a parent, I value transparency and regular progress tracking. CCA provides weekly test performance analytics and faculty accessibility that you simply won't find in massive commercial coaching factories.",
+    "featured": true,
+    "rating": 5
+  }
+]

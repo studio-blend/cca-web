@@ -1,0 +1,20 @@
+[
+  {
+    "id": "faq-1",
+    "question": "What makes CCA's coaching methodology unique for NEET and JEE?",
+    "answer": "CCA combines active recall, visual conceptual mapping, and daily practice sessions tailored to individual student performance metrics rather than rote learning.",
+    "category": "General"
+  },
+  {
+    "id": "faq-2",
+    "question": "Are offline classroom batches available along with hybrid options?",
+    "answer": "Yes! We offer fully offline interactive batches at our learning center, as well as hybrid options with live interactive lectures.",
+    "category": "Admissions"
+  },
+  {
+    "id": "faq-3",
+    "question": "How do you assist students who require additional doubt resolution?",
+    "answer": "We conduct 1-on-1 daily doubt resolution desks after scheduled classes, led by experienced faculty members.",
+    "category": "Academics"
+  }
+]

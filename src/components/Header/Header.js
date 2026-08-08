@@ -9,6 +9,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileProgramsOpen, setMobileProgramsOpen] = useState(false);
+  const [announcement, setAnnouncement] = useState(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -16,6 +17,16 @@ export default function Header() {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
+
+    fetch("/api/admin/announcements")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.announcement?.active) {
+          setAnnouncement(data.announcement);
+        }
+      })
+      .catch(() => {});
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -30,6 +41,44 @@ export default function Header() {
 
   return (
     <>
+      {announcement && announcement.active && (
+        <div
+          style={{
+            background: "linear-gradient(90deg, #0e1f3b 0%, #1e3a8a 50%, #0e1f3b 100%)",
+            color: "#f8fafc",
+            padding: "8px 16px",
+            textAlign: "center",
+            fontSize: "13px",
+            fontWeight: "600",
+            borderBottom: "1px solid rgba(212, 175, 55, 0.3)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "12px",
+            zIndex: 1001,
+            position: "relative",
+          }}
+        >
+          <span>{announcement.text}</span>
+          {announcement.ctaText && (
+            <Link
+              href={announcement.ctaUrl || "/#lead-form"}
+              style={{
+                backgroundColor: "var(--color-brand-gold, #D4AF37)",
+                color: "#0e1f3b",
+                padding: "3px 10px",
+                borderRadius: "4px",
+                fontSize: "11px",
+                fontWeight: "700",
+                textDecoration: "none",
+                display: "inline-block",
+              }}
+            >
+              {announcement.ctaText} →
+            </Link>
+          )}
+        </div>
+      )}
       <header id="main-header" className={`header-nav ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-container">
           <Link href="/" className="logo-wrap" onClick={closeMenu}>

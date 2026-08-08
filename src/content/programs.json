@@ -1,0 +1,50 @@
+[
+  {
+    "id": "prog-1",
+    "title": "Class 11 NEET Mastery (2-Year Integrated)",
+    "targetAudience": "Students moving to Class 11",
+    "duration": "24 Months",
+    "fee": "₹45,000 / year",
+    "feeRange": "₹3,500 - ₹4,500 / month",
+    "badge": "Most Popular",
+    "description": "Comprehensive 2-year preparation covering NCERT Biology, Physics, and Chemistry from foundational concepts to advanced NEET level.",
+    "features": [
+      "Daily 2-hour interactive lectures (Offline & Live Hybrid)",
+      "Weekly OMR pattern mock tests with rank analysis",
+      "Dedicated 1-on-1 daily doubt resolution desks",
+      "Comprehensive printed study modules & formula sheets"
+    ]
+  },
+  {
+    "id": "prog-2",
+    "title": "Class 12 NEET Booster & Board Prep",
+    "targetAudience": "Class 12 Students",
+    "duration": "12 Months",
+    "fee": "₹48,000 / year",
+    "feeRange": "₹4,000 - ₹5,000 / month",
+    "badge": "High Success Rate",
+    "description": "Dual-focused program designed to maximize Class 12 Board exam percentages while intensively revising Class 11 & 12 NEET syllabus.",
+    "features": [
+      "Class 12 Board exam answer writing practice",
+      "Full Class 11 revision crash modules",
+      "50+ full-length NEET mock test series",
+      "Personalized mentor performance tracking"
+    ]
+  },
+  {
+    "id": "prog-3",
+    "title": "NEET Dropper / Repeater Intensive",
+    "targetAudience": "Class 12 Passed Students",
+    "duration": "10 Months",
+    "fee": "₹52,000 / batch",
+    "feeRange": "₹4,500 - ₹5,500 / month",
+    "badge": "15% Early Bird Discount",
+    "description": "Rigorously paced batch designed for students dedicated to securing a top government medical college seat in their repeat attempt.",
+    "features": [
+      "6-hour daily intensive practice & problem-solving",
+      "Strict tracking of weak topic error notebooks",
+      "Direct 1-on-1 mentorship by senior faculty",
+      "Unlimited access to online video recordings & question banks"
+    ]
+  }
+]

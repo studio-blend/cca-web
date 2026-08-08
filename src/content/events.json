@@ -1,0 +1,24 @@
+[
+  {
+    "id": "evt-1",
+    "title": "NEET 2026 Strategy & Biology Mindmapping Seminar",
+    "date": "Sunday, August 16, 2026",
+    "time": "10:00 AM - 1:00 PM",
+    "type": "Offline Seminar & Hybrid Stream",
+    "venue": "CCA Thiruninravur Campus & Live Online",
+    "speaker": "Prof. Revathy (Founder & Master Educator)",
+    "description": "Interactive 3-hour masterclass on mastering NCERT Biology, high-yield physics shortcuts, and avoiding common silly errors in NEET MCQs.",
+    "registrationUrl": "#lead-form"
+  },
+  {
+    "id": "evt-2",
+    "title": "Class 12 Board + NEET Dual Prep Webinar",
+    "date": "Sunday, August 23, 2026",
+    "time": "5:00 PM - 6:30 PM",
+    "type": "Live Interactive Webinar",
+    "venue": "Online (Zoom & YouTube Live)",
+    "speaker": "CCA Academic Expert Panel",
+    "description": "Learn how to balance board exam answer presentation with NEET objective speed without getting overwhelmed.",
+    "registrationUrl": "#lead-form"
+  }
+]

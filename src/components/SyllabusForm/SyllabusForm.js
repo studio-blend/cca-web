@@ -26,6 +26,20 @@ export default function SyllabusForm({ programName }) {
       return;
     }
 
+    // Save lead submission to CMS database/inbox
+    try {
+      fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          phone: cleanPhone,
+          course: programName,
+          source: `Syllabus Request (${programName})`,
+        }),
+      }).catch(() => {});
+    } catch (err) {}
+
     const message = `Hi Crystal Clear Academy, I would like to get the syllabus details for the ${programName} program.\n\n- Name: ${name.trim()}\n- Phone: ${cleanPhone}`;
     const encodedText = encodeURIComponent(message);
     window.open(`https://wa.me/919841644813?text=${encodedText}`, "_blank");

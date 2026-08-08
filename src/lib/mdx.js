@@ -29,8 +29,13 @@ export function getAllPosts() {
       };
     });
 
+  // Filter out unpublished drafts on public site
+  const publishedPosts = posts.filter(
+    (p) => p.frontmatter.published !== false
+  );
+
   // Sort by date descending
-  return posts.sort(
+  return publishedPosts.sort(
     (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
   );
 }

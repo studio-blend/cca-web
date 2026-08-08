@@ -1,0 +1,38 @@
+[
+  {
+    "id": "res-1",
+    "title": "Class 11 NEET Biology Visual Mindmap & Formulas",
+    "category": "NEET Prep",
+    "grade": "Class 11",
+    "subject": "Biology",
+    "fileType": "PDF",
+    "fileSize": "4.2 MB",
+    "downloadUrl": "#",
+    "downloadsCount": 1420,
+    "description": "Complete visual diagram collection covering Human Physiology and Cell Biology."
+  },
+  {
+    "id": "res-2",
+    "title": "Class 12 Physics Electromagnetism Formula Sheet",
+    "category": "Board Exam",
+    "grade": "Class 12",
+    "subject": "Physics",
+    "fileType": "PDF",
+    "fileSize": "2.8 MB",
+    "downloadUrl": "#",
+    "downloadsCount": 980,
+    "description": "Quick revision cheat sheet for electrostatic equations, magnetic fields, and AC circuits."
+  },
+  {
+    "id": "res-3",
+    "title": "JEE Main Chemistry Organic Reactions Roadmap",
+    "category": "JEE Prep",
+    "grade": "Class 12",
+    "subject": "Chemistry",
+    "fileType": "PDF",
+    "fileSize": "3.5 MB",
+    "downloadUrl": "#",
+    "downloadsCount": 1150,
+    "description": "Step-by-step organic conversion maps for rapid problem solving."
+  }
+]

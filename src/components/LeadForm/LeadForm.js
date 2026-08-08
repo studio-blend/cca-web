@@ -43,6 +43,21 @@ export default function LeadForm({ defaultGoal = "Foundations" }) {
     };
 
     const selectedGoal = goalLabelMap[goal] || goal;
+
+    // Save lead submission to CMS database/inbox asynchronously
+    try {
+      fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          phone: cleanPhone,
+          goal: selectedGoal,
+          source: "Clarity Session Lead Form",
+        }),
+      }).catch(() => {});
+    } catch (err) {}
+
     const message = `Hi Crystal Clear Academy, I'm interested in enrolling. My details are:\n\n- Name: ${name.trim()}\n- Phone: ${cleanPhone}\n- Goal/Track: ${selectedGoal}\n\nPlease guide me on the next steps.`;
     const encodedText = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/919841644813?text=${encodedText}`;
