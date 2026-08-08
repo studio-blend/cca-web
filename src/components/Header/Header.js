@@ -39,6 +39,10 @@ export default function Header() {
   // Helper to determine if link is active
   const isActive = (path) => pathname === path;
 
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
+
   return (
     <>
       <div className="header-nav-container">
