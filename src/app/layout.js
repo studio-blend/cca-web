@@ -25,7 +25,7 @@ export const metadata = {
     template: "%s | Crystal Clear Academy",
   },
   description:
-    "Backed by 18+ years of the founder's teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai. Small batches, personal mentorship, proven methods.",
+    "Backed by 18+ years of the founder's teaching excellence. Focused coaching for Classes 9–12 Board Exams, NEET mastery, and Practical Digital Skills in Chennai. Small batches, personal mentorship.",
   keywords: [
     "Crystal Clear Academy",
     "CCA Chennai",
@@ -48,7 +48,7 @@ export const metadata = {
     siteName: "Crystal Clear Academy",
     title: "Crystal Clear Academy | Where Excellence Begins with Clarity",
     description:
-      "Backed by 18+ years of the founder's teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai.",
+      "Backed by 18+ years of the founder's teaching excellence. Structured coaching for Classes 9–12, NEET, and Practical Digital Skills in Chennai.",
     images: [
       {
         url: "/og-image.png",
@@ -143,7 +143,7 @@ function OrganizationJsonLd() {
         {
           "@type": "Course",
           name: "CCA Launchpad",
-          description: "Future-ready digital skills: UI/UX Design, Python, AI Literacy",
+          description: "Practical digital skills: UI/UX Design, Python Programming, and AI Tools",
         },
         {
           "@type": "Course",

@@ -39,7 +39,7 @@ export default function FoundationsPage() {
               <span style={{ color: "var(--color-brand-gold)" }}>Classes 9–12</span>
             </h1>
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
-              Building conceptual concrete bases that support high board score outcomes. We transition students from rote learning memory loops into intuitive first-principles problem-solving.
+              Build strong fundamentals in Science and Maths. We teach students how concepts work so they score top marks in Board exams without memorizing steps.
             </p>
             <div style={{ marginTop: "20px" }}>
               <a 

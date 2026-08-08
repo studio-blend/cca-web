@@ -67,12 +67,12 @@ export default function AboutPage() {
 
           <ScrollReveal className="founder-text-block">
             <span className="founder-subtitle font-label-lg">Founder Bio</span>
-            <h2 className="font-headline-lg" style={{ color: "var(--color-primary-navy)" }}>Pedagogical Philosophy</h2>
+            <h2 className="font-headline-lg" style={{ color: "var(--color-primary-navy)" }}>Teaching Philosophy</h2>
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
               Our founder started CCA in Chennai as a high-focus center with a clear vision: keep batches tiny, maintain daily mentorship tracking logs, and teach subjects from scratch.
             </p>
             <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)" }}>
-              We design structured checklists and visual concept maps for Physics mechanics and stoichiometry, ensuring state board and CBSE candidates bypass memorization loops to focus directly on application logic.
+              We design structured checklists and visual concept maps for Physics, Chemistry, and Maths, ensuring State Board and CBSE candidates skip rote memorization and focus directly on problem-solving logic.
             </p>
           </ScrollReveal>
         </div>

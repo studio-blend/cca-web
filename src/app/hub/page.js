@@ -46,7 +46,7 @@ export default function HubPage() {
     {
       category: "Free Webinar",
       title: "Class 10 Board Prep Strategy",
-      desc: "Unlock visual concept maps and memory triggers designed to help students score 95%+ in Science and Mathematics CBSE/State Board exams.",
+      desc: "Get visual concept maps and proven revision frameworks designed to help students score 95%+ in Science and Mathematics CBSE/State Board exams.",
       date: eventDates.boardWebinarDate,
       badgeColor: "var(--color-secondary)",
       textColor: "#ffffff",

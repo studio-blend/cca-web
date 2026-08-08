@@ -33,13 +33,13 @@ export default function LaunchpadPage() {
       <section className="hero-section" style={{ paddingTop: "120px", background: "var(--color-surface-container-lowest)" }}>
         <div className="container hero-grid">
           <ScrollReveal className="hero-content">
-            <span className="hero-tagline font-label-lg">Future-Ready Capabilities</span>
+            <span className="hero-tagline font-label-lg">Practical Digital Skills</span>
             <h1 className="font-display-lg" style={{ color: "var(--color-primary-navy)" }}>
               CCA Launchpad <br/>
               <span style={{ color: "var(--color-brand-gold)" }}>Digital Skills</span>
             </h1>
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
-              Equipping the next generation with digital tool competencies. Move past school definitions to master design frameworks, coding structures, and automation engines.
+              Learn practical skills used in tech today — Figma UI/UX design, Python programming, and AI workflow tools.
             </p>
             <div style={{ marginTop: "20px" }}>
               <a 

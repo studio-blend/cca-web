@@ -22,7 +22,7 @@ export default function Home() {
                 <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 9 &amp; 10</span>
                 <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Science + Maths Foundation</h4>
                 <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Build strong conceptual roots in Science and Mathematics to transition from rote learning loops into intuitive problem solving.
+                  Build strong fundamentals in Science and Mathematics so you solve exam problems naturally instead of memorizing steps.
                 </p>
                 <a
                   className="btn btn-secondary btn-block"
@@ -746,10 +746,10 @@ export default function Home() {
 
           {/* Right Column: Text details */}
           <ScrollReveal className="founder-text-block">
-            <span className="founder-subtitle font-label-lg">Pedagogical Vision</span>
+            <span className="founder-subtitle font-label-lg">Founder's Vision</span>
             <h2 className="founder-title font-headline-lg">Mentorship by Revathy M.</h2>
             <p className="founder-desc font-body-lg">
-              With 18+ years of core education leadership in Chennai, Revathy M. has pioneered conceptual coaching in Physics, Chemistry, and Mathematics. Her signature clarity-first mentoring bridges the gap between school board mastery and competitive NEET syllabus demands, helping students unlock top tier academic performance.
+              With 18+ years of teaching leadership in Chennai, Revathy M. specializes in conceptual coaching for Physics, Chemistry, and Mathematics. Her clarity-first mentoring guides students to excel in school boards while building the speed needed to crack NEET.
             </p>
             <ul className="program-checklist" style={{ margin: "8px 0 16px 0" }}>
               <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
@@ -1051,7 +1051,7 @@ export default function Home() {
             </h2>
             <p className="cta-tamil">சரியான வழிகாட்டுதல். தெளிவான எதிர்காலம்.</p>
             <p className="cta-desc font-body-lg">
-              Unlock direct access to standard board prep, elite NEET coaching, and job-ready future digital skillsets.
+              Get direct access to standard board prep, elite NEET coaching, and job-ready future digital skillsets.
             </p>
             <a
               className="btn btn-gold"

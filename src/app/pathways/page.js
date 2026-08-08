@@ -39,7 +39,7 @@ export default function PathwaysPage() {
               <span style={{ color: "var(--color-brand-gold)" }}>TET Mentoring</span>
             </h1>
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
-              Helping teachers build a foundational career path. Master pedagogical psychology concepts, question matrices, and child development theory with clarity.
+              Helping educators excel in Teacher Eligibility Tests (TET). Master Child Development &amp; Pedagogy theories and question strategies with confidence.
             </p>
             <div style={{ marginTop: "20px" }}>
               <a 
