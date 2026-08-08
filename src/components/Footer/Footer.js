@@ -55,7 +55,17 @@ export default function Footer() {
       </div>
       
       <div className="container footer-bottom">
-        <span>© 2026 Crystal Clear Academy. Built by Studio Blend.</span>
+        <span>
+          © 2026 Crystal Clear Academy. Crafted by{" "}
+          <a 
+            href="https://klyph.in" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style={{ color: "var(--color-brand-gold)", fontWeight: "600", textDecoration: "underline" }}
+          >
+            Klyph Studios
+          </a>.
+        </span>
         <div className="footer-bottom-links">
           <a className="footer-bottom-link" href="/privacy-policy">Privacy Policy</a>
           <a className="footer-bottom-link" href="/terms-of-service">Terms of Service</a>
