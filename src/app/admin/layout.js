@@ -70,6 +70,7 @@ export default function AdminLayout({ children }) {
     { label: "Events & Seminars", href: "/admin/events", icon: "📅" },
     { label: "FAQs & Notice Bar", href: "/admin/faqs", icon: "❓" },
     { label: "Lead Capture Inbox", href: "/admin/leads", icon: "📥" },
+    { label: "Site Settings & Uploads", href: "/admin/settings", icon: "⚙️" },
   ];
 
   return (

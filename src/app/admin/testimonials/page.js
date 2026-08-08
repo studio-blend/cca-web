@@ -13,6 +13,8 @@ export default function TestimonialsManagerPage() {
     role: "",
     college: "",
     quote: "",
+    avatar: "",
+    videoUrl: "",
     featured: true,
     rating: 5,
   });
@@ -257,6 +259,30 @@ export default function TestimonialsManagerPage() {
                     <option value="true">Yes (Show on landing)</option>
                     <option value="false">No (Hub only)</option>
                   </select>
+                </div>
+              </div>
+
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                <div className={styles.inputGroup}>
+                  <label className={styles.label}>Avatar Image URL</label>
+                  <input
+                    type="text"
+                    className={styles.input}
+                    placeholder="/student-kavya.png or /uploads/..."
+                    value={formData.avatar}
+                    onChange={(e) => setFormData({ ...formData, avatar: e.target.value })}
+                  />
+                </div>
+
+                <div className={styles.inputGroup}>
+                  <label className={styles.label}>Video Embed / YouTube URL</label>
+                  <input
+                    type="text"
+                    className={styles.input}
+                    placeholder="https://youtube.com/watch?v=..."
+                    value={formData.videoUrl}
+                    onChange={(e) => setFormData({ ...formData, videoUrl: e.target.value })}
+                  />
                 </div>
               </div>
 

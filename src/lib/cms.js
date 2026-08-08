@@ -10,6 +10,8 @@ const TESTIMONIALS_FILE = path.join(process.cwd(), "src/content/testimonials.jso
 const EVENTS_FILE = path.join(process.cwd(), "src/content/events.json");
 const ANNOUNCEMENT_FILE = path.join(process.cwd(), "src/content/announcement.json");
 const LEADS_FILE = path.join(process.cwd(), "src/content/leads.json");
+const SETTINGS_FILE = path.join(process.cwd(), "src/content/settings.json");
+const UPLOADS_DIR = path.join(process.cwd(), "public/uploads");
 
 function ensureDir(dirPath) {
   if (!fs.existsSync(dirPath)) {
@@ -39,6 +41,38 @@ function writeJsonFile(filePath, data) {
   const dir = path.dirname(filePath);
   ensureDir(dir);
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
+}
+
+/* ==================== SITE SETTINGS ==================== */
+export function getSiteSettings() {
+  return readJsonFile(SETTINGS_FILE, {
+    academyName: "Crystal Clear Academy",
+    tagline: "Concept-First Coaching for NEET & Board Excellence",
+    phone: "+91 98416 44813",
+    whatsappPhone: "919841644813",
+    email: "crystalclearacademy@outlook.com",
+    address: "Thiruninravur, Chennai, Tamil Nadu",
+    instagramUrl: "https://instagram.com/crystalclearacademy",
+    facebookUrl: "https://facebook.com/crystalclearacademy",
+  });
+}
+
+export function saveSiteSettings(data) {
+  writeJsonFile(SETTINGS_FILE, data);
+  return data;
+}
+
+/* ==================== FILE UPLOADS ==================== */
+export async function saveUploadedFile(file) {
+  ensureDir(UPLOADS_DIR);
+  const bytes = await file.arrayBuffer();
+  const buffer = Buffer.from(bytes);
+
+  const cleanFileName = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, "_")}`;
+  const filePath = path.join(UPLOADS_DIR, cleanFileName);
+
+  fs.writeFileSync(filePath, buffer);
+  return `/uploads/${cleanFileName}`;
 }
 
 /* ==================== BLOG POSTS ==================== */
@@ -249,7 +283,7 @@ export function saveTestimonial(data) {
   if (data.id) {
     updated = list.map((t) => (t.id === data.id ? { ...t, ...data } : t));
   } else {
-    updated = [{ id: `test-${Date.now()}`, featured: true, rating: 5, ...data }, ...list];
+    updated = [{ id: `test-${Date.now()}`, featured: true, rating: 5, videoUrl: "", ...data }, ...list];
   }
   writeJsonFile(TESTIMONIALS_FILE, updated);
   return updated;
