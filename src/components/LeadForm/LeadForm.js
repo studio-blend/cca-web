@@ -22,6 +22,7 @@ export default function LeadForm({ defaultGoal = "Foundations" }) {
       "Foundations": "CCA Foundations (Class 9-12)",
       "Aspire": "CCA Aspire (NEET Coaching)",
       "Launchpad": "CCA Launchpad (Digital Skills)",
+      "Pathways": "CCA Pathways (TET Mentoring)",
     };
 
     const selectedGoal = goalLabelMap[goal] || goal;

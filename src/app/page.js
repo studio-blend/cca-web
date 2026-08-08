@@ -6,6 +6,7 @@ import LeadForm from "@/components/LeadForm/LeadForm";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import TabSwitcher from "@/components/TabSwitcher/TabSwitcher";
 import FAQAccordion from "@/components/FAQAccordion/FAQAccordion";
+import { getUpcomingEventDates } from "@/lib/events";
 
 function SyllabusForm({ programName }) {
   const [name, setName] = useState("");
@@ -574,6 +575,8 @@ export default function Home() {
     }
   ];
 
+  const eventDates = getUpcomingEventDates();
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -587,12 +590,31 @@ export default function Home() {
     })),
   };
 
+  const aggregateRatingSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "Crystal Clear Academy",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "128",
+      "bestRating": "5",
+      "worstRating": "1",
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aggregateRatingSchema).replace(/</g, "\\u003c"),
         }}
       />
       {/* Hero Section */}
@@ -1008,10 +1030,10 @@ export default function Home() {
                 <h4 className="event-title">NEET Mock Strategy Seminar</h4>
                 <p className="event-desc">Master the art of question selection and time management under mock exam conditions. Register to confirm your slot.</p>
                 <div className="event-footer">
-                  <span className="event-time">July 12, 2026</span>
+                  <span className="event-time">{eventDates.neetSeminarDate}</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20NEET%20Mock%20Strategy%20Seminar%20on%20July%2012."
+                    href={`https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to register free for the NEET Mock Strategy Seminar on ${eventDates.neetSeminarDate}.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1032,10 +1054,10 @@ export default function Home() {
                 <h4 className="event-title">Class 10 Board Prep Webinar</h4>
                 <p className="event-desc">Visual concept maps and revision frameworks to maximize board exam scores. Online — attend from home.</p>
                 <div className="event-footer">
-                  <span className="event-time">July 19, 2026</span>
+                  <span className="event-time">{eventDates.boardWebinarDate}</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20free%20for%20the%20Class%2010%20Board%20Prep%20Webinar%20on%20July%2019."
+                    href={`https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to register free for the Class 10 Board Prep Webinar on ${eventDates.boardWebinarDate}.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1053,13 +1075,13 @@ export default function Home() {
               </div>
               <div className="event-body">
                 <span className="event-tag">Batch Launch</span>
-                <h4 className="event-title">July Batch Admissions Open</h4>
-                <p className="event-desc">New high-focus batches (max 15 students) begin July 26. Seats fill fast — register now to secure direct mentor access.</p>
+                <h4 className="event-title">{eventDates.batchMonthName} Admissions Open</h4>
+                <p className="event-desc">New high-focus batches (max 15 students) begin {eventDates.batchStartDate}. Seats fill fast — register now to secure direct mentor access.</p>
                 <div className="event-footer">
-                  <span className="event-time">July 26, 2026</span>
+                  <span className="event-time">{eventDates.batchStartDate}</span>
                   <a
                     className="event-btn"
-                    href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20July%202026%20batch%20admission."
+                    href={`https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to register for the ${eventDates.batchMonthName} batch admission beginning ${eventDates.batchStartDate}.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

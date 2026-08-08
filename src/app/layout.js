@@ -51,7 +51,7 @@ export const metadata = {
       "18+ years of teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai.",
     images: [
       {
-        url: "https://crystalclearacademy.in/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Crystal Clear Academy — Premium Academic Coaching",
@@ -63,7 +63,7 @@ export const metadata = {
     title: "Crystal Clear Academy | Where Excellence Begins with Clarity",
     description:
       "18+ years of teaching excellence. NEET coaching, board exam prep, and digital skills in Chennai.",
-    images: ["https://crystalclearacademy.in/og-image.png"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -81,11 +81,11 @@ export const metadata = {
   },
 };
 
-// Organization JSON-LD for site-wide SEO
+// Organization & LocalBusiness JSON-LD for site-wide SEO
 function OrganizationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    "@type": ["EducationalOrganization", "LocalBusiness"],
     name: "Crystal Clear Academy",
     alternateName: "CCA",
     url: "https://crystalclearacademy.in",
@@ -93,14 +93,28 @@ function OrganizationJsonLd() {
     description:
       "Premier academic coaching institution in Chennai with 18+ years of teaching excellence. Specializing in Classes 9–12 board exam preparation, NEET medical entrance coaching, digital skills training, and TET mentoring.",
     foundingDate: "2006",
+    priceRange: "₹1,500 - ₹5,000 / month",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Chennai",
+      streetAddress: "Anna Nagar",
       addressLocality: "Chennai",
       addressRegion: "Tamil Nadu",
       postalCode: "600040",
       addressCountry: "IN",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "13.0878",
+      longitude: "80.2170",
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "09:00",
+        closes: "19:30",
+      },
+    ],
     areaServed: {
       "@type": "City",
       name: "Chennai",
