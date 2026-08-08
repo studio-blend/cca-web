@@ -74,7 +74,7 @@ To exercise any of these rights, contact us at the details below.`,
 
 📞 +91 98416 44813 (WhatsApp or Call)
 📧 crystalclearacademy@outlook.com
-📍 Chennai, Tamil Nadu — 600 040`,
+📍 Thiruninravur, Tamil Nadu — 602 024`,
     },
     {
       heading: "9. Updates to This Policy",

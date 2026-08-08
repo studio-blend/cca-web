@@ -1,21 +1,22 @@
 # Crystal Clear Academy (CCA)
 
-Premier educational tutoring academy in Chennai, India. Specializing in board preparation, NEET medical coaching, digital skills, and teacher eligibility preparation.
+Premier educational tutoring academy offering live interactive online coaching — 1-on-1 focused teaching for your child as well as small-batch premium classes across Tamil Nadu, India, and worldwide. Specializing in board preparation, NEET medical entrance coaching, digital skills, and teacher eligibility mentoring.
 
 ## Core Information
 - **Founding Date:** 2026
 - **Founder & Lead Educator:** Revathy M. — Specializes in first-principles physics & chemistry coaching with 18+ years of teaching excellence.
+- **Delivery Model:** Live Interactive Online Coaching (1-on-1 Personal Teaching & Small Premium Batches — Not location confined).
 - **Batches:** Strict maximum limit of 15 students per batch (High-Focus Batches), and 8 students for premium personal tracks.
 - **Contact Phone:** +91 98416 44813
 - **Email:** crystalclearacademy@outlook.com
 - **Website:** https://crystalclearacademy.in
 - **Primary Channels:** Interactive inquiries and enrollment redirects run through WhatsApp.
-- **Location:** Anna Nagar, Chennai, Tamil Nadu — 600 040
+- **Headquarters:** Thiruninravur, Tamil Nadu — 602 024
 
 ## Educational Programs
 
-### 1. CCA Foundations (Classes 9-12)
-- **Scope:** Physics, Chemistry, Biology, Mathematics for CBSE & State Board.
+### 1. CCA Foundations (Classes 9–12)
+- **Scope:** Physics, Chemistry, Biology, Mathematics for CBSE & State Board (Live 1-on-1 & Small Group).
 - **Pricing:** 
   - Class 9-10: ₹1,500–₹2,500/month
   - Class 11-12: ₹2,000–₹3,500/month
@@ -30,7 +31,7 @@ Premier educational tutoring academy in Chennai, India. Specializing in board pr
 - **URL:** https://crystalclearacademy.in/aspire
 
 ### 3. CCA Launchpad (Digital Skills)
-- **Scope:** Job-ready future competencies: Graphic Design, Figma wireframing, AI & Emerging Tech, No-Code, Web Dev, Communication, and Professional Development.
+- **Scope:** Practical digital skills: Graphic Design, Figma UI/UX wireframing, Python programming, and AI workflow tools.
 - **Pricing:**
   - Weekend Workshop (2-day): ₹2,500–₹4,000
   - Full Course (4–6 weeks): ₹5,000–₹8,000

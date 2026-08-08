@@ -96,16 +96,16 @@ function OrganizationJsonLd() {
     priceRange: "₹1,500 - ₹5,000 / month",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Anna Nagar",
-      addressLocality: "Chennai",
+      streetAddress: "Thiruninravur",
+      addressLocality: "Thiruninravur, Tiruvallur",
       addressRegion: "Tamil Nadu",
-      postalCode: "600040",
+      postalCode: "602024",
       addressCountry: "IN",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "13.0878",
-      longitude: "80.2170",
+      latitude: "13.1167",
+      longitude: "79.9833",
     },
     openingHoursSpecification: [
       {
@@ -115,14 +115,11 @@ function OrganizationJsonLd() {
         closes: "19:30",
       },
     ],
-    hasMap: "https://maps.google.com/?q=Anna+Nagar+Chennai",
+    hasMap: "https://maps.google.com/?q=Thiruninravur+Tamil+Nadu",
     areaServed: [
-      { "@type": "City", name: "Chennai" },
-      { "@type": "AdministrativeArea", name: "Anna Nagar" },
-      { "@type": "AdministrativeArea", name: "Kilpauk" },
-      { "@type": "AdministrativeArea", name: "Shenoy Nagar" },
-      { "@type": "AdministrativeArea", name: "Mogappair" },
-      { "@type": "AdministrativeArea", name: "Aminjikarai" }
+      { "@type": "Country", name: "India" },
+      { "@type": "AdministrativeArea", name: "Tamil Nadu" },
+      { "@type": "City", name: "Online Worldwide" }
     ],
     contactPoint: {
       "@type": "ContactPoint",

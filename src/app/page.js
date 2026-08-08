@@ -511,7 +511,7 @@ export default function Home() {
     },
     {
       question: "Do you offer online classes?",
-      answer: "We currently focus on Hybrid Learning. While primary instruction is offline at our center, we provide extensive digital resources and online doubt-clearing sessions."
+      answer: "We specialize in Live Interactive Online Coaching — offering focused 1-on-1 personal teaching for your child as well as premium small-batch sessions. Classes are accessible from anywhere in Tamil Nadu, India, or abroad without location limits."
     },
     {
       question: "What are the fee payment options?",
@@ -569,7 +569,7 @@ export default function Home() {
       <section className="hero-section">
         <div className="container hero-grid">
           <ScrollReveal className="hero-content">
-            <span className="hero-tagline font-label-lg">Premium Academic Mentorship · Chennai</span>
+            <span className="hero-tagline font-label-lg">Premium Online Coaching · Thiruninravur HQ</span>
             <div className="urgency-badge" style={{ marginTop: "4px" }}>
               <span className="urgency-dot"></span>
               <span>NEET Founder&apos;s Batch: Only 8 seats left</span>
@@ -584,7 +584,7 @@ export default function Home() {
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "4px" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
                 <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Primarily offline · Chennai center
+                Online 1-on-1 &amp; Small Batches · Worldwide Reach
               </span>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
                 <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>

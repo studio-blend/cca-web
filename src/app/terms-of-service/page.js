@@ -82,7 +82,7 @@ CCA shall not be liable for indirect, consequential, or punitive damages, includ
 
 📞 +91 98416 44813 (WhatsApp or Call)
 📧 crystalclearacademy@outlook.com
-📍 Chennai, Tamil Nadu — 600 040`,
+📍 Thiruninravur, Tamil Nadu — 602 024`,
     },
     {
       heading: "12. Updates to These Terms",
