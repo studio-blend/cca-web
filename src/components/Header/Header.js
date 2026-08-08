@@ -60,7 +60,7 @@ export default function Header() {
               </button>
               <div className="nav-dropdown-menu">
                 <Link href="/foundations" className={`nav-dropdown-item ${isActive("/foundations") ? "active" : ""}`}>
-                  Foundations (Class 9-10)
+                  Foundations (Classes 9–12)
                 </Link>
                 <Link href="/aspire" className={`nav-dropdown-item ${isActive("/aspire") ? "active" : ""}`}>
                   Aspire (NEET)

@@ -28,7 +28,7 @@ export default function Footer() {
         <div className="footer-column">
           <h5>Ecosystem</h5>
           <div className="footer-links">
-            <Link className="footer-link" href="/foundations">Foundations (Class 9-12)</Link>
+            <Link className="footer-link" href="/foundations">Foundations (Classes 9–12)</Link>
             <Link className="footer-link" href="/aspire">Aspire (NEET Coaching)</Link>
             <Link className="footer-link" href="/launchpad">Launchpad (Digital Skills)</Link>
             <Link className="footer-link" href="/pathways">Pathways (TET Mentoring)</Link>
