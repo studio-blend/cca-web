@@ -5,20 +5,51 @@ import { useState } from "react";
 export default function SyllabusForm({ programName }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) {
-      alert("Please fill in all details.");
+    setErrorMsg("");
+
+    if (honeypot.trim().length > 0) return; // Silent reject bot
+
+    if (!name.trim()) {
+      setErrorMsg("Please fill in your name.");
       return;
     }
-    const message = `Hi Crystal Clear Academy, I would like to get the syllabus details for the ${programName} program.\n\n- Name: ${name.trim()}\n- Phone: ${phone.trim()}`;
+
+    const cleanPhone = phone.replace(/[\s-]/g, "");
+    const phoneRegex = /^[6-9]\d{9}$/;
+    if (!phoneRegex.test(cleanPhone)) {
+      setErrorMsg("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    const message = `Hi Crystal Clear Academy, I would like to get the syllabus details for the ${programName} program.\n\n- Name: ${name.trim()}\n- Phone: ${cleanPhone}`;
     const encodedText = encodeURIComponent(message);
     window.open(`https://wa.me/919841644813?text=${encodedText}`, "_blank");
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+      {/* Honeypot */}
+      <input
+        type="text"
+        name="syllabus_hp"
+        value={honeypot}
+        onChange={(e) => setHoneypot(e.target.value)}
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+      />
+
+      {errorMsg && (
+        <div style={{ backgroundColor: "#FEE2E2", border: "1px solid #FCA5A5", color: "#991B1B", padding: "6px 10px", borderRadius: "4px", fontSize: "12px" }}>
+          {errorMsg}
+        </div>
+      )}
+
       <div className="input-group">
         <label className="input-label" htmlFor={`syllabus-name-${programName.replace(/\s+/g, '-')}`} style={{ fontSize: "11px" }}>Student Name</label>
         <input
@@ -32,8 +63,9 @@ export default function SyllabusForm({ programName }) {
           required
         />
       </div>
+
       <div className="input-group">
-        <label className="input-label" htmlFor={`syllabus-phone-${programName.replace(/\s+/g, '-')}`} style={{ fontSize: "11px" }}>WhatsApp Number</label>
+        <label className="input-label" htmlFor={`syllabus-phone-${programName.replace(/\s+/g, '-')}`} style={{ fontSize: "11px" }}>WhatsApp Mobile Number</label>
         <input
           id={`syllabus-phone-${programName.replace(/\s+/g, '-')}`}
           type="tel"
@@ -42,12 +74,18 @@ export default function SyllabusForm({ programName }) {
           placeholder="e.g. 9876543210"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          maxLength={10}
           required
         />
       </div>
-      <button type="submit" className="btn btn-gold btn-block" style={{ marginTop: "8px", padding: "12px", fontSize: "14px" }}>
-        Request Syllabus on WhatsApp
+
+      <button type="submit" className="btn btn-gold btn-block" style={{ marginTop: "4px", padding: "12px", fontSize: "14px" }}>
+        Request Syllabus on WhatsApp →
       </button>
+
+      <div style={{ textAlign: "center", fontSize: "11px", color: "var(--color-on-surface-variant)" }}>
+        Or call center directly: <a href="tel:+919841644813" style={{ color: "var(--color-primary-navy)", fontWeight: "700" }}>+91 98416 44813</a>
+      </div>
     </form>
   );
 }

@@ -115,10 +115,15 @@ function OrganizationJsonLd() {
         closes: "19:30",
       },
     ],
-    areaServed: {
-      "@type": "City",
-      name: "Chennai",
-    },
+    hasMap: "https://maps.google.com/?q=Anna+Nagar+Chennai",
+    areaServed: [
+      { "@type": "City", name: "Chennai" },
+      { "@type": "AdministrativeArea", name: "Anna Nagar" },
+      { "@type": "AdministrativeArea", name: "Kilpauk" },
+      { "@type": "AdministrativeArea", name: "Shenoy Nagar" },
+      { "@type": "AdministrativeArea", name: "Mogappair" },
+      { "@type": "AdministrativeArea", name: "Aminjikarai" }
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-98416-44813",
@@ -128,27 +133,49 @@ function OrganizationJsonLd() {
     sameAs: ["https://instagram.com/crystalclearacademy"],
     hasOfferingCatalog: {
       "@type": "OfferingCatalog",
-      name: "Academic Programs",
+      name: "Academic Coaching & Skill Programs",
       itemListElement: [
         {
           "@type": "Course",
-          name: "CCA Foundations",
+          name: "CCA Foundations (Classes 9–12 Board Prep)",
           description: "Board exam preparation for Classes 9-12 (State Board & CBSE)",
+          courseMode: "blended",
+          offers: {
+            "@type": "Offer",
+            price: "1500.00",
+            priceCurrency: "INR",
+            availability: "https://schema.org/InStock"
+          }
         },
         {
           "@type": "Course",
-          name: "CCA Aspire",
+          name: "CCA Aspire (NEET Coaching)",
           description: "Intensive NEET medical entrance coaching with 10+ years track record",
+          courseMode: "blended",
+          offers: {
+            "@type": "Offer",
+            price: "3500.00",
+            priceCurrency: "INR",
+            availability: "https://schema.org/InStock"
+          }
         },
         {
           "@type": "Course",
-          name: "CCA Launchpad",
+          name: "CCA Launchpad (Digital Skills)",
           description: "Practical digital skills: UI/UX Design, Python Programming, and AI Tools",
+          courseMode: "blended",
+          offers: {
+            "@type": "Offer",
+            price: "2500.00",
+            priceCurrency: "INR",
+            availability: "https://schema.org/InStock"
+          }
         },
         {
           "@type": "Course",
-          name: "CCA Pathways",
+          name: "CCA Pathways (TET Mentoring)",
           description: "Teacher Eligibility Test (TET) mentoring and pedagogy training",
+          courseMode: "blended"
         },
       ],
     },

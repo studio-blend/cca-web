@@ -762,7 +762,11 @@ export default function Home() {
               </li>
               <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
                 <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>Track record of training government school students</strong> to qualify for MBBS/BDS under the 7.5% reservation.</span>
+                <span><strong>Track record of training government school candidates</strong> to qualify for MBBS/BDS under 7.5% reservation.</span>
+              </li>
+              <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
+                <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span><strong>Parent Peace-of-Mind:</strong> Weekly progress updates, biometric attendance tracking, and CCTV secured Anna Nagar center.</span>
               </li>
             </ul>
             <div className="founder-credentials">
