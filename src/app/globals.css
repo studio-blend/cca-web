@@ -828,12 +828,18 @@ img {
 
 
 /* ---- Component Styles Migrated from Backup ---- */
-        .header-nav {
+        .header-nav-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 10000;
+            transition: var(--transition-smooth);
+        }
+
+        .header-nav {
+            position: relative;
+            width: 100%;
             background-color: rgba(245, 247, 250, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);

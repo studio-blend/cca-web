@@ -41,129 +41,129 @@ export default function Header() {
 
   return (
     <>
-      {announcement && announcement.active && (
-        <div
-          style={{
-            background: "linear-gradient(90deg, #0e1f3b 0%, #1e3a8a 50%, #0e1f3b 100%)",
-            color: "#f8fafc",
-            padding: "8px 16px",
-            textAlign: "center",
-            fontSize: "13px",
-            fontWeight: "600",
-            borderBottom: "1px solid rgba(212, 175, 55, 0.3)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "12px",
-            zIndex: 1001,
-            position: "relative",
-          }}
-        >
-          <span>{announcement.text}</span>
-          {announcement.ctaText && (
-            <Link
-              href={announcement.ctaUrl || "/#lead-form"}
-              style={{
-                backgroundColor: "var(--color-brand-gold, #D4AF37)",
-                color: "#0e1f3b",
-                padding: "3px 10px",
-                borderRadius: "4px",
-                fontSize: "11px",
-                fontWeight: "700",
-                textDecoration: "none",
-                display: "inline-block",
-              }}
-            >
-              {announcement.ctaText} →
-            </Link>
-          )}
-        </div>
-      )}
-      <header id="main-header" className={`header-nav ${scrolled ? "scrolled" : ""}`}>
-        <div className="container nav-container">
-          <Link href="/" className="logo-wrap" onClick={closeMenu}>
-            <Logo className="logo-crest" width="84px" height="38px" />
-            <span className="logo-text">Crystal Clear Academy</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="desktop-nav" aria-label="Main Navigation">
-            <Link href="/" className={`nav-link ${isActive("/") ? "active" : ""}`}>
-              Home
-            </Link>
-            
-            <div className="nav-dropdown">
-              <button
-                className={`nav-link nav-dropdown-trigger ${
-                  isActive("/programs") || isActive("/foundations") || isActive("/aspire") || isActive("/launchpad") || isActive("/pathways")
-                    ? "active"
-                    : ""
-                }`}
-                type="button"
-                style={{ display: "flex", alignItems: "center", gap: "4px" }}
-              >
-                Programs
-                <svg viewBox="0 0 24 24" style={{ width: "12px", height: "12px", fill: "currentColor" }}>
-                  <path d="M7 10l5 5 5-5z" />
-                </svg>
-              </button>
-              <div className="nav-dropdown-menu">
-                <Link href="/programs" className={`nav-dropdown-item ${isActive("/programs") ? "active" : ""}`} style={{ fontWeight: "700", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "8px", marginBottom: "4px", color: "var(--color-brand-gold)" }}>
-                  All Programs Overview →
-                </Link>
-                <Link href="/foundations" className={`nav-dropdown-item ${isActive("/foundations") ? "active" : ""}`}>
-                  Foundations (Classes 9–12)
-                </Link>
-                <Link href="/aspire" className={`nav-dropdown-item ${isActive("/aspire") ? "active" : ""}`}>
-                  Aspire (NEET)
-                </Link>
-                <Link href="/launchpad" className={`nav-dropdown-item ${isActive("/launchpad") ? "active" : ""}`}>
-                  Launchpad
-                </Link>
-                <Link href="/pathways" className={`nav-dropdown-item ${isActive("/pathways") ? "active" : ""}`}>
-                  Pathways
-                </Link>
-              </div>
-            </div>
-
-            <Link href="/about" className={`nav-link ${isActive("/about") ? "active" : ""}`}>
-              About
-            </Link>
-            <Link href="/blog" className={`nav-link ${isActive("/blog") ? "active" : ""}`}>
-              Blog
-            </Link>
-            <Link href="/resources" className={`nav-link ${isActive("/resources") ? "active" : ""}`}>
-              Resources
-            </Link>
-            <Link href="/hub" className={`nav-link ${isActive("/hub") ? "active" : ""}`}>
-              Bulletin &amp; Gallery
-            </Link>
-            <a
-              href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20chat%20with%20the%20Lead%20Mentor%20and%20begin%20my%20clarity%20journey."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-gold font-label-md"
-              style={{ padding: "8px 16px", marginLeft: "10px" }}
-            >
-              WhatsApp Us
-            </a>
-          </nav>
-
-          {/* Mobile Hamburger Button */}
-          <button
-            id="menu-toggle"
-            className={`hamburger-btn ${menuOpen ? "open" : ""}`}
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-            aria-expanded={menuOpen}
+      <div className="header-nav-container">
+        {announcement && announcement.active && (
+          <div
+            style={{
+              background: "linear-gradient(90deg, #0e1f3b 0%, #1e3a8a 50%, #0e1f3b 100%)",
+              color: "#f8fafc",
+              padding: "8px 16px",
+              textAlign: "center",
+              fontSize: "13px",
+              fontWeight: "600",
+              borderBottom: "1px solid rgba(212, 175, 55, 0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "12px",
+            }}
           >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </header>
+            <span>{announcement.text}</span>
+            {announcement.ctaText && (
+              <Link
+                href={announcement.ctaUrl || "/#lead-form"}
+                style={{
+                  backgroundColor: "var(--color-brand-gold, #D4AF37)",
+                  color: "#0e1f3b",
+                  padding: "3px 10px",
+                  borderRadius: "4px",
+                  fontSize: "11px",
+                  fontWeight: "700",
+                  textDecoration: "none",
+                  display: "inline-block",
+                }}
+              >
+                {announcement.ctaText} →
+              </Link>
+            )}
+          </div>
+        )}
+        <header id="main-header" className={`header-nav ${scrolled ? "scrolled" : ""}`}>
+          <div className="container nav-container">
+            <Link href="/" className="logo-wrap" onClick={closeMenu}>
+              <Logo className="logo-crest" width="84px" height="38px" />
+              <span className="logo-text">Crystal Clear Academy</span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <nav className="desktop-nav" aria-label="Main Navigation">
+              <Link href="/" className={`nav-link ${isActive("/") ? "active" : ""}`}>
+                Home
+              </Link>
+              
+              <div className="nav-dropdown">
+                <button
+                  className={`nav-link nav-dropdown-trigger ${
+                    isActive("/programs") || isActive("/foundations") || isActive("/aspire") || isActive("/launchpad") || isActive("/pathways")
+                      ? "active"
+                      : ""
+                  }`}
+                  type="button"
+                  style={{ display: "flex", alignItems: "center", gap: "4px" }}
+                >
+                  Programs
+                  <svg viewBox="0 0 24 24" style={{ width: "12px", height: "12px", fill: "currentColor" }}>
+                    <path d="M7 10l5 5 5-5z" />
+                  </svg>
+                </button>
+                <div className="nav-dropdown-menu">
+                  <Link href="/programs" className={`nav-dropdown-item ${isActive("/programs") ? "active" : ""}`} style={{ fontWeight: "700", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "8px", marginBottom: "4px", color: "var(--color-brand-gold)" }}>
+                    All Programs Overview →
+                  </Link>
+                  <Link href="/foundations" className={`nav-dropdown-item ${isActive("/foundations") ? "active" : ""}`}>
+                    Foundations (Classes 9–12)
+                  </Link>
+                  <Link href="/aspire" className={`nav-dropdown-item ${isActive("/aspire") ? "active" : ""}`}>
+                    Aspire (NEET)
+                  </Link>
+                  <Link href="/launchpad" className={`nav-dropdown-item ${isActive("/launchpad") ? "active" : ""}`}>
+                    Launchpad
+                  </Link>
+                  <Link href="/pathways" className={`nav-dropdown-item ${isActive("/pathways") ? "active" : ""}`}>
+                    Pathways
+                  </Link>
+                </div>
+              </div>
+
+              <Link href="/about" className={`nav-link ${isActive("/about") ? "active" : ""}`}>
+                About
+              </Link>
+              <Link href="/blog" className={`nav-link ${isActive("/blog") ? "active" : ""}`}>
+                Blog
+              </Link>
+              <Link href="/resources" className={`nav-link ${isActive("/resources") ? "active" : ""}`}>
+                Resources
+              </Link>
+              <Link href="/hub" className={`nav-link ${isActive("/hub") ? "active" : ""}`}>
+                Bulletin &amp; Gallery
+              </Link>
+              <a
+                href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20chat%20with%20the%20Lead%20Mentor%20and%20begin%20my%20clarity%20journey."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-gold font-label-md"
+                style={{ padding: "8px 16px", marginLeft: "10px" }}
+              >
+                WhatsApp Us
+              </a>
+            </nav>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              id="menu-toggle"
+              className={`hamburger-btn ${menuOpen ? "open" : ""}`}
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
+              aria-expanded={menuOpen}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+      </div>
 
       {/* Mobile Navigation Panel */}
       <nav id="mobile-menu" className={`mobile-nav-panel ${menuOpen ? "open" : ""}`} aria-label="Mobile Navigation">
