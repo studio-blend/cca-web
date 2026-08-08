@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
+import { getUpcomingEventDates } from "@/lib/events";
 
 export const metadata = {
   title: "CCA Hub - Bulletin & Gallery | Crystal Clear Academy",
@@ -9,6 +10,8 @@ export const metadata = {
 };
 
 export default function HubPage() {
+  const eventDates = getUpcomingEventDates();
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -25,8 +28,8 @@ export default function HubPage() {
     {
       category: "Special Waiver",
       title: "Founder's Batch Early-Bird Offer",
-      desc: "Receive a flat 15% waiver on annual tuition fees for all Class 9-12 and NEET programs. Valid for registrations confirmed before July 31.",
-      date: "Valid till July 31",
+      desc: "Receive a flat 15% waiver on annual tuition fees for all Class 9-12 and NEET programs for early registrations.",
+      date: `Admissions Open for ${eventDates.batchMonthName}`,
       badgeColor: "var(--color-brand-gold)",
       textColor: "var(--color-primary-navy)",
       link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20apply%20for%20the%2015%25%20Early-Bird%20Waiver."
@@ -35,28 +38,28 @@ export default function HubPage() {
       category: "Free Seminar",
       title: "NEET Mock Exam Strategy Seminar",
       desc: "Learn critical speed techniques, question selection methodology, and OMR scheduling from our lead mentors to score 650+.",
-      date: "July 12, 4:00 PM",
+      date: eventDates.neetSeminarDate,
       badgeColor: "var(--color-academic-blue)",
       textColor: "#ffffff",
-      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20NEET%20Mock%20Strategy%20Seminar%20on%20July%2012."
+      link: `https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to register for the NEET Mock Strategy Seminar on ${eventDates.neetSeminarDate}.`)}`
     },
     {
       category: "Free Webinar",
       title: "Class 10 Board Prep Strategy",
       desc: "Unlock visual concept maps and memory triggers designed to help students score 95%+ in Science and Mathematics CBSE/State Board exams.",
-      date: "July 19, 6:00 PM",
+      date: eventDates.boardWebinarDate,
       badgeColor: "var(--color-secondary)",
       textColor: "#ffffff",
-      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20register%20for%20the%20Class%2010%20Board%20Prep%20Webinar%20on%20July%2019."
+      link: `https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to register for the Class 10 Board Prep Webinar on ${eventDates.boardWebinarDate}.`)}`
     },
     {
       category: "Batch Startup",
       title: "Direct Admission Small Batches Start",
       desc: "First batch of our high-focus programs (maximum 15 seats per class) commences. Direct mentor allocation and syllabus mapping sheets distributed.",
-      date: "July 26 Batch",
+      date: `Starts ${eventDates.batchStartDate}`,
       badgeColor: "var(--color-primary-navy)",
       textColor: "#ffffff",
-      link: "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20secure%20a%20seat%20for%20the%20July%202026%20batch."
+      link: `https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to secure a seat for the batch commencing ${eventDates.batchStartDate}.`)}`
     }
   ];
 
@@ -194,18 +197,11 @@ export default function HubPage() {
           </ScrollReveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", marginTop: "40px" }}>
-            {/* Testimonial Video Card 1 */}
+            {/* Testimonial Card 1 */}
             <ScrollReveal className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "32px", height: "100%", backgroundColor: "var(--color-surface-card)", border: "1px solid rgba(198,167,94,0.18)", boxShadow: "var(--shadow-sm)", borderRadius: "var(--radius-lg)" }}>
               <div style={{ position: "relative", height: "200px", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "20px" }}>
                 <img src="/student-boy.png" alt="Srinivas K." style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(14,31,59,0.4)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div className="btn-play-pulse" style={{ width: "60px", height: "60px", borderRadius: "50%", backgroundColor: "var(--color-brand-gold)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 12px rgba(198,167,94,0.5)" }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary-navy)" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: "4px" }}>
-                      <path d="M8 5V19L19 12L8 5Z" />
-                    </svg>
-                  </div>
-                </div>
-                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>VIDEO TESTIMONIAL</span>
+                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>STUDENT SPOTLIGHT</span>
               </div>
               <div style={{ flexGrow: 1 }}>
                 <div className="font-label-md" style={{ color: "var(--color-brand-gold)", marginBottom: "4px" }}>NEET Scorer — 680/720</div>
@@ -216,18 +212,11 @@ export default function HubPage() {
               </div>
             </ScrollReveal>
 
-            {/* Testimonial Video Card 2 */}
+            {/* Testimonial Card 2 */}
             <ScrollReveal className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "32px", height: "100%", backgroundColor: "var(--color-surface-card)", border: "1px solid rgba(198,167,94,0.18)", boxShadow: "var(--shadow-sm)", borderRadius: "var(--radius-lg)" }}>
               <div style={{ position: "relative", height: "200px", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "20px" }}>
                 <img src="/student-girl.png" alt="Priyanka M." style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", backgroundColor: "rgba(14,31,59,0.4)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <div className="btn-play-pulse" style={{ width: "60px", height: "60px", borderRadius: "50%", backgroundColor: "var(--color-brand-gold)", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 4px 12px rgba(198,167,94,0.5)" }}>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--color-primary-navy)" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: "4px" }}>
-                      <path d="M8 5V19L19 12L8 5Z" />
-                    </svg>
-                  </div>
-                </div>
-                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>VIDEO TESTIMONIAL</span>
+                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>STUDENT SPOTLIGHT</span>
               </div>
               <div style={{ flexGrow: 1 }}>
                 <div className="font-label-md" style={{ color: "var(--color-brand-gold)", marginBottom: "4px" }}>CBSE Class 12 — 97% Scorer</div>

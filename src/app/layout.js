@@ -25,7 +25,7 @@ export const metadata = {
     template: "%s | Crystal Clear Academy",
   },
   description:
-    "18+ years of teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai. Small batches, personal mentorship, proven results.",
+    "Backed by 18+ years of the founder's teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai. Small batches, personal mentorship, proven methods.",
   keywords: [
     "Crystal Clear Academy",
     "CCA Chennai",
@@ -48,7 +48,7 @@ export const metadata = {
     siteName: "Crystal Clear Academy",
     title: "Crystal Clear Academy | Where Excellence Begins with Clarity",
     description:
-      "18+ years of teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai.",
+      "Backed by 18+ years of the founder's teaching excellence. Structured coaching for Classes 9–12, NEET, and Future-Ready Digital Skills in Chennai.",
     images: [
       {
         url: "/og-image.png",
@@ -62,7 +62,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Crystal Clear Academy | Where Excellence Begins with Clarity",
     description:
-      "18+ years of teaching excellence. NEET coaching, board exam prep, and digital skills in Chennai.",
+      "Backed by 18+ years of the founder's teaching excellence. NEET coaching, board exam prep, and digital skills in Chennai.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -91,8 +91,8 @@ function OrganizationJsonLd() {
     url: "https://crystalclearacademy.in",
     logo: "https://crystalclearacademy.in/logo.png",
     description:
-      "Premier academic coaching institution in Chennai with 18+ years of teaching excellence. Specializing in Classes 9–12 board exam preparation, NEET medical entrance coaching, digital skills training, and TET mentoring.",
-    foundingDate: "2006",
+      "Premier academic coaching institution in Chennai founded in 2026 by an educator with 18+ years of teaching excellence. Specializing in Classes 9–12 board exam preparation, NEET medical entrance coaching, digital skills training, and TET mentoring.",
+    foundingDate: "2026",
     priceRange: "₹1,500 - ₹5,000 / month",
     address: {
       "@type": "PostalAddress",

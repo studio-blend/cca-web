@@ -42,7 +42,7 @@ export default function AboutPage() {
               <span style={{ color: "var(--color-brand-gold)" }}>Conceptual Clarity</span>
             </h1>
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)" }}>
-              Founded in 2006 on the principles of logic, simplicity, and intensive personal mentorship. We believe every student has the capacity to excel once technical terms are mapped onto real-world frameworks.
+              Established in 2026 on the principles of logic, simplicity, and intensive personal mentorship by an educator with over 18 years of classroom leadership. We believe every student has the capacity to excel once technical terms are mapped onto real-world frameworks.
             </p>
           </ScrollReveal>
         </div>

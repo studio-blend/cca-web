@@ -1,62 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import LeadForm from "@/components/LeadForm/LeadForm";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import TabSwitcher from "@/components/TabSwitcher/TabSwitcher";
 import FAQAccordion from "@/components/FAQAccordion/FAQAccordion";
+import SyllabusForm from "@/components/SyllabusForm/SyllabusForm";
 import { getUpcomingEventDates } from "@/lib/events";
-
-function SyllabusForm({ programName }) {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!name.trim() || !phone.trim()) {
-      alert("Please fill in all details.");
-      return;
-    }
-    const message = `Hi Crystal Clear Academy, I would like to get the syllabus details for the ${programName} program.\n\n- Name: ${name.trim()}\n- Phone: ${phone.trim()}`;
-    const encodedText = encodeURIComponent(message);
-    window.open(`https://wa.me/919841644813?text=${encodedText}`, "_blank");
-  };
-
-  return (
-    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-      <div className="input-group">
-        <label className="input-label" htmlFor={`syllabus-name-${programName.replace(/\s+/g, '-')}`} style={{ fontSize: "11px" }}>Student Name</label>
-        <input
-          id={`syllabus-name-${programName.replace(/\s+/g, '-')}`}
-          type="text"
-          className="form-input"
-          style={{ padding: "10px 12px", fontSize: "14px" }}
-          placeholder="e.g. Sanjay Kumar"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-      </div>
-      <div className="input-group">
-        <label className="input-label" htmlFor={`syllabus-phone-${programName.replace(/\s+/g, '-')}`} style={{ fontSize: "11px" }}>WhatsApp Number</label>
-        <input
-          id={`syllabus-phone-${programName.replace(/\s+/g, '-')}`}
-          type="tel"
-          className="form-input"
-          style={{ padding: "10px 12px", fontSize: "14px" }}
-          placeholder="e.g. 9876543210"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-        />
-      </div>
-      <button type="submit" className="btn btn-gold btn-block" style={{ marginTop: "8px", padding: "12px", fontSize: "14px" }}>
-        Request Syllabus on WhatsApp
-      </button>
-    </form>
-  );
-}
 
 export default function Home() {
   // Ecosystem Tabs Content
@@ -631,7 +579,7 @@ export default function Home() {
             </h1>
             <p className="hero-tamil">தெளிவே வெற்றியின் தொடக்கம்</p>
             <p className="hero-description font-body-lg">
-              18+ years of leadership in education. Custom courses structured for Classes 9–12 Board Exams, NEET mastery, and future-focused digital competencies.
+              Led by 18+ years of teaching excellence. Custom courses structured for Classes 9–12 Board Exams, NEET mastery, and future-focused digital competencies.
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "4px" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
@@ -723,12 +671,12 @@ export default function Home() {
             <div className="stat-item">
               <span className="stat-number">1,200+</span>
               <span className="stat-label">Students Mentored</span>
-              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>2006–Present</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Founder&apos;s Career</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">98%</span>
               <span className="stat-label">Board Pass Rate</span>
-              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>18-year average</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Founder&apos;s Track Record</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">10+ Yrs</span>
