@@ -962,7 +962,9 @@ img {
             right: -100%;
             width: 100%;
             height: 100vh;
-            background-color: var(--color-surface-container-lowest);
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             z-index: 9999;
             display: flex;
             flex-direction: column;
@@ -1049,10 +1051,10 @@ img {
         }
 
         .hero-tamil {
-            font-family: var(--font-family-serif);
-            font-size: 26px;
+            font-family: 'Noto Sans Tamil', system-ui, var(--font-family-sans);
+            font-size: 24px;
             color: var(--color-academic-blue);
-            font-style: italic;
+            font-style: normal;
             font-weight: 700;
             border-left: 3px solid var(--color-brand-gold);
             padding-left: 16px;
@@ -2505,8 +2507,8 @@ img {
 }
 
 .text-glow-gold {
-    color: var(--color-brand-gold);
-    text-shadow: 0 2px 12px rgba(198, 167, 94, 0.35);
+    color: #A0843F;
+    text-shadow: 0 2px 12px rgba(198, 167, 94, 0.25);
 }
 
 /* Credentials row styling */
