@@ -5,7 +5,7 @@ import Link from "next/link";
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import SyllabusForm from "@/components/SyllabusForm/SyllabusForm";
 
-export default function ProgramsExplorer() {
+export default function ProgramsExplorer({ initialPrograms = null }) {
   const [activeWing, setActiveWing] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -17,7 +17,7 @@ export default function ProgramsExplorer() {
     { id: "pathways", label: "🎓 Pathways (TET Mentoring)" },
   ];
 
-  const allPrograms = [
+  const defaultPrograms = [
     // Foundations Wing
     {
       id: "foundations-class-9",
@@ -195,6 +195,25 @@ export default function ProgramsExplorer() {
       whatsappMsg: "Hi CCA, I am interested in the TET Paper II Mentoring program.",
     },
   ];
+
+  const allPrograms = useMemo(() => {
+    if (initialPrograms && initialPrograms.length > 0) {
+      return initialPrograms.map((p) => ({
+        id: p.id,
+        wing: p.wing || "foundations",
+        wingLabel: p.wingLabel || "Academic Wing",
+        wingBadgeColor: p.wingBadgeColor || "#1F4E79",
+        title: p.title,
+        grade: p.targetAudience || p.grade || "Class 9-12",
+        board: p.board || p.fee || "CBSE & State Board",
+        desc: p.description || p.desc || "",
+        highlights: p.features || p.highlights || [],
+        pageUrl: `/${p.wing || "foundations"}`,
+        whatsappMsg: `Hi CCA, I am interested in the ${p.title} program.`,
+      }));
+    }
+    return defaultPrograms;
+  }, [initialPrograms]);
 
   const filteredPrograms = useMemo(() => {
     return allPrograms.filter((p) => {

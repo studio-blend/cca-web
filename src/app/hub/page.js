@@ -1,5 +1,6 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import { getUpcomingEventDates } from "@/lib/events";
+import { getAllEvents, getAllTestimonials } from "@/lib/cms";
 
 export const metadata = {
   title: "CCA Hub - Bulletin & Gallery | Crystal Clear Academy",
@@ -11,6 +12,8 @@ export const metadata = {
 
 export default function HubPage() {
   const eventDates = getUpcomingEventDates();
+  const cmsEvents = getAllEvents();
+  const cmsTestimonials = getAllTestimonials();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -24,7 +27,7 @@ export default function HubPage() {
     }
   };
 
-  const bulletins = [
+  const defaultBulletins = [
     {
       category: "Special Waiver",
       title: "Founder's Batch Early-Bird Offer",
@@ -62,6 +65,18 @@ export default function HubPage() {
       link: `https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to secure a seat for the batch commencing ${eventDates.batchStartDate}.`)}`
     }
   ];
+
+  const bulletins = cmsEvents && cmsEvents.length > 0
+    ? cmsEvents.map((evt) => ({
+        category: evt.type || "Announcement",
+        title: evt.title,
+        desc: evt.description || `Speaker: ${evt.speaker || 'CCA Academic Team'}. Venue: ${evt.venue || 'CCA Campus'}`,
+        date: `${evt.date} (${evt.time})`,
+        badgeColor: "var(--color-brand-gold)",
+        textColor: "var(--color-primary-navy)",
+        link: `https://wa.me/919841644813?text=${encodeURIComponent(`Hi CCA, I want to register for ${evt.title} on ${evt.date}.`)}`,
+      }))
+    : defaultBulletins;
 
   return (
     <>
@@ -192,40 +207,24 @@ export default function HubPage() {
         <div className="container">
           <ScrollReveal className="section-title-wrap">
             <span className="hero-tagline font-label-lg">Student Voices</span>
-            <h2 className="font-headline-lg">Video &amp; Written Testimonials</h2>
+            <h2 className="font-headline-lg">Student &amp; Parent Testimonials</h2>
             <div className="gold-divider"></div>
           </ScrollReveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "32px", marginTop: "40px" }}>
-            {/* Testimonial Card 1 */}
-            <ScrollReveal className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "32px", height: "100%", backgroundColor: "var(--color-surface-card)", border: "1px solid rgba(198,167,94,0.18)", boxShadow: "var(--shadow-sm)", borderRadius: "var(--radius-lg)" }}>
-              <div style={{ position: "relative", height: "200px", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "20px" }}>
-                <img src="/student-boy.png" alt="Srinivas K." style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>STUDENT SPOTLIGHT</span>
-              </div>
-              <div style={{ flexGrow: 1 }}>
-                <div className="font-label-md" style={{ color: "var(--color-brand-gold)", marginBottom: "4px" }}>NEET Scorer — 680/720</div>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 12px 0", fontSize: "20px" }}>Srinivas K.</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontStyle: "italic", fontSize: "14px", lineHeight: "1.6" }}>
-                  &ldquo;The physics concept maps broke down complex formulas into easy rules. I stopped memorizing equations and started understanding how to derive them. Revathy M.&apos;s mentorship completely changed my approach to solving numericals under time pressure.&rdquo;
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Testimonial Card 2 */}
-            <ScrollReveal className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "32px", height: "100%", backgroundColor: "var(--color-surface-card)", border: "1px solid rgba(198,167,94,0.18)", boxShadow: "var(--shadow-sm)", borderRadius: "var(--radius-lg)" }}>
-              <div style={{ position: "relative", height: "200px", width: "100%", borderRadius: "var(--radius-md)", overflow: "hidden", marginBottom: "20px" }}>
-                <img src="/student-girl.png" alt="Priyanka M." style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                <span style={{ position: "absolute", bottom: "12px", right: "12px", backgroundColor: "rgba(0,0,0,0.6)", color: "#fff", padding: "4px 8px", borderRadius: "4px", fontSize: "11px", fontWeight: "bold" }}>STUDENT SPOTLIGHT</span>
-              </div>
-              <div style={{ flexGrow: 1 }}>
-                <div className="font-label-md" style={{ color: "var(--color-brand-gold)", marginBottom: "4px" }}>CBSE Class 12 — 97% Scorer</div>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 12px 0", fontSize: "20px" }}>Priyanka M.</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontStyle: "italic", fontSize: "14px", lineHeight: "1.6" }}>
-                  &ldquo;I was struggling with rote learning before joining CCA. The offline classes made math concepts visual and logical. Drawing proofs on digital maps helped me visualize mechanics and calculus easily, which made my CBSE boards stress-free!&rdquo;
-                </p>
-              </div>
-            </ScrollReveal>
+            {cmsTestimonials.map((t) => (
+              <ScrollReveal key={t.id} className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "32px", height: "100%", backgroundColor: "var(--color-surface-card)", border: "1px solid rgba(198,167,94,0.18)", boxShadow: "var(--shadow-sm)", borderRadius: "var(--radius-lg)" }}>
+                <div style={{ flexGrow: 1 }}>
+                  <div className="font-label-md" style={{ color: "var(--color-brand-gold)", marginBottom: "4px" }}>{t.role}</div>
+                  <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 4px 0", fontSize: "20px" }}>{t.name}</h4>
+                  <div style={{ fontSize: "12px", color: "var(--color-outline)", marginBottom: "12px" }}>{t.college}</div>
+                  <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontStyle: "italic", fontSize: "14px", lineHeight: "1.6" }}>
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                </div>
+                <div style={{ marginTop: "16px", fontSize: "14px" }}>{"⭐".repeat(t.rating || 5)}</div>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
@@ -275,19 +274,6 @@ export default function HubPage() {
                 <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>Biology Genetics Review</h4>
                 <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontSize: "13px", lineHeight: "1.4" }}>
                   Mapping out transcription stages, replication loops, and organic molecular connections visually rather than relying on plain memorization lists.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            {/* Gallery Item 4 */}
-            <ScrollReveal className="pricing-card" style={{ padding: "0", overflow: "hidden", border: "1px solid rgba(198,167,94,0.15)", borderRadius: "var(--radius-lg)", boxShadow: "var(--shadow-sm)" }}>
-              <div style={{ height: "200px", width: "100%", overflow: "hidden" }}>
-                <img src="/gallery-uiux.png" alt="Figma UI/UX Mockups" style={{ width: "100%", height: "100%", objectFit: "cover" }} className="gallery-hover-zoom" />
-              </div>
-              <div style={{ padding: "20px" }}>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0" }}>Figma UI/UX Mockups</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", fontSize: "13px", lineHeight: "1.4" }}>
-                  Launchpad students showcasing their design systems, mobile grid structures, and interactive Figma prototypes to peers.
                 </p>
               </div>
             </ScrollReveal>

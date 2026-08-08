@@ -1,5 +1,6 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import ProgramsExplorer from "@/components/ProgramsExplorer/ProgramsExplorer";
+import { getAllPrograms } from "@/lib/cms";
 
 export const metadata = {
   title: "All Programs | Crystal Clear Academy Chennai",
@@ -10,6 +11,8 @@ export const metadata = {
 };
 
 export default function AllProgramsPage() {
+  const cmsPrograms = getAllPrograms();
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -71,7 +74,7 @@ export default function AllProgramsPage() {
       </section>
 
       {/* Interactive Programs Explorer Component */}
-      <ProgramsExplorer />
+      <ProgramsExplorer initialPrograms={cmsPrograms} />
     </>
   );
 }

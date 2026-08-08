@@ -1,50 +1,192 @@
 [
   {
-    "id": "prog-1",
-    "title": "Class 11 NEET Mastery (2-Year Integrated)",
-    "targetAudience": "Students moving to Class 11",
-    "duration": "24 Months",
-    "fee": "₹45,000 / year",
-    "feeRange": "₹3,500 - ₹4,500 / month",
-    "badge": "Most Popular",
-    "description": "Comprehensive 2-year preparation covering NCERT Biology, Physics, and Chemistry from foundational concepts to advanced NEET level.",
+    "id": "foundations-class-9",
+    "wing": "foundations",
+    "wingLabel": "Foundations Wing",
+    "wingBadgeColor": "#1F4E79",
+    "title": "Class 9 Foundation & Core Science",
+    "targetAudience": "Class 9 Students",
+    "duration": "12 Months",
+    "fee": "₹36,000 / year",
+    "feeRange": "₹2,500 - ₹3,500 / month",
+    "badge": "Core Foundation",
+    "board": "CBSE & TN State Board",
+    "description": "Bridge from middle school to high school. Focuses on first-principles mental models in Physics laws, Chemical nomenclature, and Algebraic foundations.",
     "features": [
-      "Daily 2-hour interactive lectures (Offline & Live Hybrid)",
-      "Weekly OMR pattern mock tests with rank analysis",
-      "Dedicated 1-on-1 daily doubt resolution desks",
-      "Comprehensive printed study modules & formula sheets"
+      "Visual Physics Experiments",
+      "Atomic Structure Chemistry",
+      "Euclidean & Algebraic Maths"
     ]
   },
   {
-    "id": "prog-2",
-    "title": "Class 12 NEET Booster & Board Prep",
+    "id": "foundations-class-10",
+    "wing": "foundations",
+    "wingLabel": "Foundations Wing",
+    "wingBadgeColor": "#1F4E79",
+    "title": "Class 10 Board Excellence & Science Intensive",
+    "targetAudience": "Class 10 Students",
+    "duration": "12 Months",
+    "fee": "₹40,000 / year",
+    "feeRange": "₹3,000 - ₹4,000 / month",
+    "badge": "Board Special",
+    "board": "CBSE & TN State Board",
+    "description": "Comprehensive Board exam mastery. High-frequency numerical practice, ray diagram derivations, and step-by-step paper presentation blueprints.",
+    "features": [
+      "Light & Circuit Numerical Mastery",
+      "Carbon Reactions & Equations",
+      "Board Blueprint Mock Exams"
+    ]
+  },
+  {
+    "id": "foundations-class-11",
+    "wing": "foundations",
+    "wingLabel": "Foundations Wing",
+    "wingBadgeColor": "#1F4E79",
+    "title": "Class 11 Senior Science & Calculus Bridge",
+    "targetAudience": "Class 11 Students",
+    "duration": "12 Months",
+    "fee": "₹45,000 / year",
+    "feeRange": "₹3,500 - ₹4,500 / month",
+    "badge": "Most Popular",
+    "board": "CBSE & TN State Board",
+    "description": "Eradicates senior high school friction. Vectors, thermodynamics, calculus differentiation, and organic reaction pathways taught in clear visual steps.",
+    "features": [
+      "Vector Mechanics & Free-Body Diagrams",
+      "Organic IUPAC & Reaction Pathways",
+      "Differential Calculus & Limits"
+    ]
+  },
+  {
+    "id": "foundations-class-12",
+    "wing": "foundations",
+    "wingLabel": "Foundations Wing",
+    "wingBadgeColor": "#1F4E79",
+    "title": "Class 12 Board Cent-um Masterclass",
     "targetAudience": "Class 12 Students",
     "duration": "12 Months",
     "fee": "₹48,000 / year",
     "feeRange": "₹4,000 - ₹5,000 / month",
-    "badge": "High Success Rate",
-    "description": "Dual-focused program designed to maximize Class 12 Board exam percentages while intensively revising Class 11 & 12 NEET syllabus.",
+    "badge": "Cent-um Target",
+    "board": "CBSE & TN State Board",
+    "description": "The ultimate board examination milestone. Rigorous answer writing speed drills, full-length sample paper evaluations, and direct founder reviews.",
     "features": [
-      "Class 12 Board exam answer writing practice",
-      "Full Class 11 revision crash modules",
-      "50+ full-length NEET mock test series",
-      "Personalized mentor performance tracking"
+      "Electrodynamics & Optics Derivations",
+      "Electrochemistry & Named Reactions",
+      "Integral Calculus & 3D Geometry"
     ]
   },
   {
-    "id": "prog-3",
-    "title": "NEET Dropper / Repeater Intensive",
-    "targetAudience": "Class 12 Passed Students",
+    "id": "aspire-2year",
+    "wing": "aspire",
+    "wingLabel": "Aspire NEET Wing",
+    "wingBadgeColor": "#C6A75E",
+    "title": "2-Year Integrated NEET Masterclass",
+    "targetAudience": "Class 11 & 12",
+    "duration": "24 Months",
+    "fee": "₹55,000 / year",
+    "feeRange": "₹4,500 - ₹5,500 / month",
+    "badge": "Top Recommended",
+    "board": "NEET Medical Entrance",
+    "description": "Designed for Class 10 graduates stepping into Class 11. Establishes deep conceptual clarity in NCERT Biology and Physics derivations before speed drills.",
+    "features": [
+      "Line-by-Line NCERT Biology",
+      "Physics 45-Sec MCQ Shortcut Rules",
+      "30+ Full OMR Simulated Exams"
+    ]
+  },
+  {
+    "id": "aspire-1year",
+    "wing": "aspire",
+    "wingLabel": "Aspire NEET Wing",
+    "wingBadgeColor": "#C6A75E",
+    "title": "1-Year Fast-Track NEET Sprint",
+    "targetAudience": "Class 12 Students",
+    "duration": "12 Months",
+    "fee": "₹50,000 / year",
+    "feeRange": "₹4,000 - ₹5,000 / month",
+    "badge": "Dual Focus",
+    "board": "NEET + Board Dual Focus",
+    "description": "Dual-preparation strategy ensuring zero compromise on Class 12 Board marks while mastering high-yield NEET MCQs and formula matrices.",
+    "features": [
+      "High-Yield Chapter Priority",
+      "Physics Formula Matrix Sheets",
+      "Balanced Weekly Board & NEET Schedule"
+    ]
+  },
+  {
+    "id": "aspire-repeater",
+    "wing": "aspire",
+    "wingLabel": "Aspire NEET Wing",
+    "wingBadgeColor": "#C6A75E",
+    "title": "Intensive NEET Repeater Target 650+ Track",
+    "targetAudience": "Dropper / Repeater",
     "duration": "10 Months",
     "fee": "₹52,000 / batch",
     "feeRange": "₹4,500 - ₹5,500 / month",
-    "badge": "15% Early Bird Discount",
-    "description": "Rigorously paced batch designed for students dedicated to securing a top government medical college seat in their repeat attempt.",
+    "badge": "Target 650+",
+    "board": "NEET Medical Entrance",
+    "description": "Full-time intensive training for students taking a dedicated year to maximize their NEET score. Individual error analysis and intense daily practice.",
     "features": [
-      "6-hour daily intensive practice & problem-solving",
-      "Strict tracking of weak topic error notebooks",
-      "Direct 1-on-1 mentorship by senior faculty",
-      "Unlimited access to online video recordings & question banks"
+      "150+ Daily Solved MCQs",
+      "Custom Weakness Repair Micro-Classes",
+      "Weekly All-India Level Tests"
+    ]
+  },
+  {
+    "id": "launchpad-uiux",
+    "wing": "launchpad",
+    "wingLabel": "Launchpad Tech Wing",
+    "wingBadgeColor": "#35618d",
+    "title": "UI/UX Interface Design & Figma Prototyping",
+    "targetAudience": "Students & Beginners",
+    "duration": "3 Months",
+    "fee": "₹15,000 / course",
+    "feeRange": "₹5,000 / month",
+    "badge": "Digital Skill",
+    "board": "Digital Skills Certification",
+    "description": "Master modern visual design from low-fidelity wireframing to interactive high-fidelity prototypes using Figma. Learn spacing grids and layout systems.",
+    "features": [
+      "Typography & 8pt Grid Systems",
+      "Figma Components & Auto-Layout",
+      "Behance/LinkedIn Portfolio Project"
+    ]
+  },
+  {
+    "id": "launchpad-python",
+    "wing": "launchpad",
+    "wingLabel": "Launchpad Tech Wing",
+    "wingBadgeColor": "#35618d",
+    "title": "Python Programming & Algorithmic Logic",
+    "targetAudience": "Students & Beginners",
+    "duration": "3 Months",
+    "fee": "₹15,000 / course",
+    "feeRange": "₹5,000 / month",
+    "badge": "Coding Track",
+    "board": "Digital Skills Certification",
+    "description": "Coding taught as logical problem-solving rather than dry syntax memorization. Write real Python scripts to automate files, parse data, and build apps.",
+    "features": [
+      "Variables, Data Structures & Control Logic",
+      "CSV/JSON File Parsing Automation",
+      "GitHub Capstone Python Utility App"
+    ]
+  },
+  {
+    "id": "pathways-paper1",
+    "wing": "pathways",
+    "wingLabel": "Pathways TET Wing",
+    "wingBadgeColor": "#0E1F3B",
+    "title": "TET Paper I Mentoring (Classes 1–5 Primary Stage)",
+    "targetAudience": "Primary School Teachers",
+    "duration": "6 Months",
+    "fee": "₹18,000 / course",
+    "feeRange": "₹3,000 / month",
+    "badge": "Teacher Cert",
+    "board": "TN TRB TET Certification",
+    "description": "Tailored specifically for primary stage educators. Focuses heavily on Early Child Development & Pedagogy, foundational literacy, and EVS.",
+    "features": [
+      "Piaget & Vygotsky Early Child Psychology",
+      "Tamil/English Grammar & EVS Concepts",
+      "10-Year Solved PYQ Drills"
     ]
   }
 ]
