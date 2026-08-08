@@ -87,7 +87,7 @@ To exercise any of these rights, contact us at the details below.`,
       style={{
         backgroundColor: "var(--color-surface)",
         minHeight: "100vh",
-        paddingTop: "80px",
+        paddingTop: "120px",
       }}
     >
       {/* Hero */}

@@ -48,7 +48,7 @@ export default function LaunchpadPage() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Enquire About This Program →
+                Enquire on WhatsApp →
               </a>
             </div>
           </ScrollReveal>
@@ -120,7 +120,7 @@ export default function LaunchpadPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Enquire on WhatsApp
+              Enquire on WhatsApp →
             </a>
           </ScrollReveal>
         </div>

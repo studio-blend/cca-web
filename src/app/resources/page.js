@@ -68,6 +68,27 @@ export default function ResourcesPage() {
 
       {/* Interactive Resources Filter */}
       <ResourcesFilter resources={allResources} />
+
+      {/* CTA Section */}
+      <section className="section-py cta-section">
+        <div className="container cta-container">
+          <ScrollReveal>
+            <h2 className="font-display-lg cta-title">Need Custom Practice Worksheets?</h2>
+            <p className="cta-tamil">தெளிவான வழிகாட்டுதல். சிறந்த எதிர்காலம்.</p>
+            <p className="cta-desc font-body-lg">
+              Contact our academic mentors for tailored subject revision guides and past board exam solution banks.
+            </p>
+            <a
+              className="btn btn-gold"
+              href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20need%20custom%20study%20resources%20and%20worksheet%20packs."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Request Custom Packs on WhatsApp →
+            </a>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   );
 }

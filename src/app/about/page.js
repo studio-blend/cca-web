@@ -106,22 +106,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Collaboration Info */}
-      <section className="section-py" style={{ backgroundColor: "var(--color-surface-container-lowest)" }}>
-        <div className="container" style={{ maxWidth: "800px", textAlign: "center" }}>
+      {/* Collaboration & CTA Section */}
+      <section className="section-py cta-section">
+        <div className="container cta-container">
           <ScrollReveal>
-            <span className="hero-tagline font-label-lg">Collaborations</span>
-            <h2 className="font-headline-lg" style={{ color: "var(--color-primary-navy)", marginBottom: "16px" }}>Future Institutional Partnerships</h2>
-            <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)", marginBottom: "24px" }}>
-              We collaborate with schools, CSR bodies, and digital agencies to deliver custom coding workshops, NEET foundation camps, and pedagogic syllabus audits.
+            <span className="hero-tagline font-label-lg" style={{ color: "var(--color-brand-gold)" }}>Collaborations</span>
+            <h2 className="font-display-lg cta-title">Institutional Partnerships</h2>
+            <p className="cta-tamil">இணைந்து செயல்படுவோம். தெளிவான எதிர்காலம் படைப்போம்.</p>
+            <p className="cta-desc font-body-lg">
+              We collaborate with schools, CSR bodies, and institutions to deliver custom coding workshops, NEET foundation camps, and pedagogic syllabus audits.
             </p>
             <a
-              className="btn btn-primary"
+              className="btn btn-gold"
               href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20represent%20an%20institution%20and%20want%20to%20discuss%20collaborations."
               target="_blank"
               rel="noopener noreferrer"
             >
-              Partner with Us on WhatsApp
+              Partner with Us on WhatsApp →
             </a>
           </ScrollReveal>
         </div>

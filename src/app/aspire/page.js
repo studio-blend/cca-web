@@ -48,7 +48,7 @@ export default function AspirePage() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Enquire About This Program →
+                Enquire on WhatsApp →
               </a>
             </div>
           </ScrollReveal>
@@ -146,7 +146,7 @@ export default function AspirePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Reserve seat on WhatsApp
+              Enquire on WhatsApp →
             </a>
           </ScrollReveal>
         </div>

@@ -97,7 +97,7 @@ Last updated: June 2026.`,
       style={{
         backgroundColor: "var(--color-surface)",
         minHeight: "100vh",
-        paddingTop: "80px",
+        paddingTop: "120px",
       }}
     >
       {/* Hero */}

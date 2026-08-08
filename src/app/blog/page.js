@@ -86,6 +86,27 @@ export default function BlogListingPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="section-py cta-section">
+        <div className="container cta-container">
+          <ScrollReveal>
+            <h2 className="font-display-lg cta-title">Have Questions for Our Mentors?</h2>
+            <p className="cta-tamil">சரியான வழிகாட்டுதல். தெளிவான எதிர்காலம்.</p>
+            <p className="cta-desc font-body-lg">
+              Get personalized academic advice and concept resolution directly from lead educators.
+            </p>
+            <a
+              className="btn btn-gold"
+              href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20read%20your%20blog%20and%20have%20questions%20about%20your%20coaching."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask Lead Mentor on WhatsApp →
+            </a>
+          </ScrollReveal>
+        </div>
+      </section>
     </>
   );
 }

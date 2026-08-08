@@ -48,7 +48,7 @@ export default function FoundationsPage() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                Enquire About This Program →
+                Enquire on WhatsApp →
               </a>
             </div>
           </ScrollReveal>
@@ -155,7 +155,7 @@ export default function FoundationsPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Reserve Seat on WhatsApp
+              Enquire on WhatsApp →
             </a>
           </ScrollReveal>
         </div>
