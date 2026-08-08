@@ -46,7 +46,7 @@ export default function Header() {
             <div className="nav-dropdown">
               <button
                 className={`nav-link nav-dropdown-trigger ${
-                  isActive("/foundations") || isActive("/aspire") || isActive("/launchpad") || isActive("/pathways")
+                  isActive("/programs") || isActive("/foundations") || isActive("/aspire") || isActive("/launchpad") || isActive("/pathways")
                     ? "active"
                     : ""
                 }`}
@@ -59,6 +59,9 @@ export default function Header() {
                 </svg>
               </button>
               <div className="nav-dropdown-menu">
+                <Link href="/programs" className={`nav-dropdown-item ${isActive("/programs") ? "active" : ""}`} style={{ fontWeight: "700", borderBottom: "1px solid rgba(0,0,0,0.06)", paddingBottom: "8px", marginBottom: "4px", color: "var(--color-brand-gold)" }}>
+                  All Programs Overview →
+                </Link>
                 <Link href="/foundations" className={`nav-dropdown-item ${isActive("/foundations") ? "active" : ""}`}>
                   Foundations (Classes 9–12)
                 </Link>
@@ -130,6 +133,7 @@ export default function Header() {
           </svg>
         </button>
         <div style={{ display: mobileProgramsOpen ? "flex" : "none", flexDirection: "column", gap: "12px", backgroundColor: "rgba(14,31,59,0.03)", width: "100%", padding: "12px 0", alignItems: "center" }}>
+          <Link href="/programs" className="nav-link font-title-md" style={{ fontWeight: "700", color: "var(--color-brand-gold)" }} onClick={closeMenu}>All Programs Overview</Link>
           <Link href="/foundations" className="nav-link font-title-md" onClick={closeMenu}>Foundations</Link>
           <Link href="/aspire" className="nav-link font-title-md" onClick={closeMenu}>Aspire (NEET)</Link>
           <Link href="/launchpad" className="nav-link font-title-md" onClick={closeMenu}>Launchpad</Link>

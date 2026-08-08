@@ -4,6 +4,7 @@ export default async function sitemap() {
   // Static routes
   const routes = [
     "",
+    "/programs",
     "/foundations",
     "/aspire",
     "/launchpad",
