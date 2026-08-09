@@ -126,7 +126,7 @@ export default function Header() {
               {/* Desktop Programs Dropdown */}
               <div className="nav-dropdown-wrapper">
                 <Link
-                  href="/#programs"
+                  href="/programs"
                   className={`nav-link nav-dropdown-trigger ${
                     pathname === "/foundations" || pathname === "/aspire" || pathname === "/launchpad" || pathname === "/pathways" || pathname === "/programs" ? "active" : ""
                   }`}
