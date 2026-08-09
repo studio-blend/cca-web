@@ -1,7 +1,7 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import BannerSlideshow from "@/components/BannerSlideshow/BannerSlideshow";
 import { getUpcomingEventDates } from "@/lib/events";
-import { getAllEvents, getAllTestimonials } from "@/lib/cms";
+import { getAllEvents, getAllTestimonials, getActiveBanners } from "@/lib/cms";
 
 export const metadata = {
   title: "CCA Hub - Bulletin & Gallery | Crystal Clear Academy",
@@ -15,6 +15,7 @@ export default function HubPage() {
   const eventDates = getUpcomingEventDates();
   const cmsEvents = getAllEvents();
   const cmsTestimonials = getAllTestimonials();
+  const activeBanners = getActiveBanners();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -140,7 +141,7 @@ export default function HubPage() {
       </section>
 
       {/* Marketing Banners Slideshow */}
-      <BannerSlideshow />
+      <BannerSlideshow initialBanners={activeBanners} />
 
       {/* Live Bulletin Board */}
       <section className="section-py" style={{ backgroundColor: "var(--color-surface-container-low)" }}>

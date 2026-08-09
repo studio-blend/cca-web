@@ -7,12 +7,13 @@ import SyllabusForm from "@/components/SyllabusForm/SyllabusForm";
 import BannerSlideshow from "@/components/BannerSlideshow/BannerSlideshow";
 import PricingSection from "@/components/PricingSection/PricingSection";
 import { getUpcomingEventDates } from "@/lib/events";
-import { getFeaturedWings, getSiteSettings, getAllPrograms } from "@/lib/cms";
+import { getFeaturedWings, getSiteSettings, getAllPrograms, getActiveBanners } from "@/lib/cms";
 
 export default function Home() {
   const wings = getFeaturedWings();
   const settings = getSiteSettings();
   const allPrograms = getAllPrograms();
+  const activeBanners = getActiveBanners();
   const whatsappNumber = settings.whatsappPhone || "919841644813";
 
   // Build Ecosystem tabs dynamically from wings
@@ -530,7 +531,7 @@ export default function Home() {
       </section>
 
       {/* Marketing Banners Slideshow */}
-      <BannerSlideshow />
+      <BannerSlideshow initialBanners={activeBanners} />
 
       {/* Programs Section */}
       <section className="section-py" id="programs">
