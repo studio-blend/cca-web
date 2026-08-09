@@ -1,4 +1,5 @@
 import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
+import BannerSlideshow from "@/components/BannerSlideshow/BannerSlideshow";
 import { getUpcomingEventDates } from "@/lib/events";
 import { getAllEvents, getAllTestimonials } from "@/lib/cms";
 
@@ -137,6 +138,9 @@ export default function HubPage() {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Marketing Banners Slideshow */}
+      <BannerSlideshow />
 
       {/* Live Bulletin Board */}
       <section className="section-py" style={{ backgroundColor: "var(--color-surface-container-low)" }}>
