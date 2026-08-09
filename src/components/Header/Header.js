@@ -142,11 +142,18 @@ export default function Header() {
                 Bulletin &amp; Gallery
               </Link>
               <a
+                href="tel:+919841644813"
+                className="btn btn-secondary font-label-md"
+                style={{ padding: "8px 14px", marginLeft: "8px" }}
+              >
+                📞 Call: 9841644813
+              </a>
+              <a
                 href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20chat%20with%20the%20Lead%20Mentor%20and%20begin%20my%20clarity%20journey."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold font-label-md"
-                style={{ padding: "8px 16px", marginLeft: "10px" }}
+                style={{ padding: "8px 16px", marginLeft: "6px" }}
               >
                 WhatsApp Us
               </a>

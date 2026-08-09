@@ -457,7 +457,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* 3-Step Concept-Clarity Method Section */}
+      <section className="section-py" style={{ backgroundColor: "var(--color-surface-container-lowest)", borderTop: "1px solid rgba(31,78,121,0.06)", borderBottom: "1px solid rgba(31,78,121,0.06)" }}>
+        <div className="container">
+          <ScrollReveal className="section-title-wrap">
+            <span className="hero-tagline font-label-lg">The CCA Blueprint</span>
+            <h2 className="font-headline-lg">Our 3-Step Concept-Clarity Method</h2>
+            <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)", maxWidth: "600px", margin: "12px auto 0 auto" }}>
+              How we transform struggling students into confident board toppers and NEET qualifiers.
+            </p>
+            <div className="gold-divider"></div>
+          </ScrollReveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px", marginTop: "32px" }}>
+            <ScrollReveal className="pricing-card" style={{ padding: "32px", position: "relative" }}>
+              <div style={{ fontSize: "14px", fontWeight: "800", color: "var(--color-brand-gold)", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "12px" }}>
+                Step 01
+              </div>
+              <h3 className="font-title-lg" style={{ color: "var(--color-primary-navy)", marginBottom: "12px" }}>
+                Diagnostic Gap Audit
+              </h3>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", lineHeight: 1.6 }}>
+                We pinpoint exact conceptual blindspots in Physics, Chemistry, and Maths rather than treating symptoms with passive lectures.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal className="pricing-card" style={{ padding: "32px", position: "relative", borderTop: "3px solid var(--color-brand-gold)" }}>
+              <div style={{ fontSize: "14px", fontWeight: "800", color: "var(--color-brand-gold)", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "12px" }}>
+                Step 02
+              </div>
+              <h3 className="font-title-lg" style={{ color: "var(--color-primary-navy)", marginBottom: "12px" }}>
+                Visual Node Mapping
+              </h3>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", lineHeight: 1.6 }}>
+                Students learn first-principles visual derivations and concept maps so formulas become logical extensions, not rote memory loops.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal className="pricing-card" style={{ padding: "32px", position: "relative" }}>
+              <div style={{ fontSize: "14px", fontWeight: "800", color: "var(--color-brand-gold)", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "12px" }}>
+                Step 03
+              </div>
+              <h3 className="font-title-lg" style={{ color: "var(--color-primary-navy)", marginBottom: "12px" }}>
+                High-Speed Exam Simulation
+              </h3>
+              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", lineHeight: 1.6 }}>
+                Weekly timed OMR mock tests and CBSE/State Board answer-writing drills build real exam temperament under real conditions.
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section (Asymmetric Spotlight Wireframe) */}
       <section className="section-py" id="testimonials">
         <div className="container">
           <ScrollReveal className="section-title-wrap">
@@ -466,66 +518,55 @@ export default function Home() {
             <div className="gold-divider"></div>
           </ScrollReveal>
           
-          <div className="testimonials-grid">
-            <ScrollReveal className="testimonial-card">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "24px", marginTop: "32px" }}>
+            {/* Featured Left Spotlight Card */}
+            <ScrollReveal className="testimonial-card" style={{ backgroundColor: "var(--color-primary-navy)", color: "#ffffff", padding: "40px", display: "flex", flexDirection: "column", justifyContent: "space-between", border: "1px solid var(--color-brand-gold)" }}>
               <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
+                <div style={{ color: "var(--color-brand-gold)", fontSize: "12px", fontWeight: "800", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "16px" }}>
+                  ★ Featured Parent Story
                 </div>
-                <p className="testimonial-text">{"\"My daughter was terrified of Class 10 Physics numericals and scoring under 60%. Revathy Ma'am's 1-on-1 concept maps completely turned her confidence around. She scored 96% in her board exams!\""}</p>
+                <p className="testimonial-text" style={{ fontSize: "18px", color: "rgba(255,255,255,0.95)", lineHeight: 1.7, fontStyle: "italic", marginBottom: "24px" }}>
+                  {"\"My daughter was terrified of Class 10 Physics numericals and scoring under 60%. Revathy Ma'am's 1-on-1 concept maps completely turned her confidence around. She scored 96% in her board exams!\""}
+                </p>
               </div>
-              <div>
-                <div className="testimonial-author-name">Mrs. Rajalakshmi</div>
-                <div className="testimonial-author-desc">Parent of Class 10 Board Topper</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal className="testimonial-card">
-              <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
-                </div>
-                <p className="testimonial-text">{"\"I used to waste hours memorizing NEET Biology chapters without understanding the connections. CCA's visual node mapping made complex genetics and physiology simple. I scored 680/720 in NEET!\""}</p>
-              </div>
-              <div>
-                <div className="testimonial-author-name">Adhithya Kumar</div>
-                <div className="testimonial-author-desc">NEET Qualifier — 680/720</div>
-              </div>
-            </ScrollReveal>
-            
-            <ScrollReveal className="testimonial-card">
-              <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
-                </div>
-                <p className="testimonial-text">{"\"What I value most as a parent is the direct access to the lead educator and weekly progress tracking. Online classes were engaging with zero screen fatigue for my son.\""}</p>
-              </div>
-              <div>
-                <div className="testimonial-author-name">Dr. Arulmani</div>
-                <div className="testimonial-author-desc">Parent of Class 12 Science Student</div>
+              <div style={{ borderTop: "1px solid rgba(198,167,94,0.3)", paddingTop: "16px" }}>
+                <div className="testimonial-author-name" style={{ color: "var(--color-brand-gold)", fontSize: "18px" }}>Mrs. Rajalakshmi</div>
+                <div className="testimonial-author-desc" style={{ color: "rgba(255,255,255,0.7)" }}>Parent of Class 10 Board Topper</div>
               </div>
             </ScrollReveal>
 
-            <ScrollReveal className="testimonial-card">
-              <div>
-                <div className="stars-container">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                  ))}
+            {/* Right Stack Cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <ScrollReveal className="testimonial-card">
+                <div>
+                  <div className="stars-container">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    ))}
+                  </div>
+                  <p className="testimonial-text">{"\"I used to waste hours memorizing NEET Biology chapters without understanding the connections. CCA's visual node mapping made complex genetics and physiology simple. I scored 680/720 in NEET!\""}</p>
                 </div>
-                <p className="testimonial-text">{"\"I was struggling with organic chemistry mechanisms. Within 3 weeks at CCA, the step-by-step logic clicked. The quick WhatsApp mentor doubt support gave me huge confidence during revision!\""}</p>
-              </div>
-              <div>
-                <div className="testimonial-author-name">Priya S.</div>
-                <div className="testimonial-author-desc">CBSE Class 12 — 95% Scorer</div>
-              </div>
-            </ScrollReveal>
+                <div>
+                  <div className="testimonial-author-name">Adhithya Kumar</div>
+                  <div className="testimonial-author-desc">NEET Qualifier — 680/720</div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal className="testimonial-card">
+                <div>
+                  <div className="stars-container">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    ))}
+                  </div>
+                  <p className="testimonial-text">{"\"What I value most as a parent is the direct access to the lead educator and weekly progress tracking. Online classes were engaging with zero screen fatigue for my son.\""}</p>
+                </div>
+                <div>
+                  <div className="testimonial-author-name">Dr. Arulmani</div>
+                  <div className="testimonial-author-desc">Parent of Class 12 Science Student</div>
+                </div>
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
