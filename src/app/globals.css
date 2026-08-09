@@ -2564,3 +2564,22 @@ img {
     background-color: #e5c373 !important;
     box-shadow: 0 6px 20px rgba(198, 167, 94, 0.7) !important;
 }
+
+/* Utility Bar & Mobile Sticky Bar Responsive Styles */
+@media (min-width: 769px) {
+    .mobile-sticky-bar {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-bottom: 60px;
+    }
+    .utility-bar {
+        justify-content: center !important;
+        text-align: center;
+        padding: 6px 12px !important;
+    }
+}
+
