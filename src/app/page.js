@@ -82,7 +82,7 @@ export default function Home() {
               padding: "10px 20px"
             }}
           >
-            {wing.exploreButtonText || `Explore ${wing.wingLabel} â†’`}
+            {wing.exploreButtonText || `Explore ${wing.wingLabel} →`}
           </Link>
         </div>
 
@@ -180,7 +180,7 @@ export default function Home() {
     },
     {
       question: "Do you offer online classes?",
-      answer: "We specialize in Live Interactive Online Coaching â€” offering focused 1-on-1 personal teaching for your child as well as premium small-batch sessions. Classes are accessible from anywhere in Tamil Nadu, India, or abroad without location limits."
+      answer: "We specialize in Live Interactive Online Coaching — offering focused 1-on-1 personal teaching for your child as well as premium small-batch sessions. Classes are accessible from anywhere in Tamil Nadu, India, or abroad without location limits."
     },
     {
       question: "What are the fee payment options?",
@@ -238,26 +238,26 @@ export default function Home() {
       <section className="hero-section">
         <div className="container hero-grid">
           <ScrollReveal className="hero-content">
-            <span className="hero-tagline font-label-lg">Premium Online Coaching Â· Thiruninravur HQ</span>
+            <span className="hero-tagline font-label-lg">Premium Online Coaching · Thiruninravur HQ</span>
             <div className="urgency-badge" style={{ marginTop: "4px" }}>
               <span className="urgency-dot"></span>
-              <span>NEET Founder&apos;s Batch: Only 8 seats left</span>
+              <span>NEET Founder's Batch: Only 8 seats left</span>
             </div>
             <h1 className="hero-title font-display-lg">
               Where Excellence Begins with <span className="text-glow-gold">Clarity</span>
             </h1>
-            <p className="hero-tamil">à®¤à¯†à®³à®¿à®µà¯‡ à®µà¯†à®±à¯à®±à®¿à®¯à®¿à®©à¯ à®¤à¯Šà®Ÿà®•à¯à®•à®®à¯</p>
+            <p className="hero-tamil">தெளிவே வெற்றியின் தொடக்கம்</p>
             <p className="hero-description font-body-lg">
-              Led by 18+ years of teaching excellence. Custom courses structured for Classes 9â€“12 Board Exams, NEET mastery, and future-focused digital competencies.
+              Led by 18+ years of teaching excellence. Custom courses structured for Classes 9–12 Board Exams, NEET mastery, and future-focused digital competencies.
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "4px" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
                 <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Online 1-on-1 &amp; Small Batches Â· Worldwide Reach
+                Online 1-on-1 & Small Batches · Worldwide Reach
               </span>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
                 <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-                Online doubt support Â· 4â€“6 hr response
+                Online doubt support · 4–6 hr response
               </span>
             </div>
             <LeadForm defaultGoal="foundations" />
@@ -340,12 +340,12 @@ export default function Home() {
             <div className="stat-item">
               <span className="stat-number">1,200+</span>
               <span className="stat-label">Students Mentored</span>
-              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Founder&apos;s Career</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Founder's Career</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">98%</span>
               <span className="stat-label">Board Pass Rate</span>
-              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Founder&apos;s Track Record</span>
+              <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", marginTop: "2px" }}>Founder's Track Record</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">10+ Yrs</span>
@@ -361,7 +361,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Govt School â†’ NEET Callout Banner */}
+      {/* Govt School → NEET Callout Banner */}
       <section style={{ backgroundColor: "var(--color-primary-navy)", padding: "0" }}>
         <div className="container" style={{ padding: "20px var(--spacing-lg)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", justifyContent: "space-between" }}>
@@ -370,9 +370,9 @@ export default function Home() {
                 <svg style={{ width: "26px", height: "26px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
               </div>
               <div>
-                <p style={{ margin: "0 0 4px 0", fontSize: "18px", fontWeight: "700", color: "var(--color-brand-gold)", lineHeight: 1.2 }}>Government School â†’ Medical College</p>
+                <p style={{ margin: "0 0 4px 0", fontSize: "18px", fontWeight: "700", color: "var(--color-brand-gold)", lineHeight: 1.2 }}>Government School → Medical College</p>
                 <p style={{ margin: 0, fontSize: "14px", color: "rgba(255,255,255,0.85)", lineHeight: 1.5, maxWidth: "600px" }}>
-                  CCA students from Tamil Nadu government schools have qualified NEET and secured MBBS/BDS seats under the 7.5% reservation â€” proof that the right mentorship levels every playing field.
+                  CCA students from Tamil Nadu government schools have qualified NEET and secured MBBS/BDS seats under the 7.5% reservation — proof that the right mentorship levels every playing field.
                 </p>
               </div>
             </div>
@@ -401,11 +401,11 @@ export default function Home() {
                 </div>
                 <div style={{ textAlign: "center" }}>
                   <div className="founder-name" style={{ fontSize: "20px" }}>Revathy M.</div>
-                  <div className="founder-role">Lead Educator &amp; Founder</div>
+                  <div className="founder-role">Lead Educator & Founder</div>
                 </div>
               </div>
               <div>
-                <span className="quote-icon" style={{ position: "static", display: "block", marginBottom: "8px" }}>â€œ</span>
+                <span className="quote-icon" style={{ position: "static", display: "block", marginBottom: "8px" }}>“</span>
                 <p className="founder-quote-text" style={{ fontSize: "20px", marginBottom: 0 }}>
                   {"True education isn't about memorizing facts; it's about lighting a fire of curiosity through structured clarity."}
                 </p>
@@ -488,7 +488,7 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations â€” things that seemed impossible â€” became second nature. I cracked NEET in my first attempt.\""}</p>
+                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations — things that seemed impossible — became second nature. I cracked NEET in my first attempt.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Adhithya Kumar</div>
@@ -518,11 +518,11 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"I was struggling with Physics derivations for months. After just 3 sessions at CCA, I finally understood the logic behind them â€” not just the formula. The WhatsApp doubt support is also super fast, always replied within a few hours.\""}</p>
+                <p className="testimonial-text">{"\"I was struggling with Physics derivations for months. After just 3 sessions at CCA, I finally understood the logic behind them — not just the formula. The WhatsApp doubt support is also super fast, always replied within a few hours.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Priya S.</div>
-                <div className="testimonial-author-desc">Class 12 Student Â· CCA Aspire Batch</div>
+                <div className="testimonial-author-desc">Class 12 Student · CCA Aspire Batch</div>
               </div>
             </ScrollReveal>
           </div>
@@ -566,7 +566,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>1. Conceptual Clarity</h4>
-              <p>Every topic is taught root-up â€” visual concept maps for Biology, step-by-step derivations for Physics, model-based reasoning for Chemistry. No rote learning, only understanding that sticks.</p>
+              <p>Every topic is taught root-up — visual concept maps for Biology, step-by-step derivations for Physics, model-based reasoning for Chemistry. No rote learning, only understanding that sticks.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -576,7 +576,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>2. Concrete Foundations</h4>
-              <p>Daily practice sheets calibrated to board and NEET difficulty levels, plus weekly diagnostic assessments. Each student receives a personalised roadmap after the first session â€” not after enrollment.</p>
+              <p>Daily practice sheets calibrated to board and NEET difficulty levels, plus weekly diagnostic assessments. Each student receives a personalised roadmap after the first session — not after enrollment.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -586,7 +586,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>3. Small-Batch Mentorship</h4>
-              <p>Maximum 15 students per batch â€” every face known, every gap tracked. Students have direct WhatsApp access to mentors: every doubt answered within 4â€“6 hours, even between sessions.</p>
+              <p>Maximum 15 students per batch — every face known, every gap tracked. Students have direct WhatsApp access to mentors: every doubt answered within 4–6 hours, even between sessions.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -596,7 +596,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>4. Outcome-Driven Excellence</h4>
-              <p>Target scores are set on Day 1, tracked weekly. Monthly progress reports shared with parents. Merit milestones celebrated â€” because accountability without recognition doesn't build confidence.</p>
+              <p>Target scores are set on Day 1, tracked weekly. Monthly progress reports shared with parents. Merit milestones celebrated — because accountability without recognition doesn't build confidence.</p>
             </ScrollReveal>
           </div>
         </div>
@@ -663,7 +663,7 @@ export default function Home() {
               <div className="event-body">
                 <span className="event-tag">Board Strategy</span>
                 <h4 className="event-title">Class 10 Board Prep Webinar</h4>
-                <p className="event-desc">Visual concept maps and revision frameworks to maximize board exam scores. Online â€” attend from home.</p>
+                <p className="event-desc">Visual concept maps and revision frameworks to maximize board exam scores. Online — attend from home.</p>
                 <div className="event-footer">
                   <span className="event-time">{eventDates.boardWebinarDate}</span>
                   <a
@@ -687,7 +687,7 @@ export default function Home() {
               <div className="event-body">
                 <span className="event-tag">Batch Launch</span>
                 <h4 className="event-title">{eventDates.batchMonthName} Admissions Open</h4>
-                <p className="event-desc">New high-focus batches (max 15 students) begin {eventDates.batchStartDate}. Seats fill fast â€” register now to secure direct mentor access.</p>
+                <p className="event-desc">New high-focus batches (max 15 students) begin {eventDates.batchStartDate}. Seats fill fast — register now to secure direct mentor access.</p>
                 <div className="event-footer">
                   <span className="event-time">{eventDates.batchStartDate}</span>
                   <a
@@ -712,7 +712,7 @@ export default function Home() {
             <h2 className="font-display-lg cta-title">
               Ready to Begin with <span style={{ color: "var(--color-brand-gold)" }}>Clarity?</span>
             </h2>
-            <p className="cta-tamil">à®šà®°à®¿à®¯à®¾à®© à®µà®´à®¿à®•à®¾à®Ÿà¯à®Ÿà¯à®¤à®²à¯. à®¤à¯†à®³à®¿à®µà®¾à®© à®Žà®¤à®¿à®°à¯à®•à®¾à®²à®®à¯.</p>
+            <p className="cta-tamil">சரியான வழிகாட்டுதல். தெளிவான எதிர்காலம்.</p>
             <p className="cta-desc font-body-lg">
               Get direct access to standard board prep, elite NEET coaching, and job-ready future digital skillsets.
             </p>
