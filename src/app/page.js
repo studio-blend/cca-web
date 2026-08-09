@@ -474,11 +474,11 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"The personalized attention at CCA is unmatched. Every student's learning gaps are identified and resolved, making my child feel confident and fully supported.\""}</p>
+                <p className="testimonial-text">{"\"My daughter was terrified of Class 10 Physics numericals and scoring under 60%. Revathy Ma'am's 1-on-1 concept maps completely turned her confidence around. She scored 96% in her board exams!\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Mrs. Rajalakshmi</div>
-                <div className="testimonial-author-desc">Parent of Class 10 Student</div>
+                <div className="testimonial-author-desc">Parent of Class 10 Board Topper</div>
               </div>
             </ScrollReveal>
             
@@ -489,11 +489,11 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations — things that seemed impossible — became second nature. I cracked NEET in my first attempt.\""}</p>
+                <p className="testimonial-text">{"\"I used to waste hours memorizing NEET Biology chapters without understanding the connections. CCA's visual node mapping made complex genetics and physiology simple. I scored 680/720 in NEET!\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Adhithya Kumar</div>
-                <div className="testimonial-author-desc">NEET Qualifier 2023</div>
+                <div className="testimonial-author-desc">NEET Qualifier — 680/720</div>
               </div>
             </ScrollReveal>
             
@@ -504,11 +504,11 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"The guidance here is not just about lectures; it's a mentorship that goes beyond classroom hours. The support system has helped my child excel academically and personally.\""}</p>
+                <p className="testimonial-text">{"\"What I value most as a parent is the direct access to the lead educator and weekly progress tracking. Online classes were engaging with zero screen fatigue for my son.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Dr. Arulmani</div>
-                <div className="testimonial-author-desc">Parent of Class 12 Student</div>
+                <div className="testimonial-author-desc">Parent of Class 12 Science Student</div>
               </div>
             </ScrollReveal>
 
@@ -519,11 +519,11 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"I was struggling with Physics derivations for months. After just 3 sessions at CCA, I finally understood the logic behind them — not just the formula. The WhatsApp doubt support is also super fast, always replied within a few hours.\""}</p>
+                <p className="testimonial-text">{"\"I was struggling with organic chemistry mechanisms. Within 3 weeks at CCA, the step-by-step logic clicked. The quick WhatsApp mentor doubt support gave me huge confidence during revision!\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Priya S.</div>
-                <div className="testimonial-author-desc">Class 12 Student · CCA Aspire Batch</div>
+                <div className="testimonial-author-desc">CBSE Class 12 — 95% Scorer</div>
               </div>
             </ScrollReveal>
           </div>
