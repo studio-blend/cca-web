@@ -5,12 +5,14 @@ import TabSwitcher from "@/components/TabSwitcher/TabSwitcher";
 import FAQAccordion from "@/components/FAQAccordion/FAQAccordion";
 import SyllabusForm from "@/components/SyllabusForm/SyllabusForm";
 import BannerSlideshow from "@/components/BannerSlideshow/BannerSlideshow";
+import PricingSection from "@/components/PricingSection/PricingSection";
 import { getUpcomingEventDates } from "@/lib/events";
-import { getFeaturedWings, getSiteSettings } from "@/lib/cms";
+import { getFeaturedWings, getSiteSettings, getAllPrograms } from "@/lib/cms";
 
 export default function Home() {
   const wings = getFeaturedWings();
   const settings = getSiteSettings();
+  const allPrograms = getAllPrograms();
   const whatsappNumber = settings.whatsappPhone || "919841644813";
 
   // Build Ecosystem tabs dynamically from wings
@@ -600,21 +602,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="section-py fees-section" id="fees">
-        <div className="container">
-          <ScrollReveal className="section-title-wrap">
-            <span className="hero-tagline font-label-lg" style={{ color: "var(--color-on-primary-container)" }}>Transparent Pricing</span>
-            <h2>Fees &amp; Pricing</h2>
-            <p>{"Founder's Batches â€” Early registrations receive an immediate 10% waiver"}</p>
-            <div className="gold-divider" style={{ marginTop: "16px" }}></div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <TabSwitcher tabs={tuitionFeeTabs} gridLayout={false} defaultTabId="aspire" />
-          </ScrollReveal>
-        </div>
-      </section>
+      {/* Pricing Section with Online/Offline Mode Switcher */}
+      <PricingSection programs={allPrograms} whatsappNumber={whatsappNumber} />
 
       {/* FAQ Section */}
       <section className="section-py faq-section" id="faqs">

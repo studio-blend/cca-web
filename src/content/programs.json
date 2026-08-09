@@ -1,192 +1,201 @@
 [
   {
-    "id": "foundations-class-9",
+    "id": "foundations-class-9-10",
     "wing": "foundations",
-    "wingLabel": "Foundations Wing",
-    "wingBadgeColor": "#1F4E79",
-    "title": "Class 9 Foundation & Core Science",
-    "targetAudience": "Class 9 Students",
-    "duration": "12 Months",
-    "fee": "₹36,000 / year",
-    "feeRange": "₹2,500 - ₹3,500 / month",
-    "badge": "Core Foundation",
+    "wingLabel": "CCA Foundations",
+    "title": "Class 9 & 10 Science + Maths Foundation",
+    "targetAudience": "Class 9 & 10 Students",
     "board": "CBSE & TN State Board",
-    "description": "Bridge from middle school to high school. Focuses on first-principles mental models in Physics laws, Chemical nomenclature, and Algebraic foundations.",
+    "duration": "12 Months",
+    "description": "Build strong fundamentals in Science and Mathematics so you solve exam problems naturally instead of memorizing steps.",
     "features": [
       "Visual Physics Experiments",
       "Atomic Structure Chemistry",
       "Euclidean & Algebraic Maths"
+    ],
+    "featuredOnHomepage": true,
+    "whatsappMessage": "Hi CCA, I am interested in the Science + Maths Foundation for Class 9-10.",
+    "pricingTiers": [
+      {
+        "id": "f910-tier-1",
+        "tierName": "Standard Batch",
+        "format": "Small Group · 8 sessions/month",
+        "description": "Science & Maths conceptual coaching with weekly diagnostic assessments.",
+        "onlinePrice": "₹1,500",
+        "onlinePriceSuffix": "–₹2,000/month",
+        "offlinePrice": "₹2,000",
+        "offlinePriceSuffix": "–₹2,500/month",
+        "badge": "",
+        "featured": false,
+        "whatsappMessage": "Hi CCA, I am enquiring about Foundations fees for Class 9-10."
+      }
     ]
   },
   {
-    "id": "foundations-class-10",
+    "id": "foundations-class-11-12",
     "wing": "foundations",
-    "wingLabel": "Foundations Wing",
-    "wingBadgeColor": "#1F4E79",
-    "title": "Class 10 Board Excellence & Science Intensive",
-    "targetAudience": "Class 10 Students",
-    "duration": "12 Months",
-    "fee": "₹40,000 / year",
-    "feeRange": "₹3,000 - ₹4,000 / month",
-    "badge": "Board Special",
+    "wingLabel": "CCA Foundations",
+    "title": "Class 11 & 12 Senior Secondary Science",
+    "targetAudience": "Class 11 & 12 Students",
     "board": "CBSE & TN State Board",
-    "description": "Comprehensive Board exam mastery. High-frequency numerical practice, ray diagram derivations, and step-by-step paper presentation blueprints.",
-    "features": [
-      "Light & Circuit Numerical Mastery",
-      "Carbon Reactions & Equations",
-      "Board Blueprint Mock Exams"
-    ]
-  },
-  {
-    "id": "foundations-class-11",
-    "wing": "foundations",
-    "wingLabel": "Foundations Wing",
-    "wingBadgeColor": "#1F4E79",
-    "title": "Class 11 Senior Science & Calculus Bridge",
-    "targetAudience": "Class 11 Students",
     "duration": "12 Months",
-    "fee": "₹45,000 / year",
-    "feeRange": "₹3,500 - ₹4,500 / month",
-    "badge": "Most Popular",
-    "board": "CBSE & TN State Board",
-    "description": "Eradicates senior high school friction. Vectors, thermodynamics, calculus differentiation, and organic reaction pathways taught in clear visual steps.",
+    "description": "Rigorous concept coaching in Physics, Chemistry, Biology, and Mathematics to maximize school board performance.",
     "features": [
       "Vector Mechanics & Free-Body Diagrams",
       "Organic IUPAC & Reaction Pathways",
-      "Differential Calculus & Limits"
+      "Differential & Integral Calculus"
+    ],
+    "featuredOnHomepage": true,
+    "whatsappMessage": "Hi CCA, I am interested in Senior Secondary Science for Class 11-12.",
+    "pricingTiers": [
+      {
+        "id": "f1112-tier-1",
+        "tierName": "Senior Secondary Batch",
+        "format": "Group · 10 sessions/month",
+        "description": "Physics, Chemistry, Biology & Mathematics dual-board coaching.",
+        "onlinePrice": "₹2,000",
+        "onlinePriceSuffix": "–₹3,000/month",
+        "offlinePrice": "₹2,500",
+        "offlinePriceSuffix": "–₹3,500/month",
+        "badge": "",
+        "featured": false,
+        "whatsappMessage": "Hi CCA, I am enquiring about Foundations fees for Class 11-12."
+      }
     ]
   },
   {
-    "id": "foundations-class-12",
-    "wing": "foundations",
-    "wingLabel": "Foundations Wing",
-    "wingBadgeColor": "#1F4E79",
-    "title": "Class 12 Board Cent-um Masterclass",
-    "targetAudience": "Class 12 Students",
-    "duration": "12 Months",
-    "fee": "₹48,000 / year",
-    "feeRange": "₹4,000 - ₹5,000 / month",
-    "badge": "Cent-um Target",
-    "board": "CBSE & TN State Board",
-    "description": "The ultimate board examination milestone. Rigorous answer writing speed drills, full-length sample paper evaluations, and direct founder reviews.",
-    "features": [
-      "Electrodynamics & Optics Derivations",
-      "Electrochemistry & Named Reactions",
-      "Integral Calculus & 3D Geometry"
-    ]
-  },
-  {
-    "id": "aspire-2year",
+    "id": "aspire-neet-integrated",
     "wing": "aspire",
-    "wingLabel": "Aspire NEET Wing",
-    "wingBadgeColor": "#C6A75E",
-    "title": "2-Year Integrated NEET Masterclass",
-    "targetAudience": "Class 11 & 12",
-    "duration": "24 Months",
-    "fee": "₹55,000 / year",
-    "feeRange": "₹4,500 - ₹5,500 / month",
-    "badge": "Top Recommended",
+    "wingLabel": "CCA Aspire",
+    "title": "Class 11 & 12 Integrated NEET Coaching",
+    "targetAudience": "Class 11 & 12 Students",
     "board": "NEET Medical Entrance",
-    "description": "Designed for Class 10 graduates stepping into Class 11. Establishes deep conceptual clarity in NCERT Biology and Physics derivations before speed drills.",
+    "duration": "24 Months",
+    "description": "Dual-focus conceptual masterclasses covering school board syllabus while simultaneously mastering advanced NEET entrance requirements.",
     "features": [
       "Line-by-Line NCERT Biology",
       "Physics 45-Sec MCQ Shortcut Rules",
       "30+ Full OMR Simulated Exams"
+    ],
+    "featuredOnHomepage": true,
+    "whatsappMessage": "Hi CCA, I am interested in Integrated NEET Coaching for Class 11-12.",
+    "pricingTiers": [
+      {
+        "id": "aspire-tier-weekend",
+        "tierName": "Weekend Batch",
+        "format": "Group · 8 sessions/month",
+        "description": "Comprehensive weekend coaching for NEET preparation with expert group classes.",
+        "onlinePrice": "₹2,500",
+        "onlinePriceSuffix": "/month",
+        "offlinePrice": "₹3,500",
+        "offlinePriceSuffix": "/month",
+        "badge": "",
+        "featured": false,
+        "whatsappMessage": "Hi CCA, I am interested in the NEET Weekend Batch."
+      },
+      {
+        "id": "aspire-tier-personal",
+        "tierName": "Personal Track",
+        "format": "1-on-1 · 12 sessions/month",
+        "description": "Premium 1-on-1 personalized tutoring program for high-focus NEET mentoring.",
+        "onlinePrice": "₹7,500",
+        "onlinePriceSuffix": "/month",
+        "offlinePrice": "₹9,500",
+        "offlinePriceSuffix": "/month",
+        "badge": "Only 8 seats — limited availability",
+        "featured": true,
+        "whatsappMessage": "Hi CCA, I want to secure a spot in the NEET Personal Track."
+      },
+      {
+        "id": "aspire-tier-combo",
+        "tierName": "Combo Track",
+        "format": "Personal + Batch · 20 sessions/month",
+        "description": "Get the best of both worlds: group interactive batches plus private individual review.",
+        "onlinePrice": "₹9,000",
+        "onlinePriceSuffix": "/month",
+        "offlinePrice": "₹11,500",
+        "offlinePriceSuffix": "/month",
+        "badge": "",
+        "featured": false,
+        "whatsappMessage": "Hi CCA, I am interested in the NEET Combo program."
+      }
     ]
   },
   {
-    "id": "aspire-1year",
-    "wing": "aspire",
-    "wingLabel": "Aspire NEET Wing",
-    "wingBadgeColor": "#C6A75E",
-    "title": "1-Year Fast-Track NEET Sprint",
-    "targetAudience": "Class 12 Students",
-    "duration": "12 Months",
-    "fee": "₹50,000 / year",
-    "feeRange": "₹4,000 - ₹5,000 / month",
-    "badge": "Dual Focus",
-    "board": "NEET + Board Dual Focus",
-    "description": "Dual-preparation strategy ensuring zero compromise on Class 12 Board marks while mastering high-yield NEET MCQs and formula matrices.",
-    "features": [
-      "High-Yield Chapter Priority",
-      "Physics Formula Matrix Sheets",
-      "Balanced Weekly Board & NEET Schedule"
-    ]
-  },
-  {
-    "id": "aspire-repeater",
-    "wing": "aspire",
-    "wingLabel": "Aspire NEET Wing",
-    "wingBadgeColor": "#C6A75E",
-    "title": "Intensive NEET Repeater Target 650+ Track",
-    "targetAudience": "Dropper / Repeater",
-    "duration": "10 Months",
-    "fee": "₹52,000 / batch",
-    "feeRange": "₹4,500 - ₹5,500 / month",
-    "badge": "Target 650+",
-    "board": "NEET Medical Entrance",
-    "description": "Full-time intensive training for students taking a dedicated year to maximize their NEET score. Individual error analysis and intense daily practice.",
-    "features": [
-      "150+ Daily Solved MCQs",
-      "Custom Weakness Repair Micro-Classes",
-      "Weekly All-India Level Tests"
-    ]
-  },
-  {
-    "id": "launchpad-uiux",
+    "id": "launchpad-uiux-coding",
     "wing": "launchpad",
-    "wingLabel": "Launchpad Tech Wing",
-    "wingBadgeColor": "#35618d",
-    "title": "UI/UX Interface Design & Figma Prototyping",
+    "wingLabel": "CCA Launchpad",
+    "title": "UI/UX Design & Python Coding Tracks",
     "targetAudience": "Students & Beginners",
-    "duration": "3 Months",
-    "fee": "₹15,000 / course",
-    "feeRange": "₹5,000 / month",
-    "badge": "Digital Skill",
     "board": "Digital Skills Certification",
-    "description": "Master modern visual design from low-fidelity wireframing to interactive high-fidelity prototypes using Figma. Learn spacing grids and layout systems.",
+    "duration": "4–6 Weeks",
+    "description": "Figma prototyping, layout grids, AI tools, and Python programming taught as logical problem-solving.",
     "features": [
-      "Typography & 8pt Grid Systems",
-      "Figma Components & Auto-Layout",
-      "Behance/LinkedIn Portfolio Project"
+      "Typography & Figma Auto-Layout",
+      "Python Scripting & Automation",
+      "GitHub Capstone Portfolio Project"
+    ],
+    "featuredOnHomepage": true,
+    "whatsappMessage": "Hi CCA, I am interested in Launchpad courses.",
+    "pricingTiers": [
+      {
+        "id": "lp-tier-workshop",
+        "tierName": "Weekend Workshop",
+        "format": "2-Day Intensive",
+        "description": "Design, Tech or Career tracks — practical, hands-on sessions.",
+        "onlinePrice": "₹2,500",
+        "onlinePriceSuffix": "–₹3,500",
+        "offlinePrice": "₹3,000",
+        "offlinePriceSuffix": "–₹4,000",
+        "badge": "",
+        "featured": false,
+        "whatsappMessage": "Hi CCA, I am interested in a Launchpad Weekend Workshop."
+      },
+      {
+        "id": "lp-tier-fullcourse",
+        "tierName": "Full Course (4–6 Weeks)",
+        "format": "Structured Track",
+        "description": "Structured 4–6 week courses in UI/UX, AI Literacy, or Professional Communication.",
+        "onlinePrice": "₹5,000",
+        "onlinePriceSuffix": "–₹7,000",
+        "offlinePrice": "₹6,000",
+        "offlinePriceSuffix": "–₹8,000",
+        "badge": "",
+        "featured": true,
+        "whatsappMessage": "Hi CCA, I am interested in a full Launchpad course."
+      }
     ]
   },
   {
-    "id": "launchpad-python",
-    "wing": "launchpad",
-    "wingLabel": "Launchpad Tech Wing",
-    "wingBadgeColor": "#35618d",
-    "title": "Python Programming & Algorithmic Logic",
-    "targetAudience": "Students & Beginners",
-    "duration": "3 Months",
-    "fee": "₹15,000 / course",
-    "feeRange": "₹5,000 / month",
-    "badge": "Coding Track",
-    "board": "Digital Skills Certification",
-    "description": "Coding taught as logical problem-solving rather than dry syntax memorization. Write real Python scripts to automate files, parse data, and build apps.",
-    "features": [
-      "Variables, Data Structures & Control Logic",
-      "CSV/JSON File Parsing Automation",
-      "GitHub Capstone Python Utility App"
-    ]
-  },
-  {
-    "id": "pathways-paper1",
+    "id": "pathways-tet-prep",
     "wing": "pathways",
-    "wingLabel": "Pathways TET Wing",
-    "wingBadgeColor": "#0E1F3B",
-    "title": "TET Paper I Mentoring (Classes 1–5 Primary Stage)",
-    "targetAudience": "Primary School Teachers",
-    "duration": "6 Months",
-    "fee": "₹18,000 / course",
-    "feeRange": "₹3,000 / month",
-    "badge": "Teacher Cert",
+    "wingLabel": "Pathways (TET Mentors)",
+    "title": "TET Paper I & II Teacher Mentoring",
+    "targetAudience": "Primary & Upper Primary Educators",
     "board": "TN TRB TET Certification",
-    "description": "Tailored specifically for primary stage educators. Focuses heavily on Early Child Development & Pedagogy, foundational literacy, and EVS.",
+    "duration": "6 Months",
+    "description": "Tailored specifically for educators. Master pedagogical frameworks, child psychology theories, and subject content.",
     "features": [
-      "Piaget & Vygotsky Early Child Psychology",
-      "Tamil/English Grammar & EVS Concepts",
-      "10-Year Solved PYQ Drills"
+      "Piaget & Vygotsky Child Psychology",
+      "Tamil/English Pedagogy Drills",
+      "10-Year Solved PYQ Review"
+    ],
+    "featuredOnHomepage": true,
+    "whatsappMessage": "Hi CCA, I am interested in TET Mentoring.",
+    "pricingTiers": [
+      {
+        "id": "pathways-tier-1",
+        "tierName": "Pathways Mentoring Batch",
+        "format": "Weekly Interactive Mentoring",
+        "description": "TET Mentoring — contact us for batch details, online/offline schedules, and fee structure.",
+        "onlinePrice": "Contact for Quote",
+        "onlinePriceSuffix": "",
+        "offlinePrice": "Contact for Quote",
+        "offlinePriceSuffix": "",
+        "badge": "",
+        "featured": false,
+        "whatsappMessage": "Hi CCA, I am interested in Pathways TET Mentoring batch details and fee structure."
+      }
     ]
   }
 ]

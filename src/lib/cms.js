@@ -274,6 +274,9 @@ export function deleteProgram(id) {
   writeJsonFile(PROGRAMS_FILE, list);
   return true;
 }
+export function getFeaturedPrograms() {
+  return getAllPrograms().filter((p) => p.featuredOnHomepage !== false);
+}
 
 /* ==================== TESTIMONIALS ==================== */
 export function getAllTestimonials() {
