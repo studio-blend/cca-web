@@ -1,0 +1,38 @@
+[
+  {
+    "id": "banner-1",
+    "badge": "🔥 Admission Alert",
+    "title": "NEET 2026 Founder's Batch — Limited 8 Seats",
+    "subtitle": "Early registrations receive an immediate 10% tuition waiver. Concept-first 1-on-1 & small batch coaching.",
+    "ctaText": "Reserve Your Seat",
+    "ctaUrl": "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20reserve%20a%20seat%20in%20the%20NEET%202026%20Founder's%20Batch.",
+    "bgGradient": "linear-gradient(135deg, #0e1f3b 0%, #1f4e79 60%, #C6A75E 100%)",
+    "imageUrl": "",
+    "active": true,
+    "order": 1
+  },
+  {
+    "id": "banner-2",
+    "badge": "📚 Free Resource",
+    "title": "Class 11 NEET Biology Visual Mindmaps & Formulas",
+    "subtitle": "Download our comprehensive NCERT chapter mindmaps and 45-second physics MCQ formula sheets.",
+    "ctaText": "Download Mindmap PDF",
+    "ctaUrl": "/resources",
+    "bgGradient": "linear-gradient(135deg, #1f4e79 0%, #35618d 70%, #0e1f3b 100%)",
+    "imageUrl": "",
+    "active": true,
+    "order": 2
+  },
+  {
+    "id": "banner-3",
+    "badge": "🎯 Board Exam Special",
+    "title": "Class 10 & 12 Board Cent-um Masterclass",
+    "subtitle": "Step-by-step answer presentation blueprints, ray diagram derivations, and weekly full-length mock exams.",
+    "ctaText": "Enquire on WhatsApp",
+    "ctaUrl": "https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Board%20Cent-um%20Masterclass.",
+    "bgGradient": "linear-gradient(135deg, #2b1e4a 0%, #1f4e79 100%)",
+    "imageUrl": "",
+    "active": true,
+    "order": 3
+  }
+]

@@ -68,6 +68,7 @@ export default function AdminLayout({ children }) {
     { label: "Programs & Pricing", href: "/admin/programs", icon: "💰" },
     { label: "Testimonials & Ranks", href: "/admin/testimonials", icon: "⭐" },
     { label: "Events & Seminars", href: "/admin/events", icon: "📅" },
+    { label: "Marketing Banners", href: "/admin/banners", icon: "📢" },
     { label: "FAQs & Notice Bar", href: "/admin/faqs", icon: "❓" },
     { label: "Lead Capture Inbox", href: "/admin/leads", icon: "📥" },
     { label: "Site Settings & Uploads", href: "/admin/settings", icon: "⚙️" },

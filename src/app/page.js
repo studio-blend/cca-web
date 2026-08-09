@@ -4,6 +4,7 @@ import ScrollReveal from "@/components/ScrollReveal/ScrollReveal";
 import TabSwitcher from "@/components/TabSwitcher/TabSwitcher";
 import FAQAccordion from "@/components/FAQAccordion/FAQAccordion";
 import SyllabusForm from "@/components/SyllabusForm/SyllabusForm";
+import BannerSlideshow from "@/components/BannerSlideshow/BannerSlideshow";
 import { getUpcomingEventDates } from "@/lib/events";
 import { getFeaturedWings, getSiteSettings } from "@/lib/cms";
 
@@ -525,6 +526,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Marketing Banners Slideshow */}
+      <BannerSlideshow />
 
       {/* Programs Section */}
       <section className="section-py" id="programs">

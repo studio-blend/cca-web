@@ -12,6 +12,7 @@ const ANNOUNCEMENT_FILE = path.join(process.cwd(), "src/content/announcement.jso
 const LEADS_FILE = path.join(process.cwd(), "src/content/leads.json");
 const SETTINGS_FILE = path.join(process.cwd(), "src/content/settings.json");
 const WINGS_FILE = path.join(process.cwd(), "src/content/wings.json");
+const BANNERS_FILE = path.join(process.cwd(), "src/content/banners.json");
 const UPLOADS_DIR = path.join(process.cwd(), "public/uploads");
 
 function ensureDir(dirPath) {
@@ -379,4 +380,31 @@ export function deleteWing(id) {
 }
 export function getFeaturedWings() {
   return getAllWings().filter((w) => w.featuredOnHomepage);
+}
+
+/* ==================== MARKETING BANNERS ==================== */
+export function getAllBanners() {
+  return readJsonFile(BANNERS_FILE);
+}
+export function getActiveBanners() {
+  return getAllBanners()
+    .filter((b) => b.active)
+    .sort((a, b) => (a.order || 99) - (b.order || 99));
+}
+export function saveBanner(data) {
+  const list = getAllBanners();
+  let updated;
+  if (data.id && list.some((b) => b.id === data.id)) {
+    updated = list.map((b) => (b.id === data.id ? { ...b, ...data } : b));
+  } else {
+    const newBanner = { id: `banner-${Date.now()}`, active: true, order: list.length + 1, ...data };
+    updated = [...list, newBanner];
+  }
+  writeJsonFile(BANNERS_FILE, updated);
+  return updated;
+}
+export function deleteBanner(id) {
+  const list = getAllBanners().filter((b) => b.id !== id);
+  writeJsonFile(BANNERS_FILE, list);
+  return true;
 }
