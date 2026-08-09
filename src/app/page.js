@@ -436,7 +436,7 @@ export default function Home() {
               </li>
               <li className="checklist-item font-body-md" style={{ fontWeight: "600" }}>
                 <svg className="checklist-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span><strong>Parent Peace-of-Mind:</strong> Weekly progress updates, biometric attendance tracking, and CCTV secured Anna Nagar center.</span>
+                <span><strong>Parent Peace-of-Mind:</strong> Weekly WhatsApp progress reports, live class recordings, and dedicated 1-on-1 mentor check-ins.</span>
               </li>
             </ul>
             <div className="founder-credentials">
@@ -446,7 +446,7 @@ export default function Home() {
               </div>
               <div className="credential-badge">
                 <svg className="credential-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                <span>Chennai-Based Center</span>
+                <span>Thiruninravur HQ (Online Worldwide)</span>
               </div>
               <div className="credential-badge">
                 <svg className="credential-icon" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 15l-3-3 1.41-1.41L10 13.17l4.59-4.59L16 10l-6 6z"/></svg>
