@@ -40,7 +40,7 @@ export default function SyllabusForm({ programName }) {
       }).catch(() => {});
     } catch (err) {}
 
-    const message = `Hi Crystal Clear Academy, I would like to get the syllabus details for the ${programName} program.\n\n- Name: ${name.trim()}\n- Phone: ${cleanPhone}`;
+    const message = `Hi Crystal Clear Academy, I would like to get the detailed syllabus breakdown for the ${programName} program.\n\n- Name: ${name.trim()}\n- Phone: ${cleanPhone}`;
     const encodedText = encodeURIComponent(message);
     window.open(`https://wa.me/919841644813?text=${encodedText}`, "_blank");
   };
@@ -94,11 +94,14 @@ export default function SyllabusForm({ programName }) {
       </div>
 
       <button type="submit" className="btn btn-gold btn-block" style={{ marginTop: "4px", padding: "12px", fontSize: "14px" }}>
-        Request Syllabus on WhatsApp →
+        Request Full Syllabus on WhatsApp →
       </button>
 
-      <div style={{ textAlign: "center", fontSize: "11px", color: "var(--color-on-surface-variant)" }}>
-        Or call center directly: <a href="tel:+919841644813" style={{ color: "var(--color-primary-navy)", fontWeight: "700" }}>+91 98416 44813</a>
+      {/* Ungated direct call & syllabus preview option */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "6px", alignItems: "center", marginTop: "4px", fontSize: "12px", color: "var(--color-on-surface-variant)" }}>
+        <div>
+          Prefer direct phone call? <a href="tel:+919841644813" style={{ color: "var(--color-primary-navy)", fontWeight: "700", textDecoration: "underline" }}>+91 98416 44813</a>
+        </div>
       </div>
     </form>
   );
