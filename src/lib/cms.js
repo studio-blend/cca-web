@@ -11,6 +11,7 @@ const EVENTS_FILE = path.join(process.cwd(), "src/content/events.json");
 const ANNOUNCEMENT_FILE = path.join(process.cwd(), "src/content/announcement.json");
 const LEADS_FILE = path.join(process.cwd(), "src/content/leads.json");
 const SETTINGS_FILE = path.join(process.cwd(), "src/content/settings.json");
+const WINGS_FILE = path.join(process.cwd(), "src/content/wings.json");
 const UPLOADS_DIR = path.join(process.cwd(), "public/uploads");
 
 function ensureDir(dirPath) {
@@ -349,4 +350,33 @@ export function deleteLead(id) {
   const list = getAllLeads().filter((l) => l.id !== id);
   writeJsonFile(LEADS_FILE, list);
   return true;
+}
+
+/* ==================== WINGS (Programs + Pricing) ==================== */
+export function getAllWings() {
+  return readJsonFile(WINGS_FILE);
+}
+export function getWingById(id) {
+  const wings = getAllWings();
+  return wings.find((w) => w.id === id) || null;
+}
+export function saveWing(data) {
+  const list = getAllWings();
+  let updated;
+  if (data.id && list.some((w) => w.id === data.id)) {
+    updated = list.map((w) => (w.id === data.id ? { ...w, ...data } : w));
+  } else {
+    const newWing = { id: data.id || `wing-${Date.now()}`, ...data };
+    updated = [...list, newWing];
+  }
+  writeJsonFile(WINGS_FILE, updated);
+  return updated;
+}
+export function deleteWing(id) {
+  const list = getAllWings().filter((w) => w.id !== id);
+  writeJsonFile(WINGS_FILE, list);
+  return true;
+}
+export function getFeaturedWings() {
+  return getAllWings().filter((w) => w.featuredOnHomepage);
 }

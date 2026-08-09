@@ -5,495 +5,161 @@ import TabSwitcher from "@/components/TabSwitcher/TabSwitcher";
 import FAQAccordion from "@/components/FAQAccordion/FAQAccordion";
 import SyllabusForm from "@/components/SyllabusForm/SyllabusForm";
 import { getUpcomingEventDates } from "@/lib/events";
+import { getFeaturedWings, getSiteSettings } from "@/lib/cms";
 
 export default function Home() {
-  // Ecosystem Tabs Content
-  const ecosystemTabs = [
-    {
-      id: "foundations",
-      label: "CCA Foundations",
-      content: (
-        <>
-          {/* Left Column: Program Cards */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
-              {/* Card 1 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 9 &amp; 10</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Science + Maths Foundation</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Build strong fundamentals in Science and Mathematics so you solve exam problems naturally instead of memorizing steps.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Science%20%2B%20Maths%20Foundation%20for%20Class%209-10."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
-                >
-                  Enquire on WhatsApp
-                </a>
-              </div>
-              {/* Card 2 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 11 &amp; 12</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Senior Secondary Science</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Rigorous concept coaching in Physics, Chemistry, Biology, and Mathematics to maximize school board performance.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Senior%20Secondary%20Science%20for%20Class%2011-12."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
-                >
-                  Enquire on WhatsApp
-                </a>
-              </div>
-              {/* Card 3 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 9–12</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Subject Tuition</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Custom conceptual coaching covering all key academic subjects with dedicated lead mentor doubt resolution.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Subject%20Tuition%20for%20Class%209-12."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
-                >
-                  Enquire on WhatsApp
-                </a>
-              </div>
-            </div>
+  const wings = getFeaturedWings();
+  const settings = getSiteSettings();
+  const whatsappNumber = settings.whatsappPhone || "919841644813";
 
+  // Build Ecosystem tabs dynamically from wings
+  const ecosystemTabs = wings.map((wing) => ({
+    id: wing.wingSlug || wing.id,
+    label: wing.wingLabel,
+    content: (
+      <>
+        {/* Left Column: Program Cards */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: `repeat(auto-fit, minmax(${wing.courses?.length > 3 ? "200px" : "220px"}, 1fr))`, gap: "16px" }}>
+            {(wing.courses || []).map((course) => (
+              <div key={course.id} className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
+                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: wing.id === "launchpad" || wing.id === "pathways" ? "10px" : undefined, padding: wing.id === "launchpad" || wing.id === "pathways" ? "2px 8px" : undefined }}>{course.label}</span>
+                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: wing.id === "pathways" ? "16px" : "18px" }}>{course.title}</h4>
+                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: wing.id === "pathways" ? "13px" : "14px", lineHeight: "1.4" }}>
+                  {course.description}
+                </p>
+                {course.tags?.length > 0 && (
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "12px", marginBottom: "8px" }}>
+                    {course.tags.map((tag, i) => (
+                      <span key={i} style={{ fontSize: "10px", backgroundColor: "rgba(198,167,94,0.1)", color: "var(--color-primary-navy)", padding: "2px 6px", borderRadius: "4px", fontWeight: "600" }}>{tag}</span>
+                    ))}
+                  </div>
+                )}
+                {!course.tags?.length && (
+                  <a
+                    className="btn btn-secondary btn-block"
+                    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(course.whatsappMessage || `Hi CCA, I am interested in ${course.title}.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
+                  >
+                    Enquire on WhatsApp
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {wing.boardsCovered?.length > 0 && (
             <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", alignItems: "center", margin: "4px 0" }}>
               <span style={{ fontSize: "12px", fontWeight: "700", color: "var(--color-primary-navy)", textTransform: "uppercase", marginRight: "8px" }}>Boards Covered:</span>
-              {["CBSE", "State Board", "Matric", "ICSE/CISCE", "NIOS"].map((board, i) => (
+              {wing.boardsCovered.map((board, i) => (
                 <span key={i} style={{ fontSize: "11px", fontWeight: "600", backgroundColor: "rgba(31,78,121,0.06)", color: "var(--color-academic-blue)", padding: "4px 10px", borderRadius: "100px" }}>{board}</span>
               ))}
             </div>
+          )}
 
-            <Link
-              href="/foundations"
-              className="btn btn-secondary font-label-md"
-              style={{
-                alignSelf: "flex-start",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                borderColor: "var(--color-brand-gold)",
-                color: "var(--color-primary-navy)",
-                fontWeight: "600",
-                padding: "10px 20px"
-              }}
-            >
-              Explore Foundations Program Details &amp; Timelines →
-            </Link>
-          </div>
-
-          {/* Right Column: Syllabus Form Widget */}
-          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
-            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
-              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
-            </p>
-            <SyllabusForm programName="Foundations (Class 9-12)" />
-          </div>
-        </>
-      )
-    },
-    {
-      id: "aspire",
-      label: "CCA Aspire",
-      content: (
-        <>
-          {/* Left Column: Program Cards */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "16px" }}>
-              {/* Card 1 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 9 &amp; 10</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Early NEET Foundation</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Early exposure to medical entrance patterns, mock OMR assessments, biology concept mapping, and physics shortcuts.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20Early%20NEET%20Foundation%20for%20Class%209-10."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
-                >
-                  Enquire on WhatsApp
-                </a>
-              </div>
-              {/* Card 2 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Class 11 &amp; 12</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Integrated NEET Coaching</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Dual-focus conceptual masterclasses covering school board syllabus while simultaneously mastering advanced NEET entrance requirements.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Integrated%20NEET%20Coaching%20for%20Class%2011-12."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
-                >
-                  Enquire on WhatsApp
-                </a>
-              </div>
-              {/* Card 3 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px" }}>Droppers / Repeaters</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>NEET Repeaters Program</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Full-time high-focus coaching. Daily OMR mock exams with in-depth post-exam diagnostics and speed technique drills.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Repeaters%20Program."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 16px", fontSize: "13px", marginTop: "auto" }}
-                >
-                  Enquire on WhatsApp
-                </a>
-              </div>
-            </div>
-            <Link
-              href="/aspire"
-              className="btn btn-secondary font-label-md"
-              style={{
-                alignSelf: "flex-start",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                borderColor: "var(--color-brand-gold)",
-                color: "var(--color-primary-navy)",
-                fontWeight: "600",
-                padding: "10px 20px"
-              }}
-            >
-              Explore NEET Aspire Program Details &amp; Timelines →
-            </Link>
-          </div>
-
-          {/* Right Column: Syllabus Form Widget */}
-          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
-            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
-              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
-            </p>
-            <SyllabusForm programName="Aspire (NEET)" />
-          </div>
-        </>
-      )
-    },
-    {
-      id: "launchpad",
-      label: "CCA Launchpad",
-      content: (
-        <>
-          {/* Left Column: Program Cards */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
-              {/* Card 1 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>CCA Launchpad</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Design</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Figma prototyping, layout grids, typography guidelines, and creative problem-solving — learn professional design tools used by industry.
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "12px", marginTop: "auto" }}>
-                  {["Graphic Design", "UI/UX", "Design Thinking", "Creative Tools"].map((tag, i) => (
-                    <span key={i} style={{ fontSize: "10px", backgroundColor: "rgba(198,167,94,0.1)", color: "var(--color-primary-navy)", padding: "2px 6px", borderRadius: "4px", fontWeight: "600" }}>{tag}</span>
-                  ))}
-                </div>
-              </div>
-              {/* Card 2 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>CCA Launchpad</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Technology</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Build real projects with AI tools, automation workflows, web development basics, and no-code platforms used by modern professionals.
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "12px", marginTop: "auto" }}>
-                  {["AI & Emerging Tech", "No-Code", "Web Dev", "Digital Literacy"].map((tag, i) => (
-                    <span key={i} style={{ fontSize: "10px", backgroundColor: "rgba(198,167,94,0.1)", color: "var(--color-primary-navy)", padding: "2px 6px", borderRadius: "4px", fontWeight: "600" }}>{tag}</span>
-                  ))}
-                </div>
-              </div>
-              {/* Card 3 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "20px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>CCA Launchpad</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Career</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", flexGrow: 1, fontSize: "14px", lineHeight: "1.4" }}>
-                  Communication, presentation decks, leadership exercises, and problem-solving frameworks — skills that open doors beyond academics.
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderTop: "1px solid rgba(0,0,0,0.06)", paddingTop: "12px", marginTop: "auto" }}>
-                  {["Communication", "Presentation", "Problem Solving", "Professional Dev"].map((tag, i) => (
-                    <span key={i} style={{ fontSize: "10px", backgroundColor: "rgba(198,167,94,0.1)", color: "var(--color-primary-navy)", padding: "2px 6px", borderRadius: "4px", fontWeight: "600" }}>{tag}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
+          {wing.formatsNote && (
             <div style={{ padding: "12px 16px", backgroundColor: "rgba(198,167,94,0.06)", borderRadius: "var(--radius-md)", borderLeft: "3px solid var(--color-brand-gold)", fontSize: "13px", color: "var(--color-primary-navy)", fontWeight: "600" }}>
-              <strong>Formats:</strong> 4–6 week courses · 2–3 month tracks · Weekend workshops · Holiday bootcamps
+              <strong>{wing.formatsNote}</strong>
             </div>
+          )}
 
-            <Link
-              href="/launchpad"
-              className="btn btn-gold font-label-md"
-              style={{
-                alignSelf: "flex-start",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                fontWeight: "600",
-                padding: "10px 20px"
-              }}
-            >
-              Explore All Courses →
-            </Link>
-          </div>
-
-          {/* Right Column: Syllabus Form Widget */}
-          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
-            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
-              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
-            </p>
-            <SyllabusForm programName="Launchpad (Skill Development)" />
-          </div>
-        </>
-      )
-    },
-    {
-      id: "pathways",
-      label: "Pathways (TET Mentors)",
-      content: (
-        <>
-          {/* Left Column: Program Cards */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
-              {/* Card 1 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>TET Paper I</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>Primary Teacher Prep</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
-                  Focused preparation for TET Paper I. Master pedagogical frameworks and child development theories.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20TET%20Paper%20I%20mentoring."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
-                >
-                  Enquire Now
-                </a>
-              </div>
-              {/* Card 2 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>TET Paper II</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>Upper Primary Prep</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
-                  In-depth guidance for subject-matter content and pedagogical review customized for Paper II exams.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20TET%20Paper%20II%20mentoring."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
-                >
-                  Enquire Now
-                </a>
-              </div>
-              {/* Card 3 */}
-              <div className="pricing-card" style={{ display: "flex", flexDirection: "column", height: "100%", padding: "16px", margin: 0 }}>
-                <span className="price-label" style={{ alignSelf: "flex-start", marginBottom: "8px", fontSize: "10px", padding: "2px 8px" }}>Institutions</span>
-                <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "16px" }}>Pedagogy Consult</h4>
-                <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "12px", flexGrow: 1, fontSize: "13px", lineHeight: "1.4" }}>
-                  Consultations for schools and institutes to refine child psychology, curriculum flow, and coaching methods.
-                </p>
-                <a
-                  className="btn btn-secondary btn-block"
-                  href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20pedagogical%20consultations."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ padding: "8px 12px", fontSize: "12px", marginTop: "auto" }}
-                >
-                  Enquire Now
-                </a>
-              </div>
-            </div>
-            <Link
-              href="/pathways"
-              className="btn btn-secondary font-label-md"
-              style={{
-                alignSelf: "flex-start",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                borderColor: "var(--color-brand-gold)",
-                color: "var(--color-primary-navy)",
-                fontWeight: "600",
-                padding: "10px 20px"
-              }}
-            >
-              Explore Pathways Program Details &amp; Syllabus →
-            </Link>
-          </div>
-
-          {/* Right Column: Syllabus Form Widget */}
-          <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
-            <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
-              Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
-            </p>
-            <SyllabusForm programName="Pathways (TET Mentors)" />
-          </div>
-        </>
-      )
-    }
-  ];
-
-  // Tuition Fee Tabs Content
-  const tuitionFeeTabs = [
-    {
-      id: "foundations",
-      label: "Foundations",
-      content: (
-        <div style={{ width: "100%" }}>
-          <div style={{ backgroundColor: "rgba(198,167,94,0.08)", border: "1px solid rgba(198,167,94,0.25)", borderRadius: "var(--radius-lg)", padding: "16px 24px", marginBottom: "24px", display: "flex", alignItems: "center", gap: "12px" }}>
-            <svg style={{ width: "20px", height: "20px", color: "var(--color-brand-gold)", flexShrink: 0, fill: "var(--color-brand-gold)" }} viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <p style={{ margin: 0, fontSize: "14px", color: "var(--color-primary-navy)", fontWeight: "600" }}>Fees shown are starting ranges. Final pricing depends on class level, subject combination, and session frequency. WhatsApp us for a personalised quote in under 5 minutes.</p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
-            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <span className="price-label">Class 9 &amp; 10</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹1,500<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹2,500/month</span></div>
-              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Science &amp; Maths conceptual coaching. Board-aligned curriculum with weekly assessments.</p>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20Foundations%20fees%20for%20Class%209-10." target="_blank" rel="noopener noreferrer">Get Exact Quote</a>
-            </div>
-            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <span className="price-label">Class 11 &amp; 12</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹2,000<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹3,500/month</span></div>
-              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Physics, Chemistry, Biology &amp; Mathematics. Dual-board coaching with concept-clarity method.</p>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20enquiring%20about%20Foundations%20fees%20for%20Class%2011-12." target="_blank" rel="noopener noreferrer">Get Exact Quote</a>
-            </div>
-          </div>
+          <Link
+            href={wing.detailPageUrl || `/${wing.wingSlug}`}
+            className={wing.id === "launchpad" ? "btn btn-gold font-label-md" : "btn btn-secondary font-label-md"}
+            style={{
+              alignSelf: "flex-start",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              borderColor: wing.id !== "launchpad" ? "var(--color-brand-gold)" : undefined,
+              color: "var(--color-primary-navy)",
+              fontWeight: "600",
+              padding: "10px 20px"
+            }}
+          >
+            {wing.exploreButtonText || `Explore ${wing.wingLabel} â†’`}
+          </Link>
         </div>
-      )
-    },
-    {
-      id: "aspire",
-      label: "Aspire (NEET)",
-      content: (
-        <div style={{ width: "100%" }}>
-          <div style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)", padding: "12px 24px", borderRadius: "var(--radius-lg)", marginBottom: "24px", textAlign: "center", fontWeight: "700", fontSize: "16px" }}>
-            Founder&apos;s Batch — First 10 students get 10% off
-          </div>
-          <div className="pricing-pane active" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
-            {/* Card 1 */}
-            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <span className="price-label">Weekend Batch</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹3,500<span style={{ fontSize: "14px", color: "var(--color-outline)", fontWeight: "normal" }}>/month</span></div>
-              <p className="font-body-md" style={{ color: "var(--color-outline)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
-                Group · 8 sessions/month
-              </p>
-              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
-                Comprehensive weekend coaching for NEET preparation with expert group classes.
-              </p>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Weekend%20Batch." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
-            </div>
-            {/* Card 2 */}
-            <div className="pricing-card featured" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <div className="featured-badge" style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)" }}>Only 8 seats — limited availability</div>
-              <span className="price-label" style={{ marginTop: "8px" }}>Personal Track</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹9,500<span style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", fontWeight: "normal" }}>/month</span></div>
-              <p className="font-body-md" style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
-                1-on-1 · 12 sessions/month
-              </p>
-              <p className="font-body-md" style={{ color: "rgba(255,255,255,0.9)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
-                Premium 1-on-1 personalized tutoring program for high-focus NEET mentoring.
-              </p>
-              <a className="btn btn-gold btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20want%20to%20secure%20a%20spot%20in%20the%20NEET%20Personal%20Track." target="_blank" rel="noopener noreferrer">Secure Your Spot</a>
-            </div>
-            {/* Card 3 */}
-            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <span className="price-label">Combo</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "32px", fontWeight: "800" }}>₹11,500<span style={{ fontSize: "14px", color: "var(--color-outline)", fontWeight: "normal" }}>/month</span></div>
-              <p className="font-body-md" style={{ color: "var(--color-outline)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
-                Personal + Batch · 20 sessions/month
-              </p>
-              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "15px" }}>
-                Get the best of both worlds: group interactive batches plus private individual review.
-              </p>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20the%20NEET%20Combo%20program." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
-            </div>
-          </div>
+
+        {/* Right Column: Syllabus Form Widget */}
+        <div className="syllabus-form-card" style={{ backgroundColor: "var(--color-surface-container-low)", padding: "24px", borderRadius: "var(--radius-lg)", border: "1px solid rgba(31,78,121,0.08)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <h4 className="font-headline-sm" style={{ color: "var(--color-primary-navy)", margin: "0 0 8px 0", fontSize: "18px" }}>Get Syllabus Details</h4>
+          <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "16px", fontSize: "13px", lineHeight: "1.4" }}>
+            Leave your details to receive the comprehensive program syllabus and timelines on WhatsApp.
+          </p>
+          <SyllabusForm programName={wing.syllabusFormLabel || wing.wingLabel} />
         </div>
-      )
-    },
-    {
-      id: "launchpad",
-      label: "Launchpad",
-      content: (
-        <div style={{ width: "100%" }}>
-          <div style={{ backgroundColor: "rgba(198,167,94,0.08)", border: "1px solid rgba(198,167,94,0.25)", borderRadius: "var(--radius-lg)", padding: "16px 24px", marginBottom: "24px", display: "flex", alignItems: "center", gap: "12px" }}>
-            <svg style={{ width: "20px", height: "20px", flexShrink: 0, fill: "var(--color-brand-gold)" }} viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-            <p style={{ margin: 0, fontSize: "14px", color: "var(--color-primary-navy)", fontWeight: "600" }}>Launchpad runs as 4–6 week courses, weekend workshops, and holiday bootcamps. Pricing varies by format and duration.</p>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px" }}>
-            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <span className="price-label">Weekend Workshop</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹2,500<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹4,000</span></div>
-              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>2-day intensive. Design, Tech or Career tracks — practical, hands-on sessions.</p>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20a%20Launchpad%20Weekend%20Workshop." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
-            </div>
-            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <span className="price-label">Full Course (4–6 Weeks)</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹5,000<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹8,000</span></div>
-              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Structured 4–6 week courses in UI/UX, AI Literacy, or Professional Communication.</p>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20a%20full%20Launchpad%20course." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
-            </div>
-            <div className="pricing-card" style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
-              <span className="price-label">Holiday Bootcamp</span>
-              <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: "28px", fontWeight: "800" }}>₹3,500<span style={{ fontSize: "13px", color: "var(--color-outline)", fontWeight: "normal" }}>–₹6,000</span></div>
-              <p className="font-body-md" style={{ color: "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: "14px" }}>Intensive skill builds during school holidays — 5–10 day immersive formats.</p>
-              <a className="btn btn-secondary btn-block" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20a%20Launchpad%20Holiday%20Bootcamp." target="_blank" rel="noopener noreferrer">Enquire on WhatsApp</a>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      id: "pathways",
-      label: "Pathways",
-      content: (
+      </>
+    )
+  }));
+
+  // Build Pricing tabs dynamically from wings
+  const tuitionFeeTabs = wings.map((wing) => {
+    // Check if pathways-style simple CTA
+    const isSimpleCTA = wing.pricingTiers?.length === 1 && wing.pricingTiers[0].ctaStyle === "simple";
+
+    return {
+      id: wing.wingSlug || wing.id,
+      label: wing.id === "aspire" ? "Aspire (NEET)" : wing.wingLabel?.replace("CCA ", "") || wing.id,
+      content: isSimpleCTA ? (
         <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
           <div className="pricing-card" style={{ maxWidth: "600px", padding: "40px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "20px", width: "100%" }}>
-            <h3 style={{ color: "var(--color-brand-gold)", fontSize: "24px", fontWeight: "700" }}>Pathways Fees</h3>
+            <h3 style={{ color: "var(--color-brand-gold)", fontSize: "24px", fontWeight: "700" }}>{wing.pricingTiers[0].tierName}</h3>
             <p className="font-body-lg" style={{ color: "var(--color-on-surface-variant)", fontSize: "18px", margin: "10px 0" }}>
-              TET Mentoring — contact us for batch details and fee structure.
+              {wing.pricingTiers[0].description}
             </p>
-            <a className="btn btn-secondary" href="https://wa.me/919841644813?text=Hi%20CCA%2C%20I%20am%20interested%20in%20Pathways%20TET%20Mentoring%20batch%20details%20and%20fee%20structure." target="_blank" rel="noopener noreferrer" style={{ padding: "12px 32px" }}>
+            <a className="btn btn-secondary" href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(wing.pricingTiers[0].whatsappMessage || "Hi CCA, I am enquiring about pricing.")}`} target="_blank" rel="noopener noreferrer" style={{ padding: "12px 32px" }}>
               Enquire on WhatsApp
             </a>
           </div>
         </div>
+      ) : (
+        <div style={{ width: "100%" }}>
+          {/* Banner */}
+          {wing.bannerText && (
+            wing.bannerStyle === "gold" ? (
+              <div style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)", padding: "12px 24px", borderRadius: "var(--radius-lg)", marginBottom: "24px", textAlign: "center", fontWeight: "700", fontSize: "16px" }}>
+                {wing.bannerText}
+              </div>
+            ) : (
+              <div style={{ backgroundColor: "rgba(198,167,94,0.08)", border: "1px solid rgba(198,167,94,0.25)", borderRadius: "var(--radius-lg)", padding: "16px 24px", marginBottom: "24px", display: "flex", alignItems: "center", gap: "12px" }}>
+                <svg style={{ width: "20px", height: "20px", flexShrink: 0, fill: "var(--color-brand-gold)" }} viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                <p style={{ margin: 0, fontSize: "14px", color: "var(--color-primary-navy)", fontWeight: "600" }}>{wing.bannerText}</p>
+              </div>
+            )
+          )}
+
+          {/* Pricing Cards */}
+          <div className={wing.id === "aspire" ? "pricing-pane active" : ""} style={{ display: "grid", gridTemplateColumns: `repeat(auto-fit, minmax(${wing.pricingTiers?.length > 2 ? "220px" : "240px"}, 1fr))`, gap: wing.id === "aspire" ? "24px" : "20px" }}>
+            {(wing.pricingTiers || []).map((tier) => (
+              <div key={tier.id} className={`pricing-card${tier.featured ? " featured" : ""}`} style={{ display: "flex", flexDirection: "column", padding: "24px", height: "100%" }}>
+                {tier.badge && (
+                  <div className="featured-badge" style={{ backgroundColor: "var(--color-brand-gold)", color: "var(--color-primary-navy)" }}>{tier.badge}</div>
+                )}
+                <span className="price-label" style={tier.badge ? { marginTop: "8px" } : undefined}>{tier.tierName}</span>
+                <div className="price-val" style={{ color: "var(--color-brand-gold)", margin: "12px 0", fontSize: tier.fee ? (wing.id === "aspire" ? "32px" : "28px") : "18px", fontWeight: "800" }}>
+                  {tier.fee}<span style={{ fontSize: tier.fee ? (wing.id === "aspire" ? "14px" : "13px") : "14px", color: tier.featured ? "rgba(255,255,255,0.7)" : "var(--color-outline)", fontWeight: "normal" }}>{tier.feeSuffix}</span>
+                </div>
+                {tier.format && (
+                  <p className="font-body-md" style={{ color: tier.featured ? "rgba(255,255,255,0.8)" : "var(--color-outline)", fontSize: "14px", marginBottom: "16px", fontStyle: "italic" }}>
+                    {tier.format}
+                  </p>
+                )}
+                <p className="font-body-md" style={{ color: tier.featured ? "rgba(255,255,255,0.9)" : "var(--color-on-surface-variant)", marginBottom: "20px", flexGrow: 1, fontSize: wing.id === "aspire" ? "15px" : "14px" }}>
+                  {tier.description}
+                </p>
+                <a className={tier.featured ? "btn btn-gold btn-block" : "btn btn-secondary btn-block"} href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(tier.whatsappMessage || "Hi CCA, I am enquiring about pricing.")}`} target="_blank" rel="noopener noreferrer">
+                  {tier.featured ? "Secure Your Spot" : (wing.id === "foundations" ? "Get Exact Quote" : "Enquire on WhatsApp")}
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
       )
-    }
-  ];
+    };
+  });
 
   // FAQ Accordion items
   const faqItems = [
@@ -511,7 +177,7 @@ export default function Home() {
     },
     {
       question: "Do you offer online classes?",
-      answer: "We specialize in Live Interactive Online Coaching — offering focused 1-on-1 personal teaching for your child as well as premium small-batch sessions. Classes are accessible from anywhere in Tamil Nadu, India, or abroad without location limits."
+      answer: "We specialize in Live Interactive Online Coaching â€” offering focused 1-on-1 personal teaching for your child as well as premium small-batch sessions. Classes are accessible from anywhere in Tamil Nadu, India, or abroad without location limits."
     },
     {
       question: "What are the fee payment options?",
@@ -569,7 +235,7 @@ export default function Home() {
       <section className="hero-section">
         <div className="container hero-grid">
           <ScrollReveal className="hero-content">
-            <span className="hero-tagline font-label-lg">Premium Online Coaching · Thiruninravur HQ</span>
+            <span className="hero-tagline font-label-lg">Premium Online Coaching Â· Thiruninravur HQ</span>
             <div className="urgency-badge" style={{ marginTop: "4px" }}>
               <span className="urgency-dot"></span>
               <span>NEET Founder&apos;s Batch: Only 8 seats left</span>
@@ -577,18 +243,18 @@ export default function Home() {
             <h1 className="hero-title font-display-lg">
               Where Excellence Begins with <span className="text-glow-gold">Clarity</span>
             </h1>
-            <p className="hero-tamil">தெளிவே வெற்றியின் தொடக்கம்</p>
+            <p className="hero-tamil">à®¤à¯†à®³à®¿à®µà¯‡ à®µà¯†à®±à¯à®±à®¿à®¯à®¿à®©à¯ à®¤à¯Šà®Ÿà®•à¯à®•à®®à¯</p>
             <p className="hero-description font-body-lg">
-              Led by 18+ years of teaching excellence. Custom courses structured for Classes 9–12 Board Exams, NEET mastery, and future-focused digital competencies.
+              Led by 18+ years of teaching excellence. Custom courses structured for Classes 9â€“12 Board Exams, NEET mastery, and future-focused digital competencies.
             </p>
             <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "4px" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
                 <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Online 1-on-1 &amp; Small Batches · Worldwide Reach
+                Online 1-on-1 &amp; Small Batches Â· Worldwide Reach
               </span>
               <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "12px", fontWeight: "600", color: "var(--color-primary-navy)", backgroundColor: "rgba(31,78,121,0.06)", border: "1px solid rgba(31,78,121,0.12)", borderRadius: "100px", padding: "4px 12px" }}>
                 <svg style={{ width: "14px", height: "14px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-                Online doubt support · 4–6 hr response
+                Online doubt support Â· 4â€“6 hr response
               </span>
             </div>
             <LeadForm defaultGoal="foundations" />
@@ -692,7 +358,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Govt School → NEET Callout Banner */}
+      {/* Govt School â†’ NEET Callout Banner */}
       <section style={{ backgroundColor: "var(--color-primary-navy)", padding: "0" }}>
         <div className="container" style={{ padding: "20px var(--spacing-lg)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap", justifyContent: "space-between" }}>
@@ -701,9 +367,9 @@ export default function Home() {
                 <svg style={{ width: "26px", height: "26px", fill: "var(--color-primary-navy)" }} viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
               </div>
               <div>
-                <p style={{ margin: "0 0 4px 0", fontSize: "18px", fontWeight: "700", color: "var(--color-brand-gold)", lineHeight: 1.2 }}>Government School → Medical College</p>
+                <p style={{ margin: "0 0 4px 0", fontSize: "18px", fontWeight: "700", color: "var(--color-brand-gold)", lineHeight: 1.2 }}>Government School â†’ Medical College</p>
                 <p style={{ margin: 0, fontSize: "14px", color: "rgba(255,255,255,0.85)", lineHeight: 1.5, maxWidth: "600px" }}>
-                  CCA students from Tamil Nadu government schools have qualified NEET and secured MBBS/BDS seats under the 7.5% reservation — proof that the right mentorship levels every playing field.
+                  CCA students from Tamil Nadu government schools have qualified NEET and secured MBBS/BDS seats under the 7.5% reservation â€” proof that the right mentorship levels every playing field.
                 </p>
               </div>
             </div>
@@ -736,7 +402,7 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <span className="quote-icon" style={{ position: "static", display: "block", marginBottom: "8px" }}>“</span>
+                <span className="quote-icon" style={{ position: "static", display: "block", marginBottom: "8px" }}>â€œ</span>
                 <p className="founder-quote-text" style={{ fontSize: "20px", marginBottom: 0 }}>
                   {"True education isn't about memorizing facts; it's about lighting a fire of curiosity through structured clarity."}
                 </p>
@@ -819,7 +485,7 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations — things that seemed impossible — became second nature. I cracked NEET in my first attempt.\""}</p>
+                <p className="testimonial-text">{"\"CCA's coaching style offers unmatched clarity in complex concepts. The visual biology maps and physics derivations â€” things that seemed impossible â€” became second nature. I cracked NEET in my first attempt.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Adhithya Kumar</div>
@@ -849,11 +515,11 @@ export default function Home() {
                     <svg key={i} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   ))}
                 </div>
-                <p className="testimonial-text">{"\"I was struggling with Physics derivations for months. After just 3 sessions at CCA, I finally understood the logic behind them — not just the formula. The WhatsApp doubt support is also super fast, always replied within a few hours.\""}</p>
+                <p className="testimonial-text">{"\"I was struggling with Physics derivations for months. After just 3 sessions at CCA, I finally understood the logic behind them â€” not just the formula. The WhatsApp doubt support is also super fast, always replied within a few hours.\""}</p>
               </div>
               <div>
                 <div className="testimonial-author-name">Priya S.</div>
-                <div className="testimonial-author-desc">Class 12 Student · CCA Aspire Batch</div>
+                <div className="testimonial-author-desc">Class 12 Student Â· CCA Aspire Batch</div>
               </div>
             </ScrollReveal>
           </div>
@@ -894,7 +560,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>1. Conceptual Clarity</h4>
-              <p>Every topic is taught root-up — visual concept maps for Biology, step-by-step derivations for Physics, model-based reasoning for Chemistry. No rote learning, only understanding that sticks.</p>
+              <p>Every topic is taught root-up â€” visual concept maps for Biology, step-by-step derivations for Physics, model-based reasoning for Chemistry. No rote learning, only understanding that sticks.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -904,7 +570,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>2. Concrete Foundations</h4>
-              <p>Daily practice sheets calibrated to board and NEET difficulty levels, plus weekly diagnostic assessments. Each student receives a personalised roadmap after the first session — not after enrollment.</p>
+              <p>Daily practice sheets calibrated to board and NEET difficulty levels, plus weekly diagnostic assessments. Each student receives a personalised roadmap after the first session â€” not after enrollment.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -914,7 +580,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>3. Small-Batch Mentorship</h4>
-              <p>Maximum 15 students per batch — every face known, every gap tracked. Students have direct WhatsApp access to mentors: every doubt answered within 4–6 hours, even between sessions.</p>
+              <p>Maximum 15 students per batch â€” every face known, every gap tracked. Students have direct WhatsApp access to mentors: every doubt answered within 4â€“6 hours, even between sessions.</p>
             </ScrollReveal>
 
             <ScrollReveal className="timeline-node">
@@ -924,7 +590,7 @@ export default function Home() {
                 </svg>
               </div>
               <h4>4. Outcome-Driven Excellence</h4>
-              <p>Target scores are set on Day 1, tracked weekly. Monthly progress reports shared with parents. Merit milestones celebrated — because accountability without recognition doesn't build confidence.</p>
+              <p>Target scores are set on Day 1, tracked weekly. Monthly progress reports shared with parents. Merit milestones celebrated â€” because accountability without recognition doesn't build confidence.</p>
             </ScrollReveal>
           </div>
         </div>
@@ -936,7 +602,7 @@ export default function Home() {
           <ScrollReveal className="section-title-wrap">
             <span className="hero-tagline font-label-lg" style={{ color: "var(--color-on-primary-container)" }}>Transparent Pricing</span>
             <h2>Fees &amp; Pricing</h2>
-            <p>{"Founder's Batches — Early registrations receive an immediate 10% waiver"}</p>
+            <p>{"Founder's Batches â€” Early registrations receive an immediate 10% waiver"}</p>
             <div className="gold-divider" style={{ marginTop: "16px" }}></div>
           </ScrollReveal>
 
@@ -1004,7 +670,7 @@ export default function Home() {
               <div className="event-body">
                 <span className="event-tag">Board Strategy</span>
                 <h4 className="event-title">Class 10 Board Prep Webinar</h4>
-                <p className="event-desc">Visual concept maps and revision frameworks to maximize board exam scores. Online — attend from home.</p>
+                <p className="event-desc">Visual concept maps and revision frameworks to maximize board exam scores. Online â€” attend from home.</p>
                 <div className="event-footer">
                   <span className="event-time">{eventDates.boardWebinarDate}</span>
                   <a
@@ -1028,7 +694,7 @@ export default function Home() {
               <div className="event-body">
                 <span className="event-tag">Batch Launch</span>
                 <h4 className="event-title">{eventDates.batchMonthName} Admissions Open</h4>
-                <p className="event-desc">New high-focus batches (max 15 students) begin {eventDates.batchStartDate}. Seats fill fast — register now to secure direct mentor access.</p>
+                <p className="event-desc">New high-focus batches (max 15 students) begin {eventDates.batchStartDate}. Seats fill fast â€” register now to secure direct mentor access.</p>
                 <div className="event-footer">
                   <span className="event-time">{eventDates.batchStartDate}</span>
                   <a
@@ -1053,7 +719,7 @@ export default function Home() {
             <h2 className="font-display-lg cta-title">
               Ready to Begin with <span style={{ color: "var(--color-brand-gold)" }}>Clarity?</span>
             </h2>
-            <p className="cta-tamil">சரியான வழிகாட்டுதல். தெளிவான எதிர்காலம்.</p>
+            <p className="cta-tamil">à®šà®°à®¿à®¯à®¾à®© à®µà®´à®¿à®•à®¾à®Ÿà¯à®Ÿà¯à®¤à®²à¯. à®¤à¯†à®³à®¿à®µà®¾à®© à®Žà®¤à®¿à®°à¯à®•à®¾à®²à®®à¯.</p>
             <p className="cta-desc font-body-lg">
               Get direct access to standard board prep, elite NEET coaching, and job-ready future digital skillsets.
             </p>

@@ -1,0 +1,270 @@
+[
+  {
+    "id": "foundations",
+    "wingLabel": "CCA Foundations",
+    "wingSlug": "foundations",
+    "wingBadgeColor": "#1F4E79",
+    "detailPageUrl": "/foundations",
+    "syllabusFormLabel": "Foundations (Class 9-12)",
+    "exploreButtonText": "Explore Foundations Program Details & Timelines →",
+    "bannerText": "Fees shown are starting ranges. Final pricing depends on class level, subject combination, and session frequency. WhatsApp us for a personalised quote in under 5 minutes.",
+    "bannerStyle": "info",
+    "boardsCovered": ["CBSE", "State Board", "Matric", "ICSE/CISCE", "NIOS"],
+    "formatsNote": "",
+    "featuredOnHomepage": true,
+    "courses": [
+      {
+        "id": "foundations-c1",
+        "label": "Class 9 & 10",
+        "title": "Science + Maths Foundation",
+        "description": "Build strong fundamentals in Science and Mathematics so you solve exam problems naturally instead of memorizing steps.",
+        "whatsappMessage": "Hi CCA, I am interested in the Science + Maths Foundation for Class 9-10."
+      },
+      {
+        "id": "foundations-c2",
+        "label": "Class 11 & 12",
+        "title": "Senior Secondary Science",
+        "description": "Rigorous concept coaching in Physics, Chemistry, Biology, and Mathematics to maximize school board performance.",
+        "whatsappMessage": "Hi CCA, I am interested in Senior Secondary Science for Class 11-12."
+      },
+      {
+        "id": "foundations-c3",
+        "label": "Class 9–12",
+        "title": "Subject Tuition",
+        "description": "Custom conceptual coaching covering all key academic subjects with dedicated lead mentor doubt resolution.",
+        "whatsappMessage": "Hi CCA, I am interested in Subject Tuition for Class 9-12."
+      }
+    ],
+    "pricingTiers": [
+      {
+        "id": "foundations-p1",
+        "tierName": "Class 9 & 10",
+        "fee": "₹1,500",
+        "feeSuffix": "–₹2,500/month",
+        "description": "Science & Maths conceptual coaching. Board-aligned curriculum with weekly assessments.",
+        "mode": "both",
+        "format": "",
+        "featured": false,
+        "badge": "",
+        "whatsappMessage": "Hi CCA, I am enquiring about Foundations fees for Class 9-10."
+      },
+      {
+        "id": "foundations-p2",
+        "tierName": "Class 11 & 12",
+        "fee": "₹2,000",
+        "feeSuffix": "–₹3,500/month",
+        "description": "Physics, Chemistry, Biology & Mathematics. Dual-board coaching with concept-clarity method.",
+        "mode": "both",
+        "format": "",
+        "featured": false,
+        "badge": "",
+        "whatsappMessage": "Hi CCA, I am enquiring about Foundations fees for Class 11-12."
+      }
+    ]
+  },
+  {
+    "id": "aspire",
+    "wingLabel": "CCA Aspire",
+    "wingSlug": "aspire",
+    "wingBadgeColor": "#C6A75E",
+    "detailPageUrl": "/aspire",
+    "syllabusFormLabel": "Aspire (NEET)",
+    "exploreButtonText": "Explore NEET Aspire Program Details & Timelines →",
+    "bannerText": "Founder's Batch — First 10 students get 10% off",
+    "bannerStyle": "gold",
+    "boardsCovered": [],
+    "formatsNote": "",
+    "featuredOnHomepage": true,
+    "courses": [
+      {
+        "id": "aspire-c1",
+        "label": "Class 9 & 10",
+        "title": "Early NEET Foundation",
+        "description": "Early exposure to medical entrance patterns, mock OMR assessments, biology concept mapping, and physics shortcuts.",
+        "whatsappMessage": "Hi CCA, I am interested in the Early NEET Foundation for Class 9-10."
+      },
+      {
+        "id": "aspire-c2",
+        "label": "Class 11 & 12",
+        "title": "Integrated NEET Coaching",
+        "description": "Dual-focus conceptual masterclasses covering school board syllabus while simultaneously mastering advanced NEET entrance requirements.",
+        "whatsappMessage": "Hi CCA, I am interested in Integrated NEET Coaching for Class 11-12."
+      },
+      {
+        "id": "aspire-c3",
+        "label": "Droppers / Repeaters",
+        "title": "NEET Repeaters Program",
+        "description": "Full-time high-focus coaching. Daily OMR mock exams with in-depth post-exam diagnostics and speed technique drills.",
+        "whatsappMessage": "Hi CCA, I am interested in the NEET Repeaters Program."
+      }
+    ],
+    "pricingTiers": [
+      {
+        "id": "aspire-p1",
+        "tierName": "Weekend Batch",
+        "fee": "₹3,500",
+        "feeSuffix": "/month",
+        "description": "Comprehensive weekend coaching for NEET preparation with expert group classes.",
+        "mode": "offline",
+        "format": "Group · 8 sessions/month",
+        "featured": false,
+        "badge": "",
+        "whatsappMessage": "Hi CCA, I am interested in the NEET Weekend Batch."
+      },
+      {
+        "id": "aspire-p2",
+        "tierName": "Personal Track",
+        "fee": "₹9,500",
+        "feeSuffix": "/month",
+        "description": "Premium 1-on-1 personalized tutoring program for high-focus NEET mentoring.",
+        "mode": "both",
+        "format": "1-on-1 · 12 sessions/month",
+        "featured": true,
+        "badge": "Only 8 seats — limited availability",
+        "whatsappMessage": "Hi CCA, I want to secure a spot in the NEET Personal Track."
+      },
+      {
+        "id": "aspire-p3",
+        "tierName": "Combo",
+        "fee": "₹11,500",
+        "feeSuffix": "/month",
+        "description": "Get the best of both worlds: group interactive batches plus private individual review.",
+        "mode": "both",
+        "format": "Personal + Batch · 20 sessions/month",
+        "featured": false,
+        "badge": "",
+        "whatsappMessage": "Hi CCA, I am interested in the NEET Combo program."
+      }
+    ]
+  },
+  {
+    "id": "launchpad",
+    "wingLabel": "CCA Launchpad",
+    "wingSlug": "launchpad",
+    "wingBadgeColor": "#35618d",
+    "detailPageUrl": "/launchpad",
+    "syllabusFormLabel": "Launchpad (Skill Development)",
+    "exploreButtonText": "Explore All Courses →",
+    "bannerText": "Launchpad runs as 4–6 week courses, weekend workshops, and holiday bootcamps. Pricing varies by format and duration.",
+    "bannerStyle": "info",
+    "boardsCovered": [],
+    "formatsNote": "Formats: 4–6 week courses · 2–3 month tracks · Weekend workshops · Holiday bootcamps",
+    "featuredOnHomepage": true,
+    "courses": [
+      {
+        "id": "launchpad-c1",
+        "label": "CCA Launchpad",
+        "title": "Design",
+        "description": "Figma prototyping, layout grids, typography guidelines, and creative problem-solving — learn professional design tools used by industry.",
+        "tags": ["Graphic Design", "UI/UX", "Design Thinking", "Creative Tools"],
+        "whatsappMessage": "Hi CCA, I am interested in Launchpad Design courses."
+      },
+      {
+        "id": "launchpad-c2",
+        "label": "CCA Launchpad",
+        "title": "Technology",
+        "description": "Build real projects with AI tools, automation workflows, web development basics, and no-code platforms used by modern professionals.",
+        "tags": ["AI & Emerging Tech", "No-Code", "Web Dev", "Digital Literacy"],
+        "whatsappMessage": "Hi CCA, I am interested in Launchpad Technology courses."
+      },
+      {
+        "id": "launchpad-c3",
+        "label": "CCA Launchpad",
+        "title": "Career",
+        "description": "Communication, presentation decks, leadership exercises, and problem-solving frameworks — skills that open doors beyond academics.",
+        "tags": ["Communication", "Presentation", "Problem Solving", "Professional Dev"],
+        "whatsappMessage": "Hi CCA, I am interested in Launchpad Career courses."
+      }
+    ],
+    "pricingTiers": [
+      {
+        "id": "launchpad-p1",
+        "tierName": "Weekend Workshop",
+        "fee": "₹2,500",
+        "feeSuffix": "–₹4,000",
+        "description": "2-day intensive. Design, Tech or Career tracks — practical, hands-on sessions.",
+        "mode": "both",
+        "format": "",
+        "featured": false,
+        "badge": "",
+        "whatsappMessage": "Hi CCA, I am interested in a Launchpad Weekend Workshop."
+      },
+      {
+        "id": "launchpad-p2",
+        "tierName": "Full Course (4–6 Weeks)",
+        "fee": "₹5,000",
+        "feeSuffix": "–₹8,000",
+        "description": "Structured 4–6 week courses in UI/UX, AI Literacy, or Professional Communication.",
+        "mode": "online",
+        "format": "",
+        "featured": false,
+        "badge": "",
+        "whatsappMessage": "Hi CCA, I am interested in a full Launchpad course."
+      },
+      {
+        "id": "launchpad-p3",
+        "tierName": "Holiday Bootcamp",
+        "fee": "₹3,500",
+        "feeSuffix": "–₹6,000",
+        "description": "Intensive skill builds during school holidays — 5–10 day immersive formats.",
+        "mode": "offline",
+        "format": "",
+        "featured": false,
+        "badge": "",
+        "whatsappMessage": "Hi CCA, I am interested in a Launchpad Holiday Bootcamp."
+      }
+    ]
+  },
+  {
+    "id": "pathways",
+    "wingLabel": "Pathways (TET Mentors)",
+    "wingSlug": "pathways",
+    "wingBadgeColor": "#0E1F3B",
+    "detailPageUrl": "/pathways",
+    "syllabusFormLabel": "Pathways (TET Mentors)",
+    "exploreButtonText": "Explore Pathways Program Details & Syllabus →",
+    "bannerText": "",
+    "bannerStyle": "",
+    "boardsCovered": [],
+    "formatsNote": "",
+    "featuredOnHomepage": true,
+    "courses": [
+      {
+        "id": "pathways-c1",
+        "label": "TET Paper I",
+        "title": "Primary Teacher Prep",
+        "description": "Focused preparation for TET Paper I. Master pedagogical frameworks and child development theories.",
+        "whatsappMessage": "Hi CCA, I am interested in TET Paper I mentoring."
+      },
+      {
+        "id": "pathways-c2",
+        "label": "TET Paper II",
+        "title": "Upper Primary Prep",
+        "description": "In-depth guidance for subject-matter content and pedagogical review customized for Paper II exams.",
+        "whatsappMessage": "Hi CCA, I am interested in TET Paper II mentoring."
+      },
+      {
+        "id": "pathways-c3",
+        "label": "Institutions",
+        "title": "Pedagogy Consult",
+        "description": "Consultations for schools and institutes to refine child psychology, curriculum flow, and coaching methods.",
+        "whatsappMessage": "Hi CCA, I am interested in pedagogical consultations."
+      }
+    ],
+    "pricingTiers": [
+      {
+        "id": "pathways-p1",
+        "tierName": "Pathways Fees",
+        "fee": "",
+        "feeSuffix": "",
+        "description": "TET Mentoring — contact us for batch details and fee structure.",
+        "mode": "online",
+        "format": "",
+        "featured": false,
+        "badge": "",
+        "ctaStyle": "simple",
+        "whatsappMessage": "Hi CCA, I am interested in Pathways TET Mentoring batch details and fee structure."
+      }
+    ]
+  }
+]
